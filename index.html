@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>ART × MAKEUP TOKYO 2026</title>
+<meta name="description" content="東京で開催中の美術展と、それに似合うメイクアップ。運営：ART Connection合同会社">
+<meta property="og:title" content="ART × MAKEUP TOKYO 2026">
+<meta property="og:description" content="東京の美術展と、それに似合うメイクアップ年間ガイド。">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0e0c0a; --cream: #f7f3ed; --warm: #ede7dc;
+  --rust: #b85432; --gold: #c8963c; --sage: #7a8c6e;
+  --mist: #d4cfc8; --midnight: #1c1828; --rose: #c4857a; --steel: #5c6b7a;
+}
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+::selection { background:var(--rust); color:white; }
+html { scroll-behavior:smooth; }
+body { background:var(--cream); color:var(--ink); font-family:'Noto Serif JP',serif; overflow-x:hidden; line-height:1.6; }
+a { color:inherit; text-decoration:none; }
+
+/* GRAIN */
+body::before {
+  content:''; position:fixed; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events:none; z-index:9990; opacity:0.4;
+}
+
+/* CURSOR — desktop only */
+@media (hover:hover) { body { cursor:none; } }
+@media (hover:none) { #cursor, #cursor-ring { display:none; } }
+#cursor {
+  position:fixed; width:12px; height:12px; border-radius:50%;
+  background:var(--rust); pointer-events:none; z-index:9999;
+  transform:translate(-50%,-50%); mix-blend-mode:multiply;
+  transition:width .3s, height .3s;
+}
+#cursor-ring {
+  position:fixed; width:36px; height:36px; border-radius:50%;
+  border:1px solid var(--rust); pointer-events:none; z-index:9998;
+  transform:translate(-50%,-50%); opacity:.5;
+}
+
+/* HEADER */
+header {
+  position:fixed; top:0; left:0; right:0; z-index:500;
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1.2rem clamp(1.2rem,5vw,4rem);
+  background:rgba(247,243,237,.92); backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(14,12,10,.08); transition:padding .3s;
+}
+header.scrolled { padding:.75rem clamp(1.2rem,5vw,4rem); }
+.logo-mark {
+  display:flex; align-items:baseline; gap:.4rem;
+  font-family:'Cormorant Garamond',serif; font-size:1.1rem; letter-spacing:.06em;
+}
+.logo-mark .x { color:var(--rust); font-style:italic; font-size:1.25rem; margin:0 .2rem; }
+.nav-links { display:flex; align-items:center; gap:2rem; }
+.nav-links a {
+  font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.2em; text-transform:uppercase;
+  opacity:.5; transition:opacity .2s; position:relative;
+}
+.nav-links a::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:1px; background:var(--rust); transition:width .3s; }
+.nav-links a:hover { opacity:1; }
+.nav-links a:hover::after { width:100%; }
+.nav-cta {
+  font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.18em; text-transform:uppercase;
+  padding:.55rem 1.3rem; border:1px solid var(--ink); background:transparent; color:var(--ink);
+  cursor:pointer; transition:all .25s; white-space:nowrap;
+}
+.nav-cta:hover, .nav-cta:active { background:var(--ink); color:var(--cream); }
+
+/* HAMBURGER */
+.hamburger { display:none; flex-direction:column; gap:4px; padding:.4rem; background:none; border:none; cursor:pointer; }
+.hamburger span { display:block; width:20px; height:1.5px; background:var(--ink); transition:all .3s; }
+.hamburger.open span:nth-child(1) { transform:translateY(5.5px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity:0; }
+.hamburger.open span:nth-child(3) { transform:translateY(-5.5px) rotate(-45deg); }
+.nav-mobile {
+  display:none; flex-direction:column; position:fixed;
+  top:57px; left:0; right:0; z-index:490;
+  background:rgba(247,243,237,.97); backdrop-filter:blur(14px);
+  border-bottom:1px solid rgba(14,12,10,.08);
+  transform:translateY(-8px); opacity:0; pointer-events:none;
+  transition:transform .28s, opacity .28s;
+}
+.nav-mobile.open { transform:translateY(0); opacity:1; pointer-events:auto; }
+.nav-mobile a {
+  font-family:'DM Mono',monospace; font-size:.65rem; letter-spacing:.18em; text-transform:uppercase;
+  padding:.9rem 1.5rem; border-bottom:1px solid rgba(14,12,10,.06);
+  color:rgba(14,12,10,.55); display:block;
+}
+.nav-mobile a:active { background:rgba(184,84,50,.04); }
+
+/* HERO */
+.hero { min-height:100svh; display:grid; grid-template-columns:1fr 1fr; position:relative; overflow:hidden; }
+.hero-left {
+  display:flex; flex-direction:column; justify-content:center;
+  padding:clamp(6rem,12vw,10rem) clamp(1.5rem,5vw,5rem) 3rem;
+  position:relative; z-index:1;
+}
+.hero-kicker {
+  font-family:'DM Mono',monospace; font-size:.62rem; letter-spacing:.35em; text-transform:uppercase;
+  color:var(--rust); margin-bottom:1.8rem;
+  display:flex; align-items:center; gap:1rem;
+  opacity:0; animation:fadeLeft .8s .2s forwards;
+}
+.hero-kicker::before { content:''; width:2rem; height:1px; background:var(--rust); flex-shrink:0; }
+.hero h1 {
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3rem,7vw,6.5rem); font-weight:300; line-height:1.05;
+  margin-bottom:1.8rem; opacity:0; animation:fadeLeft .9s .35s forwards;
+}
+.hero h1 em { font-style:italic; color:var(--rust); }
+.hero h1 .ja { font-family:'Noto Serif JP',serif; font-size:.38em; display:block; color:rgba(14,12,10,.42); margin-top:.5rem; }
+.hero-body {
+  font-size:clamp(.78rem,1.4vw,.88rem); line-height:2.1; color:rgba(14,12,10,.55);
+  max-width:400px; margin-bottom:2.5rem;
+  opacity:0; animation:fadeLeft .9s .5s forwards;
+}
+.hero-actions { display:flex; gap:1rem; flex-wrap:wrap; opacity:0; animation:fadeLeft .9s .65s forwards; }
+.btn-primary {
+  font-family:'DM Mono',monospace; font-size:.63rem; letter-spacing:.2em; text-transform:uppercase;
+  padding:1rem 2rem; background:var(--ink); color:var(--cream); border:none; cursor:pointer;
+  transition:all .3s; position:relative; overflow:hidden;
+}
+.btn-primary::before { content:''; position:absolute; inset:0; background:var(--rust); transform:translateX(-100%); transition:transform .3s; }
+.btn-primary:hover::before, .btn-primary:active::before { transform:translateX(0); }
+.btn-primary span { position:relative; z-index:1; }
+.btn-secondary {
+  font-family:'DM Mono',monospace; font-size:.63rem; letter-spacing:.2em; text-transform:uppercase;
+  padding:1rem 2rem; background:transparent; color:var(--ink); border:1px solid rgba(14,12,10,.3); cursor:pointer;
+  transition:all .3s;
+}
+.btn-secondary:hover, .btn-secondary:active { border-color:var(--rust); color:var(--rust); }
+.hero-right { position:relative; overflow:hidden; opacity:0; animation:fadeIn 1.2s .3s forwards; }
+.hero-mosaic {
+  position:absolute; inset:0; display:grid;
+  grid-template-columns:repeat(3,1fr); grid-template-rows:repeat(4,1fr); gap:3px;
+}
+.mosaic-cell { position:relative; overflow:hidden; transform:scale(1.05); transition:transform 8s ease; }
+.mosaic-cell.loaded { transform:scale(1); }
+.mosaic-color { position:absolute; inset:0; }
+.hero-scroll {
+  position:absolute; bottom:2.5rem; left:50%; transform:translateX(-50%);
+  display:flex; flex-direction:column; align-items:center; gap:.7rem;
+  font-family:'DM Mono',monospace; font-size:.55rem; letter-spacing:.25em; text-transform:uppercase;
+  color:rgba(14,12,10,.32); animation:bounce 2.5s ease infinite; z-index:2;
+}
+.scroll-line { width:1px; height:2.5rem; background:linear-gradient(to bottom,rgba(14,12,10,.3),transparent); }
+
+/* FILTERS BAR */
+.filters-bar {
+  position:sticky; top:57px; z-index:200;
+  background:rgba(247,243,237,.96); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(14,12,10,.08);
+  display:flex; align-items:center; overflow-x:auto; -webkit-overflow-scrolling:touch;
+  scrollbar-width:none; padding:0 clamp(1rem,3vw,3rem);
+}
+.filters-bar::-webkit-scrollbar { display:none; }
+.filter-group {
+  display:flex; align-items:center; gap:.28rem;
+  padding:.75rem 0; margin-right:1.2rem; padding-right:1.2rem;
+  border-right:1px solid rgba(14,12,10,.08); flex-shrink:0;
+}
+.filter-group:last-child { border-right:none; margin-left:0; }
+.filter-label {
+  font-family:'DM Mono',monospace; font-size:.55rem; letter-spacing:.18em; text-transform:uppercase;
+  color:rgba(14,12,10,.38); margin-right:.3rem; white-space:nowrap;
+}
+.filter-btn {
+  font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.08em;
+  padding:.28rem .75rem; border:1px solid rgba(14,12,10,.13);
+  background:transparent; color:rgba(14,12,10,.48); cursor:pointer; border-radius:2px;
+  transition:all .2s; white-space:nowrap;
+}
+.filter-btn:hover, .filter-btn.active {
+  border-color:var(--rust); color:var(--rust); background:rgba(184,84,50,.04);
+}
+.search-wrap { position:relative; }
+.search-input {
+  font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.08em;
+  padding:.38rem .8rem .38rem 2rem; border:1px solid rgba(14,12,10,.12);
+  background:transparent; color:var(--ink); outline:none; width:160px;
+  transition:border-color .2s, width .3s;
+}
+.search-input:focus { border-color:var(--rust); width:190px; }
+.search-icon { position:absolute; left:.6rem; top:50%; transform:translateY(-50%); font-size:.68rem; opacity:.3; pointer-events:none; }
+
+/* SECTION HEAD */
+.section-head {
+  padding:clamp(3rem,6vw,5rem) clamp(1.5rem,4vw,4rem) clamp(1.5rem,3vw,3rem);
+  display:flex; align-items:flex-end; gap:1.5rem; flex-wrap:wrap;
+}
+.section-num { font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,6vw,5rem); font-weight:300; line-height:1; color:rgba(14,12,10,.07); flex-shrink:0; }
+.section-titles h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(1.8rem,3vw,3rem); font-weight:300; line-height:1.2; }
+.section-titles p { font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.2em; color:var(--rust); text-transform:uppercase; margin-bottom:.25rem; }
+.section-line { flex:1; min-width:2rem; height:1px; background:rgba(14,12,10,.1); margin-bottom:.5rem; }
+.count-badge { font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.1em; padding:.28rem .75rem; border:1px solid rgba(14,12,10,.14); color:rgba(14,12,10,.38); white-space:nowrap; margin-bottom:.5rem; }
+
+/* CARD GRID */
+.exhibitions-grid {
+  display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,360px),1fr));
+  gap:1.5px; background:rgba(14,12,10,.06);
+}
+.ex-card { background:var(--cream); overflow:hidden; position:relative; transition:all .5s cubic-bezier(.16,1,.3,1); }
+.ex-card.hidden { display:none; }
+
+/* palette strip */
+.palette-strip { height:6px; display:flex; }
+.palette-strip span { flex:1; transition:flex .4s; }
+.ex-card:hover .palette-strip span { flex:1.4; }
+.ex-card:hover .palette-strip span:nth-child(3n) { flex:.5; }
+
+.card-inner { padding:clamp(1.2rem,2.5vw,2rem) clamp(1.2rem,2.5vw,2rem) 1.2rem; }
+.card-meta { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:1rem; gap:.5rem; }
+.card-venue { font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.16em; text-transform:uppercase; color:rgba(14,12,10,.4); margin-bottom:.18rem; }
+.card-period { font-family:'DM Mono',monospace; font-size:.58rem; color:var(--rust); letter-spacing:.05em; }
+.card-status { font-family:'DM Mono',monospace; font-size:.52rem; letter-spacing:.1em; text-transform:uppercase; padding:.22rem .55rem; border-radius:2px; flex-shrink:0; white-space:nowrap; }
+.status-now { background:rgba(122,140,110,.14); color:var(--sage); border:1px solid rgba(122,140,110,.28); }
+.status-soon { background:rgba(200,150,60,.12); color:var(--gold); border:1px solid rgba(200,150,60,.28); }
+.card-tags { display:flex; flex-wrap:wrap; gap:.3rem; margin-bottom:.85rem; }
+.tag { font-family:'DM Mono',monospace; font-size:.52rem; letter-spacing:.1em; text-transform:uppercase; padding:.17rem .58rem; border:1px solid currentColor; border-radius:100px; opacity:.58; }
+.card-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.25rem,2.5vw,1.55rem); font-weight:300; line-height:1.3; margin-bottom:.7rem; }
+.card-desc { font-size:clamp(.72rem,1.3vw,.8rem); line-height:1.9; color:rgba(14,12,10,.55); margin-bottom:1.2rem; }
+
+/* tap hint — touch only */
+.tap-hint { font-family:'DM Mono',monospace; font-size:.46rem; letter-spacing:.1em; text-transform:uppercase; color:rgba(184,84,50,.55); text-align:center; padding:.3rem; display:none; }
+
+/* MAKEUP PANEL */
+.makeup-panel { border-top:1px solid rgba(14,12,10,.07); overflow:hidden; max-height:0; transition:max-height .6s cubic-bezier(.16,1,.3,1); }
+/* Desktop: hover opens */
+@media (hover:hover) {
+  .ex-card:hover { z-index:10; transform:translateY(-2px); box-shadow:0 20px 60px rgba(14,12,10,.1); }
+  .ex-card:hover .makeup-panel { max-height:750px; }
+}
+/* Touch: tap toggles */
+@media (hover:none) {
+  .tap-hint { display:block; }
+  .ex-card.expanded .makeup-panel { max-height:750px; }
+}
+.makeup-panel-inner { padding:clamp(1rem,2.5vw,1.5rem) clamp(1.2rem,2.5vw,2rem) clamp(1.2rem,2.5vw,2rem); }
+.makeup-heading {
+  font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.26em; text-transform:uppercase;
+  color:var(--rust); margin-bottom:1.2rem; display:flex; align-items:center; gap:.7rem;
+}
+.makeup-heading::after { content:''; flex:1; height:1px; background:rgba(184,84,50,.2); }
+.palette-visual { display:flex; height:55px; border-radius:3px; overflow:hidden; margin-bottom:1.2rem; box-shadow:0 4px 16px rgba(14,12,10,.1); }
+.palette-swatch { flex:1; position:relative; transition:flex .28s; }
+.palette-swatch:hover, .palette-swatch:active { flex:2; }
+.swatch-label {
+  position:absolute; bottom:.35rem; left:50%; transform:translateX(-50%);
+  font-family:'DM Mono',monospace; font-size:.46rem; letter-spacing:.08em; text-transform:uppercase;
+  color:rgba(255,255,255,.9); white-space:nowrap; opacity:0; transition:opacity .2s;
+  text-shadow:0 1px 2px rgba(0,0,0,.4); pointer-events:none;
+}
+.palette-swatch:hover .swatch-label, .palette-swatch:active .swatch-label { opacity:1; }
+.makeup-grid { display:grid; grid-template-columns:1fr 1fr; gap:.85rem; }
+.makeup-item { background:rgba(14,12,10,.02); padding:.85rem; border-radius:3px; border:1px solid rgba(14,12,10,.06); transition:border-color .2s; }
+.makeup-item:hover { border-color:rgba(184,84,50,.25); }
+.m-item-header { display:flex; align-items:center; gap:.55rem; margin-bottom:.45rem; }
+.m-dot { width:16px; height:16px; border-radius:50%; flex-shrink:0; box-shadow:0 0 0 1px rgba(255,255,255,.5),0 2px 5px rgba(14,12,10,.18); }
+.m-category { font-family:'DM Mono',monospace; font-size:.55rem; letter-spacing:.13em; text-transform:uppercase; color:var(--rust); }
+.m-name { font-family:'Cormorant Garamond',serif; font-size:.96rem; font-weight:400; line-height:1.3; margin-bottom:.28rem; }
+.m-desc { font-size:clamp(.68rem,1.2vw,.74rem); line-height:1.75; color:rgba(14,12,10,.55); }
+.mood-tags { display:flex; flex-wrap:wrap; gap:.32rem; margin-top:1rem; padding-top:.9rem; border-top:1px solid rgba(14,12,10,.06); }
+.mood-tag { font-family:'DM Mono',monospace; font-size:.52rem; letter-spacing:.07em; padding:.2rem .65rem; background:rgba(184,84,50,.05); border:1px solid rgba(184,84,50,.14); color:var(--rust); border-radius:100px; }
+
+/* ACCESS ROW */
+.access-row {
+  border-top:1px solid rgba(14,12,10,.06); padding:.75rem clamp(1.2rem,2.5vw,2rem);
+  display:flex; align-items:center; justify-content:space-between; gap:.8rem; flex-wrap:wrap;
+}
+.access-info { display:flex; flex-direction:column; gap:.15rem; }
+.access-station { font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.08em; color:rgba(14,12,10,.48); display:flex; align-items:center; gap:.35rem; }
+.access-station::before { content:'◎'; color:var(--rust); font-size:.46rem; flex-shrink:0; }
+.access-fee { font-family:'DM Mono',monospace; font-size:.56rem; letter-spacing:.06em; color:rgba(14,12,10,.38); }
+.map-btn {
+  font-family:'DM Mono',monospace; font-size:.56rem; letter-spacing:.13em; text-transform:uppercase;
+  padding:.38rem .95rem; border:1px solid rgba(14,12,10,.14); background:transparent; color:rgba(14,12,10,.46);
+  cursor:pointer; text-decoration:none; white-space:nowrap; transition:all .2s;
+  display:flex; align-items:center; gap:.35rem; border-radius:2px;
+}
+.map-btn:hover, .map-btn:active { border-color:var(--rust); color:var(--rust); background:rgba(184,84,50,.03); }
+
+/* DIAGNOSIS */
+#diagnosis { background:var(--midnight); color:var(--cream); padding:clamp(4rem,8vw,8rem) clamp(1.5rem,4vw,4rem); position:relative; overflow:hidden; }
+#diagnosis::before { content:''; position:absolute; top:-30%; right:-20%; width:60vw; height:60vw; border-radius:50%; background:radial-gradient(circle,rgba(184,84,50,.12),transparent 70%); pointer-events:none; }
+#diagnosis::after { content:''; position:absolute; bottom:-20%; left:-10%; width:40vw; height:40vw; border-radius:50%; background:radial-gradient(circle,rgba(200,150,60,.08),transparent 70%); pointer-events:none; }
+.diag-inner { max-width:960px; margin:0 auto; position:relative; z-index:1; }
+.diag-header { text-align:center; margin-bottom:3.5rem; }
+.diag-kicker { font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.35em; text-transform:uppercase; color:var(--rust); margin-bottom:1.3rem; display:block; }
+.diag-header h2 { font-family:'Cormorant Garamond',serif; font-size:clamp(2rem,5vw,4.5rem); font-weight:300; line-height:1.1; }
+.diag-header h2 em { font-style:italic; color:var(--gold); }
+.diag-header p { font-size:.82rem; line-height:2; opacity:.5; margin-top:1rem; max-width:480px; margin-left:auto; margin-right:auto; }
+.diag-steps { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5px; background:rgba(255,255,255,.06); margin-bottom:2px; }
+.diag-step { background:var(--midnight); padding:clamp(1.2rem,3vw,2rem) clamp(1rem,2vw,1.5rem); }
+.step-num { font-family:'Cormorant Garamond',serif; font-size:3rem; font-weight:300; line-height:1; color:rgba(255,255,255,.06); margin-bottom:.8rem; display:block; }
+.step-q { font-family:'Cormorant Garamond',serif; font-size:clamp(.9rem,1.5vw,1.05rem); font-weight:300; line-height:1.4; margin-bottom:.9rem; color:rgba(255,255,255,.85); }
+.diag-opts { display:flex; flex-direction:column; gap:.45rem; }
+.diag-opt {
+  font-family:'DM Mono',monospace; font-size:.6rem; letter-spacing:.08em;
+  padding:.58rem .85rem; border:1px solid rgba(255,255,255,.1);
+  background:transparent; color:rgba(255,255,255,.5); cursor:pointer; text-align:left; transition:all .25s; border-radius:2px;
+}
+.diag-opt:hover, .diag-opt:active, .diag-opt.selected { border-color:var(--rust); color:var(--cream); background:rgba(184,84,50,.15); }
+.diag-cta { text-align:center; margin-top:2rem; }
+#diag-btn { font-family:'DM Mono',monospace; font-size:.63rem; letter-spacing:.25em; text-transform:uppercase; padding:1.1rem 3rem; background:var(--rust); color:white; border:none; cursor:pointer; transition:background .3s; }
+#diag-btn:hover, #diag-btn:active { background:#9f4428; }
+#diag-reset { font-family:'DM Mono',monospace; font-size:.58rem; letter-spacing:.15em; text-transform:uppercase; background:none; border:none; color:rgba(255,255,255,.28); cursor:pointer; margin-top:.9rem; transition:color .2s; display:block; margin-left:auto; margin-right:auto; }
+#diag-reset:hover { color:rgba(255,255,255,.7); }
+.diag-result { background:rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.08); padding:clamp(1.5rem,4vw,3rem); display:none; margin-top:2px; }
+.diag-result.show { display:block; animation:fadeIn .5s forwards; }
+.result-grid { display:grid; grid-template-columns:1fr 1fr; gap:2.5rem; align-items:center; }
+.result-label { font-family:'DM Mono',monospace; font-size:.56rem; letter-spacing:.28em; text-transform:uppercase; color:var(--rust); margin-bottom:.9rem; display:block; }
+.result-title { font-family:'Cormorant Garamond',serif; font-size:clamp(1.5rem,3vw,2.2rem); font-weight:300; line-height:1.2; margin-bottom:.9rem; }
+.result-desc { font-size:.8rem; line-height:2; opacity:.6; margin-bottom:1.3rem; }
+.result-exhibitions { display:flex; flex-direction:column; gap:.55rem; }
+.result-ex { padding:.75rem 1rem; border-left:2px solid var(--rust); background:rgba(255,255,255,.03); }
+.result-ex-title { font-family:'Cormorant Garamond',serif; font-size:.98rem; font-weight:300; }
+.result-ex-sub { font-family:'DM Mono',monospace; font-size:.55rem; opacity:.38; margin-top:.18rem; }
+.result-palette { display:grid; grid-template-columns:repeat(4,1fr); gap:7px; }
+.r-swatch { aspect-ratio:1; border-radius:50%; box-shadow:0 4px 14px rgba(0,0,0,.28); position:relative; overflow:hidden; transition:transform .3s; }
+.r-swatch:hover { transform:scale(1.1); }
+.r-swatch-label { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; font-family:'DM Mono',monospace; font-size:.48rem; letter-spacing:.1em; color:white; opacity:0; background:rgba(0,0,0,.4); transition:opacity .2s; }
+.r-swatch:hover .r-swatch-label { opacity:1; }
+
+/* MAP SECTION */
+#map-section { padding:clamp(3rem,6vw,6rem) clamp(1.5rem,4vw,4rem); background:var(--warm); }
+.map-grid { display:grid; grid-template-columns:1fr 1.6fr; gap:2.5rem; align-items:start; margin-top:1.5rem; }
+.map-list { display:flex; flex-direction:column; gap:.25rem; }
+.map-venue-item { padding:.9rem 1.1rem; border-left:2px solid transparent; cursor:pointer; transition:all .2s; }
+.map-venue-item:hover, .map-venue-item.active { border-left-color:var(--rust); background:rgba(184,84,50,.04); }
+.mv-name { font-family:'Cormorant Garamond',serif; font-size:1.02rem; font-weight:300; margin-bottom:.18rem; }
+.mv-area { font-family:'DM Mono',monospace; font-size:.55rem; letter-spacing:.14em; color:var(--rust); text-transform:uppercase; }
+.mv-station { font-family:'DM Mono',monospace; font-size:.55rem; color:rgba(14,12,10,.38); margin-top:.16rem; }
+.map-embed-wrap { border-radius:2px; overflow:hidden; box-shadow:0 8px 40px rgba(14,12,10,.08); }
+.map-placeholder { background:var(--mist); height:460px; position:relative; overflow:hidden; }
+.tokyo-map { width:100%; height:100%; }
+.venue-pin { cursor:pointer; transition:all .3s; }
+.venue-pin circle { transition:all .3s; }
+.venue-pin:hover circle:first-child { r:14; }
+.venue-pin.active circle:first-child { fill:var(--rust) !important; }
+.venue-pin.active text { fill:white !important; }
+.map-detail-box {
+  position:absolute; bottom:1.2rem; left:1.2rem; right:1.2rem;
+  background:rgba(247,243,237,.95); backdrop-filter:blur(8px);
+  padding:1.1rem 1.4rem; border-top:2px solid var(--rust); display:none;
+  box-shadow:0 4px 18px rgba(14,12,10,.1);
+}
+.map-detail-box.show { display:block; animation:fadeUp .3s forwards; }
+.mdb-venue { font-family:'DM Mono',monospace; font-size:.55rem; letter-spacing:.16em; text-transform:uppercase; color:var(--rust); margin-bottom:.25rem; }
+.mdb-title { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-weight:300; margin:.25rem 0; }
+.mdb-info { font-family:'DM Mono',monospace; font-size:.58rem; color:rgba(14,12,10,.48); line-height:1.8; }
+.mdb-gmaps { display:inline-flex; align-items:center; gap:.35rem; font-family:'DM Mono',monospace; font-size:.52rem; letter-spacing:.1em; text-transform:uppercase; margin-top:.55rem; padding:.3rem .75rem; border:1px solid rgba(14,12,10,.15); color:rgba(14,12,10,.45); text-decoration:none; transition:all .2s; border-radius:2px; }
+.mdb-gmaps:hover, .mdb-gmaps:active { border-color:var(--rust); color:var(--rust); }
+
+/* FOOTER */
+footer { background:var(--ink); color:var(--cream); padding:clamp(3rem,7vw,5rem) clamp(1.5rem,4vw,4rem) clamp(1.5rem,3vw,3rem); position:relative; overflow:hidden; }
+footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right:2rem; font-family:'Cormorant Garamond',serif; font-size:clamp(3rem,8vw,8rem); font-weight:300; color:rgba(255,255,255,.03); line-height:1; pointer-events:none; white-space:nowrap; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr; gap:3rem; margin-bottom:3rem; }
+.footer-logo { font-family:'Cormorant Garamond',serif; font-size:1.25rem; font-weight:300; margin-bottom:.9rem; }
+.footer-logo em { font-style:italic; color:var(--rust); }
+.footer-tagline { font-size:.78rem; line-height:1.9; opacity:.38; max-width:280px; margin-bottom:1rem; }
+.footer-company { font-family:'DM Mono',monospace; font-size:.52rem; letter-spacing:.04em; color:rgba(255,255,255,.25); border-top:1px solid rgba(255,255,255,.07); padding-top:.65rem; line-height:1.85; }
+.footer-company strong { color:rgba(255,255,255,.42); }
+.footer-col-title { font-family:'DM Mono',monospace; font-size:.56rem; letter-spacing:.24em; text-transform:uppercase; color:var(--rust); margin-bottom:1rem; }
+.footer-links { display:flex; flex-direction:column; gap:.6rem; }
+.footer-links a { font-size:.78rem; color:rgba(255,255,255,.35); transition:color .2s; }
+.footer-links a:hover { color:var(--cream); }
+.footer-bottom { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:.5rem; padding-top:1.8rem; border-top:1px solid rgba(255,255,255,.07); font-family:'DM Mono',monospace; font-size:.52rem; letter-spacing:.08em; color:rgba(255,255,255,.2); }
+
+/* ANIMATIONS */
+@keyframes fadeLeft { from{opacity:0;transform:translateX(-24px)} to{opacity:1;transform:translateX(0)} }
+@keyframes fadeUp { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:translateY(0)} }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+.reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in { opacity:1; transform:translateY(0); }
+
+/* ══ UPCOMING SECTION ══ */
+#upcoming { background: var(--warm); }
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1px; background: rgba(14,12,10,.05);
+}
+.up-card {
+  background: var(--cream); padding: clamp(1.2rem,2.5vw,1.8rem); position: relative;
+  transition: background .25s; overflow: hidden;
+}
+.up-card:hover { background: #fff; }
+.up-accent {
+  height: 3px; display: flex; margin-bottom: 1.2rem;
+  border-radius: 1px; overflow: hidden;
+}
+.up-accent span { flex: 1; }
+.up-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; line-height: 1;
+  color: rgba(14,12,10,.05); position: absolute; top: .8rem; right: 1.2rem; pointer-events: none;
+}
+.up-venue {
+  font-family: 'DM Mono', monospace; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(14,12,10,.38); margin-bottom: .2rem;
+}
+.up-title {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem,2vw,1.4rem); font-weight: 300;
+  line-height: 1.3; margin-bottom: .55rem;
+}
+.up-desc { font-size: clamp(.7rem,1.2vw,.76rem); line-height: 1.85; color: rgba(14,12,10,.5); margin-bottom: 1rem; }
+.up-meta {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  flex-wrap: wrap; margin-top: auto;
+}
+.up-period {
+  font-family: 'DM Mono', monospace; font-size: .55rem; letter-spacing: .08em;
+  color: var(--gold); display: flex; align-items: center; gap: .35rem;
+}
+.up-period::before { content: '◷'; font-size: .6rem; }
+.up-tags { display: flex; flex-wrap: wrap; gap: .28rem; margin-bottom: .75rem; }
+.up-tag {
+  font-family: 'DM Mono', monospace; font-size: .5rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .16rem .55rem; border: 1px solid currentColor; border-radius: 100px; opacity: .5;
+}
+.up-map {
+  font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .3rem .8rem; border: 1px solid rgba(14,12,10,.13); background: transparent;
+  color: rgba(14,12,10,.42); cursor: pointer; text-decoration: none; transition: all .2s;
+  display: inline-flex; align-items: center; gap: .3rem; border-radius: 2px; white-space: nowrap;
+}
+.up-map:hover, .up-map:active { border-color: var(--rust); color: var(--rust); }
+.up-makeup-hint {
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(14,12,10,.06);
+}
+.up-makeup-heading {
+  font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(14,12,10,.3); margin-bottom: .65rem; display: flex; align-items: center; gap: .5rem;
+}
+.up-makeup-heading::after { content: ''; flex: 1; height: 1px; background: rgba(14,12,10,.08); }
+.up-palette { display: flex; height: 28px; border-radius: 2px; overflow: hidden; }
+.up-palette span { flex: 1; }
+
+/* ══ RESPONSIVE ══ */
+@media (max-width:900px) {
+  .nav-links { display:none; }
+  .nav-cta { display:none; }
+  .hamburger { display:flex; }
+  .nav-mobile { display:flex; }
+  header { padding:.9rem 1.3rem; }
+  .hero { grid-template-columns:1fr; }
+  .hero-right { display:none; }
+  .hero-left { padding:5.5rem 1.5rem 3rem; }
+  .filters-bar { top:52px; padding:0 1rem; }
+  .diag-steps { grid-template-columns:1fr 1fr; }
+  .map-grid { grid-template-columns:1fr; }
+  .result-grid { grid-template-columns:1fr; }
+  .footer-grid { grid-template-columns:1fr; gap:2rem; }
+  .section-line { display:none; }
+}
+@media (max-width:600px) {
+  .filter-label { display:none; }
+  .makeup-grid { grid-template-columns:1fr; }
+  .diag-steps { grid-template-columns:1fr; }
+  .hero-actions { flex-direction:column; }
+  .btn-primary, .btn-secondary { text-align:center; }
+}
+@media (max-width:400px) {
+  .exhibitions-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- HEADER -->
+<header id="header">
+  <div class="logo-mark">ART <span class="x">×</span> MAKEUP TOKYO</div>
+  <nav class="nav-links">
+    <a href="#exhibitions">展覧会</a>
+    <a href="#upcoming">開催予定</a>
+    <a href="#diagnosis">メイク診断</a>
+    <a href="#map-section">アクセス</a>
+  </nav>
+  <button class="nav-cta" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">診断する</button>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</header>
+
+<nav class="nav-mobile" id="mobileNav">
+  <a href="#exhibitions" onclick="closeMenu()">展覧会</a>
+  <a href="#upcoming" onclick="closeMenu()">開催予定</a>
+  <a href="#diagnosis" onclick="closeMenu()">メイク診断</a>
+  <a href="#map-section" onclick="closeMenu()">アクセスマップ</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-kicker">Tokyo Art &amp; Beauty 2026 Spring</div>
+    <h1>
+      <em>Art</em> に<br>似合う<br>Makeup を。
+      <span class="ja">東京の美術展と、あなたの美のものがたり</span>
+    </h1>
+    <p class="hero-body">展覧会の色調・時代・哲学をまとうメイクアップを提案します。作品との対話をより豊かに。メイク傾向からのレコメンド診断も。</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('exhibitions').scrollIntoView({behavior:'smooth'})"><span>展覧会を見る</span></button>
+      <button class="btn-secondary" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">メイク診断</button>
+    </div>
+  </div>
+  <div class="hero-right"><div class="hero-mosaic" id="mosaic"></div></div>
+  <div class="hero-scroll"><div class="scroll-line"></div>Scroll</div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters-bar" id="filters">
+  <div class="filter-group">
+    <span class="filter-label">エリア</span>
+    <button class="filter-btn active" data-filter="area" data-val="all">すべて</button>
+    <button class="filter-btn" data-filter="area" data-val="ueno">上野</button>
+    <button class="filter-btn" data-filter="area" data-val="roppongi">六本木</button>
+    <button class="filter-btn" data-filter="area" data-val="marunouchi">丸の内</button>
+    <button class="filter-btn" data-filter="area" data-val="kiyosumi">清澄白河</button>
+    <button class="filter-btn" data-filter="area" data-val="aoyama">青山</button>
+    <button class="filter-btn" data-filter="area" data-val="kyobashi">京橋</button>
+  </div>
+  <div class="filter-group">
+    <span class="filter-label">ジャンル</span>
+    <button class="filter-btn active" data-filter="genre" data-val="all">すべて</button>
+    <button class="filter-btn" data-filter="genre" data-val="western">洋画</button>
+    <button class="filter-btn" data-filter="genre" data-val="japanese">日本美術</button>
+    <button class="filter-btn" data-filter="genre" data-val="contemporary">現代</button>
+  </div>
+  <div class="filter-group">
+    <div class="search-wrap">
+      <span class="search-icon">🔍</span>
+      <input class="search-input" id="search" type="text" placeholder="展覧会を検索...">
+    </div>
+  </div>
+</div>
+
+<!-- EXHIBITIONS -->
+<section id="exhibitions">
+  <div class="section-head reveal">
+    <div class="section-num">01</div>
+    <div class="section-titles"><p>Current Exhibitions</p><h2>開催中の展覧会</h2></div>
+    <div class="section-line"></div>
+    <div class="count-badge" id="count-badge">全 6 件表示中</div>
+  </div>
+  <div class="exhibitions-grid" id="grid">
+
+<!-- ─── CARD 1: モネ ─── -->
+<div class="ex-card" data-area="kyobashi" data-genre="western" data-search="モネ 印象派 風景 アーティゾン 京橋">
+  <div class="palette-strip">
+    <span style="background:#87CEAB"></span><span style="background:#6B9EC7"></span><span style="background:#C4A882"></span>
+    <span style="background:#D4B8E0"></span><span style="background:#B8D0A8"></span><span style="background:#F0D090"></span><span style="background:#E8C8A0"></span>
+  </div>
+  <div class="card-inner">
+    <div class="card-meta">
+      <div class="card-venue-wrap">
+        <div class="card-venue">アーティゾン美術館 — 京橋</div>
+        <div class="card-period">2026.02.07 — 05.24</div>
+      </div>
+      <span class="card-status status-now">開催中</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag" style="color:#6B9EC7">印象派</span>
+      <span class="tag" style="color:#87CEAB">風景画</span>
+      <span class="tag" style="color:#C4A882">19世紀</span>
+    </div>
+    <div class="card-title">クロード・モネ<br>— 風景への問いかけ</div>
+    <div class="card-desc">オルセー美術館から傑作が来日。印象派を代表するモネの風景画家としての軌跡を約140点で辿る。光と水が織りなす色彩の冒険。</div>
+    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="makeup-panel"><div class="makeup-panel-inner">
+      <div class="makeup-heading">この展覧会に似合うメイク</div>
+      <div class="palette-visual">
+        <div class="palette-swatch" style="background:#87CEAB"><div class="swatch-label">霧のグリーン</div></div>
+        <div class="palette-swatch" style="background:#6B9EC7"><div class="swatch-label">水面ブルー</div></div>
+        <div class="palette-swatch" style="background:#D4B8E0"><div class="swatch-label">アイリス</div></div>
+        <div class="palette-swatch" style="background:#C4A882"><div class="swatch-label">砂浜</div></div>
+        <div class="palette-swatch" style="background:#F0D090"><div class="swatch-label">陽光</div></div>
+        <div class="palette-swatch" style="background:#E8C8A0"><div class="swatch-label">朝靄</div></div>
+      </div>
+      <div class="makeup-grid">
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#a8c8e8,#d4b8e0)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">水面ラベンダー×パールブルー</div><div class="m-desc">淡いラベンダーブルーを目全体に。目頭にパールホワイトのハイライトをのせ、光を反射する水面を表現。アイライナーはブラウンで自然に。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#e8c4a0,#f5e8d0)"></div><div class="m-category">ベース・ファンデ</div></div><div class="m-name">霞がかるベール肌</div><div class="m-desc">薄いカバーのリキッドファンデに軽いミストをオーバーレイ。刷毛でさっと広げたような滲み感のあるセミシアーな肌。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#e8b890,#d4907a)"></div><div class="m-category">リップ</div></div><div class="m-name">ニュアンスコーラル</div><div class="m-desc">ヌードベージュから柔らかいコーラルへのグラデーション。印象派の「光と影」をリップでも——ふちを曖昧にぼかして。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#f0d090,#e8c0a0)"></div><div class="m-category">チーク・ハイライト</div></div><div class="m-name">陽光ピーチ グロウ</div><div class="m-desc">ゴールドパールを含んだ淡いピーチをふんわり。頬骨〜こめかみにかけて夏の陽光のように広げる。ハイライトは控えめに。</div></div>
+      </div>
+      <div class="mood-tags"><span class="mood-tag">ロマンティック</span><span class="mood-tag">透明感</span><span class="mood-tag">柔らかいグラデ</span><span class="mood-tag">印象派ブルー</span><span class="mood-tag">パールグロウ</span></div>
+    </div></div>
+  </div>
+  <div class="access-row">
+    <div class="access-info">
+      <div class="access-station">東京メトロ銀座線「京橋」徒歩1分</div>
+      <div class="access-fee">🎟 一般 2,200円</div>
+    </div>
+    <a class="map-btn" href="https://maps.google.com/?q=アーティゾン美術館+東京都中央区京橋1-7-2" target="_blank" rel="noopener">📍 地図で見る</a>
+  </div>
+</div>
+
+<!-- ─── CARD 2: YBA ─── -->
+<div class="ex-card" data-area="roppongi" data-genre="contemporary" data-search="テート 現代アート 英国 YBA ダミアン ハースト 国立新美術館 六本木">
+  <div class="palette-strip">
+    <span style="background:#1a1a1a"></span><span style="background:#e63946"></span><span style="background:#f4d35e"></span>
+    <span style="background:#3d405b"></span><span style="background:#06d6a0"></span><span style="background:#118ab2"></span><span style="background:#ffffff"></span>
+  </div>
+  <div class="card-inner">
+    <div class="card-meta">
+      <div class="card-venue-wrap">
+        <div class="card-venue">国立新美術館 — 六本木</div>
+        <div class="card-period">2026.02.11 — 05.11</div>
+      </div>
+      <span class="card-status status-now">開催中</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag" style="color:#e63946">現代アート</span>
+      <span class="tag" style="color:#118ab2">英国</span>
+      <span class="tag" style="color:#3d405b">コンセプチュアル</span>
+    </div>
+    <div class="card-title">テート美術館 YBA &amp; BEYOND<br>世界を変えた 90s 英国アート</div>
+    <div class="card-desc">ダミアン・ハーストら約60名による革命的な作品群。概念・生・死を問うブリティッシュコンテンポラリーの軌跡。</div>
+    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="makeup-panel"><div class="makeup-panel-inner">
+      <div class="makeup-heading">この展覧会に似合うメイク</div>
+      <div class="palette-visual">
+        <div class="palette-swatch" style="background:#0a0a0a"><div class="swatch-label">漆黒</div></div>
+        <div class="palette-swatch" style="background:#cc1e2e"><div class="swatch-label">ブラッドレッド</div></div>
+        <div class="palette-swatch" style="background:#f4d35e"><div class="swatch-label">イエロー</div></div>
+        <div class="palette-swatch" style="background:#06d6a0"><div class="swatch-label">エレクトリック</div></div>
+        <div class="palette-swatch" style="background:#f5f5f5"><div class="swatch-label">白磁</div></div>
+        <div class="palette-swatch" style="background:#3d405b"><div class="swatch-label">スレート</div></div>
+      </div>
+      <div class="makeup-grid">
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#1a1a2e,#cc1e2e)"></div><div class="m-category">グラフィックアイ</div></div><div class="m-name">インクブラック×ブラッドレッド</div><div class="m-desc">ブラックスモーキーを全体に。下まぶたに血を思わせるレッドのラインを非対称に。YBAの挑発的な精神を目元に宿す。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0f0f0"></div><div class="m-category">ベース</div></div><div class="m-name">磁器フラットマット</div><div class="m-desc">ポアレス仕上げの白磁ベース。感情を排した無機質な肌感がコンセプチュアルアートの世界観を体現。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#b50000"></div><div class="m-category">リップ</div></div><div class="m-name">ピュアレッドマット</div><div class="m-desc">ブリティッシュパンクへのオマージュ。政治的な純粋レッドをマットに。ラインはくっきり、ぼかしなし。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#06d6a0,#118ab2)"></div><div class="m-category">アクセント</div></div><div class="m-name">エレクトリックグリーンライン</div><div class="m-desc">目尻に細いエレクトリックグリーンのグラフィックライン1本。コンセプチュアルなアクセントとして。</div></div>
+      </div>
+      <div class="mood-tags"><span class="mood-tag">エッジィ</span><span class="mood-tag">パンク</span><span class="mood-tag">非対称</span><span class="mood-tag">コンセプチュアル</span><span class="mood-tag">ブリティッシュ</span></div>
+    </div></div>
+  </div>
+  <div class="access-row">
+    <div class="access-info">
+      <div class="access-station">東京メトロ千代田線「乃木坂」徒歩1分</div>
+      <div class="access-fee">🎟 一般 2,000円</div>
+    </div>
+    <a class="map-btn" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 地図で見る</a>
+  </div>
+</div>
+
+<!-- ─── CARD 3: スウェーデン ─── -->
+<div class="ex-card" data-area="ueno" data-genre="western" data-search="スウェーデン 北欧 カール ラーション 東京都美術館 上野">
+  <div class="palette-strip">
+    <span style="background:#e8d5b7"></span><span style="background:#a8c5a0"></span><span style="background:#c9dde8"></span>
+    <span style="background:#d4a878"></span><span style="background:#e0b8a0"></span><span style="background:#b8d0c0"></span><span style="background:#f5f0e0"></span>
+  </div>
+  <div class="card-inner">
+    <div class="card-meta">
+      <div class="card-venue-wrap">
+        <div class="card-venue">東京都美術館 — 上野</div>
+        <div class="card-period">2026.01.27 — 04.12</div>
+      </div>
+      <span class="card-status status-now">開催中</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag" style="color:#a8c5a0">北欧</span>
+      <span class="tag" style="color:#d4a878">19世紀</span>
+      <span class="tag" style="color:#c9dde8">光</span>
+    </div>
+    <div class="card-title">スウェーデン絵画<br>北欧の光、日常のかがやき</div>
+    <div class="card-desc">カール・ラーションらが描く穏やかな日常と北欧の光。スウェーデン国立美術館全面協力による待望の来日展。</div>
+    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="makeup-panel"><div class="makeup-panel-inner">
+      <div class="makeup-heading">この展覧会に似合うメイク</div>
+      <div class="palette-visual">
+        <div class="palette-swatch" style="background:#b8d4c0"><div class="swatch-label">冬の森</div></div>
+        <div class="palette-swatch" style="background:#c9dde8"><div class="swatch-label">スカイ</div></div>
+        <div class="palette-swatch" style="background:#f0e8d8"><div class="swatch-label">白樺</div></div>
+        <div class="palette-swatch" style="background:#d4a878"><div class="swatch-label">シナモン</div></div>
+        <div class="palette-swatch" style="background:#e0b8a0"><div class="swatch-label">サーモン</div></div>
+        <div class="palette-swatch" style="background:#a8b8a0"><div class="swatch-label">苔色</div></div>
+      </div>
+      <div class="makeup-grid">
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#b8d4c0,#d4e8f0)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">フロストグリーン × スカイシルバー</div><div class="m-desc">北欧の冬の森を映したフロスティなグリーン。目頭と眉骨にシルバーパールをのせ、冷たく澄んだ光感を。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0e0c8"></div><div class="m-category">ベース</div></div><div class="m-name">ナチュラルそばかす風</div><div class="m-desc">ライトカバーのティンテッドモイスチャライザー。ラーションが描く自然な生命感を—そばかすやムラを消しすぎず残す。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#e0a890"></div><div class="m-category">リップ</div></div><div class="m-name">スカンジナビアコーラル</div><div class="m-desc">北欧の健康的な頬を想う柔らかいコーラル。唇にも同じ色をのせて、全体を自然体に整える。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#f0d0b8,#f5e8d0)"></div><div class="m-category">チーク</div></div><div class="m-name">ふんわりピーチブラッシュ</div><div class="m-desc">頬全体に広がるほんのりとしたピーチ。まるで外で遊んで帰ってきたような自然な血色感に。</div></div>
+      </div>
+      <div class="mood-tags"><span class="mood-tag">ナチュラル</span><span class="mood-tag">北欧ライフスタイル</span><span class="mood-tag">フレッシュ</span><span class="mood-tag">日常の美</span><span class="mood-tag">透明感</span></div>
+    </div></div>
+  </div>
+  <div class="access-row">
+    <div class="access-info">
+      <div class="access-station">JR「上野」徒歩7分 / 東京メトロ「上野」徒歩10分</div>
+      <div class="access-fee">🎟 一般 1,900円</div>
+    </div>
+    <a class="map-btn" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 地図で見る</a>
+  </div>
+</div>
+
+<!-- ─── CARD 4: 新版画 ─── -->
+<div class="ex-card" data-area="marunouchi" data-genre="japanese" data-search="新版画 木版画 川瀬巴水 小林清親 三菱一号館 丸の内 日本">
+  <div class="palette-strip">
+    <span style="background:#1c3a4a"></span><span style="background:#8b4040"></span><span style="background:#d4c078"></span>
+    <span style="background:#6a8c70"></span><span style="background:#2c4860"></span><span style="background:#e8d5b0"></span><span style="background:#4a3020"></span>
+  </div>
+  <div class="card-inner">
+    <div class="card-meta">
+      <div class="card-venue-wrap">
+        <div class="card-venue">三菱一号館美術館 — 丸の内</div>
+        <div class="card-period">2026.02.19 — 05.24</div>
+      </div>
+      <span class="card-status status-now">開催中</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag" style="color:#8b4040">木版画</span>
+      <span class="tag" style="color:#1c3a4a">近代日本</span>
+      <span class="tag" style="color:#d4c078">明治〜昭和</span>
+    </div>
+    <div class="card-title">トワイライト、新版画<br>小林清親から川瀬巴水まで</div>
+    <div class="card-desc">黄昏の光線画から叙情的な新版画へ。スミソニアン所蔵の傑作を中心に明治〜昭和の風景木版画の系譜を辿る。</div>
+    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="makeup-panel"><div class="makeup-panel-inner">
+      <div class="makeup-heading">この展覧会に似合うメイク</div>
+      <div class="palette-visual">
+        <div class="palette-swatch" style="background:#1c2c40"><div class="swatch-label">夜藍</div></div>
+        <div class="palette-swatch" style="background:#5a2838"><div class="swatch-label">深紫</div></div>
+        <div class="palette-swatch" style="background:#c87840"><div class="swatch-label">夕暮れ</div></div>
+        <div class="palette-swatch" style="background:#8b3030"><div class="swatch-label">朱赤</div></div>
+        <div class="palette-swatch" style="background:#d4b870"><div class="swatch-label">金箔</div></div>
+        <div class="palette-swatch" style="background:#6a8c70"><div class="swatch-label">松緑</div></div>
+      </div>
+      <div class="makeup-grid">
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#2c1a3a,#8b3a50)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">藍×深紫 黄昏グラデ</div><div class="m-desc">藍色と深紫を重ねた黄昏色。目尻側に向かって深みを増し、朱赤のライナーを一筆いれて粋な和の目元に。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#d4b870,#f0d890)"></div><div class="m-category">ハイライト</div></div><div class="m-name">金箔シャンパンゴールド</div><div class="m-desc">木版画の金雲をイメージした輝き。涙袋・鼻筋・唇山にシャンパンゴールドを置いて贅沢な艶を演出。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#8b2830"></div><div class="m-category">リップ</div></div><div class="m-name">臙脂（えんじ）漆塗り</div><div class="m-desc">深みのある朱・臙脂色をラインをくっきり引いてのせる。和の格式とモダンの間を行く洗練されたリップ。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#3a2818,#6a4830)"></div><div class="m-category">ベース・眉</div></div><div class="m-name">陶器肌 × シャープ眉</div><div class="m-desc">版画の輪郭線のように眉を明確に描く。ベースはフラットで均一な陶器質感。和装にも似合う品を。</div></div>
+      </div>
+      <div class="mood-tags"><span class="mood-tag">和モダン</span><span class="mood-tag">黄昏</span><span class="mood-tag">金箔グロウ</span><span class="mood-tag">臙脂リップ</span><span class="mood-tag">格式</span></div>
+    </div></div>
+  </div>
+  <div class="access-row">
+    <div class="access-info">
+      <div class="access-station">東京メトロ「日比谷」「二重橋前」徒歩3分</div>
+      <div class="access-fee">🎟 一般 2,100円</div>
+    </div>
+    <a class="map-btn" href="https://maps.google.com/?q=三菱一号館美術館+東京都千代田区丸の内2-6-2" target="_blank" rel="noopener">📍 地図で見る</a>
+  </div>
+</div>
+
+<!-- ─── CARD 5: ソル・ルウィット ─── -->
+<div class="ex-card" data-area="kiyosumi" data-genre="contemporary" data-search="ソル ルウィット 幾何学 コンセプチュアル 東京都現代美術館 清澄白河">
+  <div class="palette-strip">
+    <span style="background:#cc2222"></span><span style="background:#2255cc"></span><span style="background:#cccc11"></span>
+    <span style="background:#000000"></span><span style="background:#ffffff"></span><span style="background:#cc2222"></span><span style="background:#22aacc"></span>
+  </div>
+  <div class="card-inner">
+    <div class="card-meta">
+      <div class="card-venue-wrap">
+        <div class="card-venue">東京都現代美術館 — 清澄白河</div>
+        <div class="card-period">2025.12.25 — 2026.04.02</div>
+      </div>
+      <span class="card-status status-now">開催中</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag" style="color:#2255cc">コンセプチュアル</span>
+      <span class="tag" style="color:#cc2222">幾何学</span>
+      <span class="tag" style="color:#888">ミニマル</span>
+    </div>
+    <div class="card-title">ソル・ルウィット<br>オープン・ストラクチャー</div>
+    <div class="card-desc">純粋な構造と概念で芸術とは何かを問う。ウォールドローイング6点を体感できる日本初個展。思考そのものが作品になる空間。</div>
+    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="makeup-panel"><div class="makeup-panel-inner">
+      <div class="makeup-heading">この展覧会に似合うメイク</div>
+      <div class="palette-visual">
+        <div class="palette-swatch" style="background:#cc2222"><div class="swatch-label">プライマリーR</div></div>
+        <div class="palette-swatch" style="background:#2255cc"><div class="swatch-label">プライマリーB</div></div>
+        <div class="palette-swatch" style="background:#cccc11"><div class="swatch-label">プライマリーY</div></div>
+        <div class="palette-swatch" style="background:#111111"><div class="swatch-label">ブラック</div></div>
+        <div class="palette-swatch" style="background:#f5f5f5"><div class="swatch-label">ホワイト</div></div>
+        <div class="palette-swatch" style="background:#22aacc"><div class="swatch-label">セカンダリー</div></div>
+      </div>
+      <div class="makeup-grid">
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(90deg,#cc2222,#2255cc)"></div><div class="m-category">グラフィックアイ</div></div><div class="m-name">三原色 非対称ライン</div><div class="m-desc">左右で異なる原色のグラフィックラインを引く。赤・青・黄いずれか1色を選び、幾何学的な直線で目元に構造を。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0f0f0"></div><div class="m-category">ベース</div></div><div class="m-name">ゼロ・ファンデ マット</div><div class="m-desc">キャンバスとなる完全なフラット肌。色も質感も感情も排除した余白——概念的な「無」の肌。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#111111"></div><div class="m-category">リップ</div></div><div class="m-name">漆黒マット or 無彩色</div><div class="m-desc">ブラックマットで幾何学的な輪郭を強調するか、あえてグロスレスの素唇で色を拒絶する。どちらも構造的。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#cc2222,#cccc11,#2255cc)"></div><div class="m-category">チーク代わり</div></div><div class="m-name">ジオメトリック ブラッシュ</div><div class="m-desc">三角形や直線状にカットしたブラッシュを彫刻的に。円形にのせるのではなく「構造」を意識したアプリケーション。</div></div>
+      </div>
+      <div class="mood-tags"><span class="mood-tag">アートメイク</span><span class="mood-tag">コンセプチュアル</span><span class="mood-tag">三原色</span><span class="mood-tag">ジオメトリック</span><span class="mood-tag">前衛</span></div>
+    </div></div>
+  </div>
+  <div class="access-row">
+    <div class="access-info">
+      <div class="access-station">東京メトロ半蔵門線「清澄白河」徒歩9分</div>
+      <div class="access-fee">🎟 一般 1,800円</div>
+    </div>
+    <a class="map-btn" href="https://maps.google.com/?q=東京都現代美術館+東京都江東区三好4-1-1" target="_blank" rel="noopener">📍 地図で見る</a>
+  </div>
+</div>
+
+<!-- ─── CARD 6: 根津美術館 ─── -->
+<div class="ex-card" data-area="aoyama" data-genre="japanese" data-search="根津美術館 武器 武具 甲冑 日本美術 南青山">
+  <div class="palette-strip">
+    <span style="background:#2d1b0e"></span><span style="background:#8b7355"></span><span style="background:#c8a96e"></span>
+    <span style="background:#e8d5a3"></span><span style="background:#4a6741"></span><span style="background:#3a2010"></span><span style="background:#a08060"></span>
+  </div>
+  <div class="card-inner">
+    <div class="card-meta">
+      <div class="card-venue-wrap">
+        <div class="card-venue">根津美術館 — 南青山</div>
+        <div class="card-period">2026.02.14 — 03.29</div>
+      </div>
+      <span class="card-status status-now">開催中</span>
+    </div>
+    <div class="card-tags">
+      <span class="tag" style="color:#8b7355">日本美術</span>
+      <span class="tag" style="color:#4a6741">武具</span>
+      <span class="tag" style="color:#c8a96e">重文</span>
+    </div>
+    <div class="card-title">英姿颯爽<br>根津美術館の武器・武具</div>
+    <div class="card-desc">重要文化財を含む武器・武具コレクション。おとぎ話をモチーフにした愛らしい刀装具から格調高い甲冑まで武の美を探る。</div>
+    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="makeup-panel"><div class="makeup-panel-inner">
+      <div class="makeup-heading">この展覧会に似合うメイク</div>
+      <div class="palette-visual">
+        <div class="palette-swatch" style="background:#2d1b0e"><div class="swatch-label">玄鉄</div></div>
+        <div class="palette-swatch" style="background:#6a3820"><div class="swatch-label">漆褐</div></div>
+        <div class="palette-swatch" style="background:#c8a96e"><div class="swatch-label">金</div></div>
+        <div class="palette-swatch" style="background:#8b2028"><div class="swatch-label">緋</div></div>
+        <div class="palette-swatch" style="background:#4a6741"><div class="swatch-label">萌葱</div></div>
+        <div class="palette-swatch" style="background:#e8d8a0"><div class="swatch-label">象牙</div></div>
+      </div>
+      <div class="makeup-grid">
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#3d2818,#8b5838)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">鉄錆ブロンズ × 朱</div><div class="m-desc">鉄と錆を思わせるブロンズ〜ダークブラウン。目尻に朱色のシャドウをさりげなく重ねて武士の凛を演出。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#c8a96e,#e8d090)"></div><div class="m-category">ハイライト</div></div><div class="m-name">甲冑の金箔 ゴールド</div><div class="m-desc">甲冑の金装飾をリスペクトしたゴールドハイライター。頬骨に高く置いて彫刻のような立体感を。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#6b2028"></div><div class="m-category">リップ</div></div><div class="m-name">深緋（こきひ）漆</div><div class="m-desc">深みのある緋色〜臙脂。一刀彫りのようにくっきりとラインを引き、凜とした和の格式を纏う。</div></div>
+        <div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#2d1b0e,#3d2818)"></div><div class="m-category">アイブロウ</div></div><div class="m-name">凜とした武士眉</div><div class="m-desc">甲冑の精密な細工のように、眉を丁寧に整えシャープに描く。凜とした強さと品格が漂う目もとに。</div></div>
+      </div>
+      <div class="mood-tags"><span class="mood-tag">和の格式</span><span class="mood-tag">武士の凛</span><span class="mood-tag">金箔グロウ</span><span class="mood-tag">深緋リップ</span><span class="mood-tag">ブロンズアイ</span></div>
+    </div></div>
+  </div>
+  <div class="access-row">
+    <div class="access-info">
+      <div class="access-station">東京メトロ銀座線「表参道」徒歩8分</div>
+      <div class="access-fee">🎟 一般 1,300円</div>
+    </div>
+    <a class="map-btn" href="https://maps.google.com/?q=根津美術館+東京都港区南青山6-5-1" target="_blank" rel="noopener">📍 地図で見る</a>
+  </div>
+</div>
+
+  </div><!-- /grid -->
+</section>
+
+<!-- UPCOMING EXHIBITIONS -->
+<section id="upcoming">
+  <div class="section-head reveal">
+    <div class="section-num">02</div>
+    <div class="section-titles"><p>Upcoming Exhibitions</p><h2>開催予定の展覧会</h2></div>
+    <div class="section-line"></div>
+    <div class="count-badge">全 9 件</div>
+  </div>
+  <div class="upcoming-grid">
+
+    <!-- UP-1: ブランクーシ -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#c8963c"></span><span style="background:#e8d090"></span><span style="background:#b0a080"></span><span style="background:#f5f0e0"></span><span style="background:#8a7a60"></span></div>
+      <div class="up-num">01</div>
+      <div class="up-venue">国立西洋美術館 — 上野</div>
+      <div class="up-tags"><span class="up-tag" style="color:#c8963c">彫刻</span><span class="up-tag" style="color:#8a7a60">モダニズム</span><span class="up-tag" style="color:#b0a080">抽象</span></div>
+      <div class="up-title">ブランクーシ<br>本質を刻む彫刻家</div>
+      <div class="up-desc">ルーマニア出身の彫刻家コンスタンティン・ブランクーシ。卵形・鳥・無限柱——純粋な形態が宿す精神性を日本初の大規模回顧展で。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#c8963c"></span><span style="background:#e8d090"></span><span style="background:#f5f0e8"></span><span style="background:#8a7a60"></span><span style="background:#3a2818"></span><span style="background:#d4c8a8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.06.09 — 09.06</div>
+        <a class="up-map" href="https://maps.google.com/?q=国立西洋美術館+東京都台東区上野公園7-7" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-2: ルーヴル -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#1a1a2e"></span><span style="background:#8b6a40"></span><span style="background:#c8b078"></span><span style="background:#e8d8b0"></span><span style="background:#4a3828"></span></div>
+      <div class="up-num">02</div>
+      <div class="up-venue">国立新美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#8b6a40">古代</span><span class="up-tag" style="color:#c8b078">ルーヴル</span><span class="up-tag" style="color:#1a1a2e">彫刻</span></div>
+      <div class="up-title">ルーヴル美術館展<br>古代ギリシャの美</div>
+      <div class="up-desc">ルーヴルが誇る古代ギリシャ彫刻・陶器・装飾品を一堂に。人体美の理想と神話の世界が、現代東京に降り立つ。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#1a1a2e"></span><span style="background:#e8d8b0"></span><span style="background:#c8b078"></span><span style="background:#8b6a40"></span><span style="background:#f0e8d0"></span><span style="background:#b0987a"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.06.03 — 08.31</div>
+        <a class="up-map" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-3: ターナー -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#e8a030"></span><span style="background:#f0c868"></span><span style="background:#88b8d8"></span><span style="background:#d0e8f0"></span><span style="background:#c87820"></span></div>
+      <div class="up-num">03</div>
+      <div class="up-venue">東京都美術館 — 上野</div>
+      <div class="up-tags"><span class="up-tag" style="color:#e8a030">ロマン主義</span><span class="up-tag" style="color:#88b8d8">英国</span><span class="up-tag" style="color:#c87820">風景</span></div>
+      <div class="up-title">ターナー<br>光の詩人、嵐の画家</div>
+      <div class="up-desc">テート・ブリテン所蔵の傑作群が来日。嵐と光が溶け合うターナーの風景画は、まるで音楽のように色彩が鳴り響く。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#e8a030"></span><span style="background:#f0c868"></span><span style="background:#88b8d8"></span><span style="background:#d0e8f0"></span><span style="background:#c8d8e8"></span><span style="background:#f8e8c0"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.07.11 — 10.04</div>
+        <a class="up-map" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-4: 江戸琳派 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#8b2028"></span><span style="background:#2c5040"></span><span style="background:#c8a030"></span><span style="background:#1a2c40"></span><span style="background:#d8c890"></span></div>
+      <div class="up-num">04</div>
+      <div class="up-venue">サントリー美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#8b2028">琳派</span><span class="up-tag" style="color:#2c5040">日本画</span><span class="up-tag" style="color:#c8a030">江戸</span></div>
+      <div class="up-title">江戸琳派の華<br>酒井抱一と鈴木其一</div>
+      <div class="up-desc">光琳から続く琳派の意匠を江戸の感性で昇華した抱一と其一。四季の草花・波・風——装飾美の極致がここに。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#8b2028"></span><span style="background:#c8a030"></span><span style="background:#2c5040"></span><span style="background:#1a2c40"></span><span style="background:#d8c890"></span><span style="background:#e8d8b8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.07.01 — 08.24</div>
+        <a class="up-map" href="https://maps.google.com/?q=サントリー美術館+東京都港区赤坂9-7-4" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-5: フェルメール -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#2255a0"></span><span style="background:#f0e0a0"></span><span style="background:#8ab0c8"></span><span style="background:#d8b870"></span><span style="background:#304870"></span></div>
+      <div class="up-num">05</div>
+      <div class="up-venue">東京都美術館 — 上野</div>
+      <div class="up-tags"><span class="up-tag" style="color:#2255a0">バロック</span><span class="up-tag" style="color:#d8b870">17世紀</span><span class="up-tag" style="color:#304870">オランダ</span></div>
+      <div class="up-title">フェルメールと<br>光の王国 オランダ黄金時代</div>
+      <div class="up-desc">マウリッツハイス美術館との共同企画。フェルメール3点を含む17世紀オランダ黄金時代の傑作20点。窓から差し込む光の魔術。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#2255a0"></span><span style="background:#8ab0c8"></span><span style="background:#f0e0a0"></span><span style="background:#d8b870"></span><span style="background:#f8f0e0"></span><span style="background:#c8a858"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.10.10 — 2027.01.18</div>
+        <a class="up-map" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-6: 奈良美智 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#e8a0a0"></span><span style="background:#88b8d8"></span><span style="background:#f0d890"></span><span style="background:#a8c8a0"></span><span style="background:#d8a8c8"></span></div>
+      <div class="up-num">06</div>
+      <div class="up-venue">森美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#e8a0a0">現代日本</span><span class="up-tag" style="color:#88b8d8">絵画</span><span class="up-tag" style="color:#a8c8a0">ポップ</span></div>
+      <div class="up-title">奈良美智<br>Still Dreaming</div>
+      <div class="up-desc">大きな瞳の少女たちと孤独な犬——奈良美智の代表作と新作を網羅した大規模個展。子どもの目線が問う怒りと愛。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#e8a0a0"></span><span style="background:#88b8d8"></span><span style="background:#f0d890"></span><span style="background:#d8a8c8"></span><span style="background:#a8c8a0"></span><span style="background:#f8e8e0"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.07.25 — 11.01</div>
+        <a class="up-map" href="https://maps.google.com/?q=森美術館+東京都港区六本木6-10-1" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-7: 李禹煥 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#606060"></span><span style="background:#a0a090"></span><span style="background:#d8d0c0"></span><span style="background:#303028"></span><span style="background:#e8e0d8"></span></div>
+      <div class="up-num">07</div>
+      <div class="up-venue">国立新美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#606060">もの派</span><span class="up-tag" style="color:#a0a090">概念</span><span class="up-tag" style="color:#303028">ミニマル</span></div>
+      <div class="up-title">李禹煥<br>余白の詩学</div>
+      <div class="up-desc">韓国・日本を拠点にもの派を牽引した李禹煥の大規模回顧展。石・鉄板・余白が対話する静謐な空間詩。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#303028"></span><span style="background:#606060"></span><span style="background:#a0a090"></span><span style="background:#d8d0c0"></span><span style="background:#e8e0d8"></span><span style="background:#f0ece8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.09.10 — 11.24</div>
+        <a class="up-map" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-8: 竹久夢二 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#c87890"></span><span style="background:#d8a8b8"></span><span style="background:#8898a8"></span><span style="background:#e8c8d0"></span><span style="background:#607080"></span></div>
+      <div class="up-num">08</div>
+      <div class="up-venue">弥生美術館 — 本郷</div>
+      <div class="up-tags"><span class="up-tag" style="color:#c87890">大正ロマン</span><span class="up-tag" style="color:#8898a8">日本画</span><span class="up-tag" style="color:#d8a8b8">挿絵</span></div>
+      <div class="up-title">竹久夢二<br>大正の恋と憂愁</div>
+      <div class="up-desc">大正浪漫の詩人画家・夢二の全貌。憂いを帯びた美人画・詩・装幀——100年を超えてなお輝く夢二美人の世界。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#c87890"></span><span style="background:#d8a8b8"></span><span style="background:#e8c8d0"></span><span style="background:#8898a8"></span><span style="background:#607080"></span><span style="background:#f0e0e8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.05.01 — 07.26</div>
+        <a class="up-map" href="https://maps.google.com/?q=弥生美術館+東京都文京区弥生2-4-3" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-9: シャガール -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#3a5a90"></span><span style="background:#e83040"></span><span style="background:#f0d050"></span><span style="background:#50a060"></span><span style="background:#9858a8"></span></div>
+      <div class="up-num">09</div>
+      <div class="up-venue">Bunkamura ザ・ミュージアム — 渋谷</div>
+      <div class="up-tags"><span class="up-tag" style="color:#3a5a90">表現主義</span><span class="up-tag" style="color:#e83040">ロシア</span><span class="up-tag" style="color:#9858a8">幻想</span></div>
+      <div class="up-title">シャガール<br>愛と夢想の色彩</div>
+      <div class="up-desc">空飛ぶ恋人・ヴィテブスクの村・青い夜——色彩の魔術師シャガールの絵画・版画・舞台美術を集めた総覧展。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#3a5a90"></span><span style="background:#e83040"></span><span style="background:#f0d050"></span><span style="background:#50a060"></span><span style="background:#9858a8"></span><span style="background:#c8e8f8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.08.01 — 10.18</div>
+        <a class="up-map" href="https://maps.google.com/?q=Bunkamuraザ・ミュージアム+東京都渋谷区道玄坂2-24-1" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DIAGNOSIS -->
+<section id="diagnosis">
+  <div class="section-head reveal">
+    <div class="section-num">03</div>
+    <div class="section-titles"><p>Art × Makeup Diagnosis</p><h2>メイク診断</h2></div>
+    <div class="section-line"></div>
+  </div>
+  <div class="diag-inner">
+    <div class="diag-header reveal">
+      <span class="diag-kicker">Art × Makeup Diagnosis</span>
+      <h2>あなたのメイクで<br><em>運命の展覧会</em>を探す</h2>
+      <p>4つの質問に答えてください。あなたのメイク傾向から今行くべき展覧会とパーフェクトメイクを提案します。</p>
+    </div>
+    <div class="diag-steps" id="diag-form">
+      <div class="diag-step"><span class="step-num">01</span><div class="step-q">普段、何色のアイシャドウを使いますか？</div><div class="diag-opts"><button class="diag-opt" data-q="1" data-v="pastel">淡いパステル・ベージュ</button><button class="diag-opt" data-q="1" data-v="dark">ダーク・スモーキー</button><button class="diag-opt" data-q="1" data-v="earth">テラコッタ・ブラウン</button><button class="diag-opt" data-q="1" data-v="vivid">ビビッド・カラー</button></div></div>
+      <div class="diag-step"><span class="step-num">02</span><div class="step-q">リップの好みは？</div><div class="diag-opts"><button class="diag-opt" data-q="2" data-v="nude">ヌード・コーラル</button><button class="diag-opt" data-q="2" data-v="red">レッド・ボルドー</button><button class="diag-opt" data-q="2" data-v="deep">深みのある和色</button><button class="diag-opt" data-q="2" data-v="bare">グロスのみ・素唇</button></div></div>
+      <div class="diag-step"><span class="step-num">03</span><div class="step-q">ベースメイクのスタイルは？</div><div class="diag-opts"><button class="diag-opt" data-q="3" data-v="sheer">シアー・うすづき</button><button class="diag-opt" data-q="3" data-v="matte">マット・セミマット</button><button class="diag-opt" data-q="3" data-v="glow">ツヤ・グロウ肌</button><button class="diag-opt" data-q="3" data-v="porcelain">磁器・フルカバー</button></div></div>
+      <div class="diag-step"><span class="step-num">04</span><div class="step-q">休日のドレスコードは？</div><div class="diag-opts"><button class="diag-opt" data-q="4" data-v="casual">ナチュラルカジュアル</button><button class="diag-opt" data-q="4" data-v="edgy">エッジィ・ストリート</button><button class="diag-opt" data-q="4" data-v="elegant">エレガント・和洋折衷</button><button class="diag-opt" data-q="4" data-v="artistic">アート的・個性派</button></div></div>
+    </div>
+    <div class="diag-cta">
+      <button id="diag-btn" onclick="runDiagnosis()">診断する →</button>
+      <br><button id="diag-reset" onclick="resetDiagnosis()">リセット</button>
+    </div>
+    <div class="diag-result" id="diag-result">
+      <div class="result-grid">
+        <div class="result-left">
+          <span class="result-label" id="result-label">あなたのタイプ</span>
+          <div class="result-title" id="result-title">—</div>
+          <div class="result-desc" id="result-desc">—</div>
+          <div class="result-exhibitions" id="result-exhibitions"></div>
+        </div>
+        <div>
+          <span class="result-label" style="display:block;margin-bottom:1rem">あなたに似合うパレット</span>
+          <div class="result-palette" id="result-palette"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section id="map-section">
+  <div class="section-head reveal">
+    <div class="section-num">04</div>
+    <div class="section-titles"><p>Access &amp; Map</p><h2>美術館マップ</h2></div>
+    <div class="section-line"></div>
+  </div>
+  <div class="map-grid" style="padding:0 clamp(1.5rem,4vw,4rem) clamp(2rem,4vw,4rem);">
+    <div class="map-list" id="map-list">
+      <div class="map-venue-item active" data-venue="0" onclick="selectVenue(0)"><div class="mv-name">アーティゾン美術館</div><div class="mv-area">京橋 — Kyobashi</div><div class="mv-station">銀座線「京橋」徒歩1分</div></div>
+      <div class="map-venue-item" data-venue="1" onclick="selectVenue(1)"><div class="mv-name">国立新美術館</div><div class="mv-area">六本木 — Roppongi</div><div class="mv-station">千代田線「乃木坂」徒歩1分</div></div>
+      <div class="map-venue-item" data-venue="2" onclick="selectVenue(2)"><div class="mv-name">東京都美術館</div><div class="mv-area">上野 — Ueno</div><div class="mv-station">JR「上野」徒歩7分</div></div>
+      <div class="map-venue-item" data-venue="3" onclick="selectVenue(3)"><div class="mv-name">三菱一号館美術館</div><div class="mv-area">丸の内 — Marunouchi</div><div class="mv-station">千代田線「二重橋前」徒歩3分</div></div>
+      <div class="map-venue-item" data-venue="4" onclick="selectVenue(4)"><div class="mv-name">東京都現代美術館</div><div class="mv-area">清澄白河 — Kiyosumi</div><div class="mv-station">半蔵門線「清澄白河」徒歩9分</div></div>
+      <div class="map-venue-item" data-venue="5" onclick="selectVenue(5)"><div class="mv-name">根津美術館</div><div class="mv-area">南青山 — Minami-Aoyama</div><div class="mv-station">銀座線「表参道」徒歩8分</div></div>
+    </div>
+    <div class="map-embed-wrap">
+      <div class="map-placeholder">
+        <svg class="tokyo-map" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" id="map-svg">
+          <rect width="500" height="400" fill="#e8e0d0"/>
+          <ellipse cx="250" cy="200" rx="220" ry="180" fill="#ddd5c5" opacity="0.5"/>
+          <path d="M 60,80 Q 200,120 350,100 Q 420,95 480,110" stroke="#c4b8a8" stroke-width="8" fill="none" opacity="0.5"/>
+          <path d="M 50,200 Q 150,190 250,210 Q 350,230 460,220" stroke="#c4b8a8" stroke-width="6" fill="none" opacity="0.4"/>
+          <path d="M 100,320 Q 200,300 320,330 Q 400,345 460,340" stroke="#c4b8a8" stroke-width="5" fill="none" opacity="0.3"/>
+          <line x1="0" y1="100" x2="500" y2="100" stroke="#d4ccbc" stroke-width="0.5"/>
+          <line x1="0" y1="200" x2="500" y2="200" stroke="#d4ccbc" stroke-width="0.5"/>
+          <line x1="0" y1="300" x2="500" y2="300" stroke="#d4ccbc" stroke-width="0.5"/>
+          <line x1="100" y1="0" x2="100" y2="400" stroke="#d4ccbc" stroke-width="0.5"/>
+          <line x1="200" y1="0" x2="200" y2="400" stroke="#d4ccbc" stroke-width="0.5"/>
+          <line x1="300" y1="0" x2="300" y2="400" stroke="#d4ccbc" stroke-width="0.5"/>
+          <line x1="400" y1="0" x2="400" y2="400" stroke="#d4ccbc" stroke-width="0.5"/>
+          <text x="330" y="85" font-size="9" fill="#a0987c" font-family="'DM Mono',monospace" letter-spacing="2">UENO</text>
+          <text x="368" y="200" font-size="9" fill="#a0987c" font-family="'DM Mono',monospace" letter-spacing="2">ROPPONGI</text>
+          <text x="218" y="215" font-size="9" fill="#a0987c" font-family="'DM Mono',monospace" letter-spacing="2">MARUNOUCHI</text>
+          <text x="368" y="275" font-size="9" fill="#a0987c" font-family="'DM Mono',monospace" letter-spacing="2">AOYAMA</text>
+          <text x="108" y="295" font-size="9" fill="#a0987c" font-family="'DM Mono',monospace" letter-spacing="2">KIYOSUMI</text>
+          <text x="298" y="150" font-size="9" fill="#a0987c" font-family="'DM Mono',monospace" letter-spacing="2">KYOBASHI</text>
+          <g class="venue-pin" id="pin-0" onclick="selectVenue(0)">
+            <circle cx="320" cy="165" r="16" fill="#f7f3ed" opacity="0.85"/>
+            <circle cx="320" cy="165" r="10" fill="#b85432"/>
+            <text x="320" y="168" text-anchor="middle" font-size="7" fill="white" font-family="'DM Mono',monospace">01</text>
+            <circle cx="320" cy="165" r="20" fill="none" stroke="#b85432" stroke-width="1" opacity="0.4"/>
+          </g>
+          <g class="venue-pin" id="pin-1" onclick="selectVenue(1)">
+            <circle cx="380" cy="210" r="16" fill="#f7f3ed" opacity="0.85"/>
+            <circle cx="380" cy="210" r="10" fill="#5c6b7a"/>
+            <text x="380" y="213" text-anchor="middle" font-size="7" fill="white" font-family="'DM Mono',monospace">02</text>
+          </g>
+          <g class="venue-pin" id="pin-2" onclick="selectVenue(2)">
+            <circle cx="355" cy="95" r="16" fill="#f7f3ed" opacity="0.85"/>
+            <circle cx="355" cy="95" r="10" fill="#7a8c6e"/>
+            <text x="355" y="98" text-anchor="middle" font-size="7" fill="white" font-family="'DM Mono',monospace">03</text>
+          </g>
+          <g class="venue-pin" id="pin-3" onclick="selectVenue(3)">
+            <circle cx="255" cy="195" r="16" fill="#f7f3ed" opacity="0.85"/>
+            <circle cx="255" cy="195" r="10" fill="#c8963c"/>
+            <text x="255" y="198" text-anchor="middle" font-size="7" fill="white" font-family="'DM Mono',monospace">04</text>
+          </g>
+          <g class="venue-pin" id="pin-4" onclick="selectVenue(4)">
+            <circle cx="145" cy="285" r="16" fill="#f7f3ed" opacity="0.85"/>
+            <circle cx="145" cy="285" r="10" fill="#2255cc"/>
+            <text x="145" y="288" text-anchor="middle" font-size="7" fill="white" font-family="'DM Mono',monospace">05</text>
+          </g>
+          <g class="venue-pin" id="pin-5" onclick="selectVenue(5)">
+            <circle cx="355" cy="270" r="16" fill="#f7f3ed" opacity="0.85"/>
+            <circle cx="355" cy="270" r="10" fill="#8b7355"/>
+            <text x="355" y="273" text-anchor="middle" font-size="7" fill="white" font-family="'DM Mono',monospace">06</text>
+          </g>
+          <g transform="translate(455,355)">
+            <circle r="18" fill="#f7f3ed" opacity="0.8"/>
+            <text y="-6" text-anchor="middle" font-size="7" fill="#b85432" font-family="'DM Mono',monospace" font-weight="bold">N</text>
+            <line x1="0" y1="-12" x2="0" y2="12" stroke="#b85432" stroke-width="1.5"/>
+            <line x1="-12" y1="0" x2="12" y2="0" stroke="#b0a090" stroke-width="0.8"/>
+          </g>
+        </svg>
+        <div class="map-detail-box show" id="map-detail">
+          <div class="mdb-venue" id="mdb-venue">アーティゾン美術館</div>
+          <div class="mdb-title" id="mdb-title">クロード・モネ — 風景への問いかけ</div>
+          <div class="mdb-info" id="mdb-info">銀座線「京橋」徒歩1分 ／ 一般 2,200円 ／ 〜2026.05.24</div>
+          <a class="mdb-gmaps" id="mdb-gmaps" href="https://maps.google.com/?q=アーティゾン美術館+東京都中央区京橋1-7-2" target="_blank" rel="noopener">📍 Google マップで開く</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div class="footer-logo">Art <em>×</em> Makeup Tokyo</div>
+      <p class="footer-tagline">展覧会の色、時代、哲学をまとうメイクアップの提案。東京の美術館と美の交差点で、あなただけのものがたりを。</p>
+      <div class="footer-company">
+        <strong>運営</strong><br>
+        ART Connection 合同会社<br>
+        © 2026 ART Connection LLC. All rights reserved.
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Exhibitions</div>
+      <div class="footer-links">
+        <a href="#exhibitions">モネ展 — アーティゾン</a>
+        <a href="#exhibitions">YBA &amp; Beyond — 国立新</a>
+        <a href="#exhibitions">スウェーデン絵画 — 都美</a>
+        <a href="#exhibitions">新版画 — 三菱一号館</a>
+        <a href="#exhibitions">ソル・ルウィット — MOT</a>
+        <a href="#exhibitions">英姿颯爽 — 根津</a>
+      </div>
+    </div>
+    <div>
+      <div class="footer-col-title">Navigate</div>
+      <div class="footer-links">
+        <a href="#exhibitions">展覧会一覧</a>
+        <a href="#diagnosis">メイク診断</a>
+        <a href="#map-section">アクセスマップ</a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>ART Connection 合同会社 — art-makeup-tokyo.netlify.app</span>
+    <span>展覧会情報は各美術館公式サイトでご確認ください</span>
+  </div>
+</footer>
+
+<script>
+/* CURSOR */
+const cursor=document.getElementById('cursor');
+const ring=document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+if(window.matchMedia('(hover:hover)').matches){
+  document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cursor.style.left=mx+'px';cursor.style.top=my+'px';});
+  (function animRing(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ring.style.left=rx+'px';ring.style.top=ry+'px';requestAnimationFrame(animRing);})();
+}
+
+/* HEADER SCROLL */
+window.addEventListener('scroll',()=>{document.getElementById('header').classList.toggle('scrolled',scrollY>60);},{passive:true});
+
+/* HAMBURGER */
+function toggleMenu(){document.getElementById('hamburger').classList.toggle('open');document.getElementById('mobileNav').classList.toggle('open');}
+function closeMenu(){document.getElementById('hamburger').classList.remove('open');document.getElementById('mobileNav').classList.remove('open');}
+document.addEventListener('click',e=>{if(!e.target.closest('#header')&&!e.target.closest('.nav-mobile'))closeMenu();});
+
+/* HERO MOSAIC */
+const mosaicColors=['#87CEAB','#6B9EC7','#D4B8E0','#C4A882','#F0D090','#e63946','#f4d35e','#1a1a1a','#06d6a0','#3d405b','#e8d5b7','#a8c5a0','#c9dde8','#d4a878','#f5f0e0','#1c3a4a','#8b4040','#d4c078','#6a8c70','#4a3020','#cc2222','#2255cc','#cccc11','#22aacc','#2d1b0e','#8b7355','#c8a96e','#4a6741','#8b2028','#c49060'];
+const mosaic=document.getElementById('mosaic');
+for(let i=0;i<12;i++){const cell=document.createElement('div');cell.className='mosaic-cell';const c=document.createElement('div');c.className='mosaic-color';c.style.background=mosaicColors[i%mosaicColors.length];cell.appendChild(c);setTimeout(()=>cell.classList.add('loaded'),100+i*80);mosaic.appendChild(cell);}
+
+/* CARD TAP (touch) */
+document.querySelectorAll('.ex-card').forEach(card=>{
+  card.addEventListener('click',function(e){
+    if(!window.matchMedia('(hover:none)').matches)return;
+    if(e.target.closest('a'))return;
+    const was=this.classList.contains('expanded');
+    document.querySelectorAll('.ex-card.expanded').forEach(c=>c.classList.remove('expanded'));
+    if(!was){this.classList.add('expanded');this.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  });
+});
+
+/* FILTERS */
+let activeArea='all',activeGenre='all',searchVal='';
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const f=btn.dataset.filter,v=btn.dataset.val;
+    document.querySelectorAll(`.filter-btn[data-filter="${f}"]`).forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    if(f==='area')activeArea=v;
+    else if(f==='genre')activeGenre=v;
+    filterCards();
+  });
+});
+document.getElementById('search').addEventListener('input',e=>{searchVal=e.target.value.toLowerCase();filterCards();});
+function filterCards(){
+  let visible=0;
+  document.querySelectorAll('.ex-card').forEach(card=>{
+    const ok=(activeArea==='all'||card.dataset.area===activeArea)&&(activeGenre==='all'||card.dataset.genre===activeGenre)&&(!searchVal||card.dataset.search.includes(searchVal));
+    card.classList.toggle('hidden',!ok);if(ok)visible++;
+  });
+  document.getElementById('count-badge').textContent=`全 ${visible} 件表示中`;
+}
+
+/* REVEAL */
+const revObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* DIAGNOSIS */
+const answers={};
+document.querySelectorAll('.diag-opt').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const q=btn.dataset.q;
+    document.querySelectorAll(`.diag-opt[data-q="${q}"]`).forEach(b=>b.classList.remove('selected'));
+    btn.classList.add('selected');
+    answers[q]=btn.dataset.v;
+  });
+});
+const diagData={
+  impressionist:{label:'インプレッショニスト',title:'光と霞の美食家',desc:'あなたは繊細な色彩と自然の光に魅かれるタイプ。メイクも絵画のように、ぼかしとグラデーションを大切にします。印象派の水面のような透明感が最も似合います。',exhibitions:['クロード・モネ — アーティゾン美術館','スウェーデン絵画 — 東京都美術館'],palette:['#87CEAB','#6B9EC7','#D4B8E0','#C4A882','#F0D090','#e8c8a8','#b8d4e0','#f5e8d0']},
+  avantgarde:{label:'アヴァンギャルディスト',title:'概念と挑発の芸術家',desc:'あなたはメイクをアートと捉える前衛派。既成概念を壊す大胆な色使いと構造的な美に惹かれます。コンセプチュアルな美術展がベストマッチ。',exhibitions:['テート美術館 YBA & BEYOND — 国立新美術館','ソル・ルウィット — 東京都現代美術館'],palette:['#e63946','#2255cc','#f4d35e','#111111','#06d6a0','#3d405b','#ffffff','#cc1166']},
+  wafu:{label:'和美主義者',title:'日本の美意識を宿す人',desc:'あなたには日本の美意識が息づいています。金箔の輝きや深い緋色、黄昏の藍——古来の色彩語が身体に馴染んでいます。和美術の世界があなたを待っています。',exhibitions:['トワイライト、新版画 — 三菱一号館美術館','英姿颯爽 — 根津美術館'],palette:['#8b2028','#c8a96e','#1c3a4a','#d4c078','#6a8c70','#4a3020','#e8d5b0','#5a2838']},
+  naturel:{label:'ナチュレル',title:'日常の光に生きる人',desc:'あなたはその日々の「普通」に美を見出す目を持っています。過剰な装飾より、自然体の色気と健やかさが魅力。北欧絵画の温かい日常美があなたに寄り添います。',exhibitions:['スウェーデン絵画 — 東京都美術館','クロード・モネ — アーティゾン美術館'],palette:['#e8d5b7','#a8c5a0','#c9dde8','#d4a878','#e0b8a0','#b8d0c0','#f5e8d8','#c8a888']}
+};
+function scoreType(){
+  const scores={impressionist:0,avantgarde:0,wafu:0,naturel:0};
+  if(answers[1]==='pastel'){scores.impressionist+=2;scores.naturel+=1;}
+  if(answers[1]==='dark'){scores.avantgarde+=2;scores.wafu+=1;}
+  if(answers[1]==='earth'){scores.wafu+=2;scores.naturel+=1;}
+  if(answers[1]==='vivid')scores.avantgarde+=2;
+  if(answers[2]==='nude'){scores.naturel+=2;scores.impressionist+=1;}
+  if(answers[2]==='red')scores.avantgarde+=2;
+  if(answers[2]==='deep')scores.wafu+=2;
+  if(answers[2]==='bare'){scores.avantgarde+=1;scores.naturel+=1;}
+  if(answers[3]==='sheer'){scores.naturel+=2;scores.impressionist+=1;}
+  if(answers[3]==='matte'){scores.avantgarde+=2;scores.wafu+=1;}
+  if(answers[3]==='glow')scores.impressionist+=2;
+  if(answers[3]==='porcelain'){scores.wafu+=1;scores.avantgarde+=1;}
+  if(answers[4]==='casual')scores.naturel+=2;
+  if(answers[4]==='edgy')scores.avantgarde+=2;
+  if(answers[4]==='elegant'){scores.wafu+=2;scores.impressionist+=1;}
+  if(answers[4]==='artistic'){scores.avantgarde+=1;scores.impressionist+=1;}
+  return Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
+}
+function runDiagnosis(){
+  if(Object.keys(answers).length<4){alert('4つの質問すべてに答えてください');return;}
+  const type=scoreType(),data=diagData[type];
+  document.getElementById('result-label').textContent=data.label;
+  document.getElementById('result-title').textContent=data.title;
+  document.getElementById('result-desc').textContent=data.desc;
+  document.getElementById('result-exhibitions').innerHTML=data.exhibitions.map(e=>`<div class="result-ex"><div class="result-ex-title">${e.split('—')[0].trim()}</div><div class="result-ex-sub">${e.split('—')[1]?.trim()||''}</div></div>`).join('');
+  document.getElementById('result-palette').innerHTML=data.palette.map((c,i)=>`<div class="r-swatch" style="background:${c}"><div class="r-swatch-label">0${i+1}</div></div>`).join('');
+  const res=document.getElementById('diag-result');
+  res.classList.add('show');
+  res.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function resetDiagnosis(){
+  Object.keys(answers).forEach(k=>delete answers[k]);
+  document.querySelectorAll('.diag-opt').forEach(b=>b.classList.remove('selected'));
+  document.getElementById('diag-result').classList.remove('show');
+}
+
+/* MAP */
+const venueData=[
+  {name:'アーティゾン美術館',title:'クロード・モネ — 風景への問いかけ',info:'銀座線「京橋」徒歩1分 ／ 一般 2,200円 ／ 〜2026.05.24',gmaps:'https://maps.google.com/?q=アーティゾン美術館+東京都中央区京橋1-7-2'},
+  {name:'国立新美術館',title:'テート美術館 YBA & BEYOND',info:'千代田線「乃木坂」徒歩1分 ／ 一般 2,000円 ／ 〜2026.05.11',gmaps:'https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2'},
+  {name:'東京都美術館',title:'スウェーデン絵画 北欧の光、日常のかがやき',info:'JR「上野」徒歩7分 ／ 一般 1,900円 ／ 〜2026.04.12',gmaps:'https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36'},
+  {name:'三菱一号館美術館',title:'トワイライト、新版画',info:'千代田線「二重橋前」徒歩3分 ／ 一般 2,100円 ／ 〜2026.05.24',gmaps:'https://maps.google.com/?q=三菱一号館美術館+東京都千代田区丸の内2-6-2'},
+  {name:'東京都現代美術館',title:'ソル・ルウィット オープン・ストラクチャー',info:'半蔵門線「清澄白河」徒歩9分 ／ 一般 1,800円 ／ 〜2026.04.02',gmaps:'https://maps.google.com/?q=東京都現代美術館+東京都江東区三好4-1-1'},
+  {name:'根津美術館',title:'英姿颯爽 根津美術館の武器・武具',info:'銀座線「表参道」徒歩8分 ／ 一般 1,300円 ／ 〜2026.03.29',gmaps:'https://maps.google.com/?q=根津美術館+東京都港区南青山6-5-1'},
+];
+function selectVenue(i){
+  document.querySelectorAll('.map-venue-item').forEach(el=>el.classList.remove('active'));
+  document.querySelector(`[data-venue="${i}"]`).classList.add('active');
+  document.querySelectorAll('.venue-pin').forEach(el=>el.classList.remove('active'));
+  document.getElementById(`pin-${i}`).classList.add('active');
+  const d=venueData[i];
+  document.getElementById('mdb-venue').textContent=d.name;
+  document.getElementById('mdb-title').textContent=d.title;
+  document.getElementById('mdb-info').textContent=d.info;
+  document.getElementById('mdb-gmaps').href=d.gmaps;
+  const box=document.getElementById('map-detail');
+  box.classList.remove('show');void box.offsetWidth;box.classList.add('show');
+}
+</script>
+</body>
+</html>
