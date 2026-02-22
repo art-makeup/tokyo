@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ART × MAKEUP TOKYO 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Noto+Serif+JP:wght@300;400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#0e0c0a;--cream:#f7f3ed;--warm:#ede7dc;--mist:#d4ccc0;--rust:#b85432;--gold:#c8963c;--sage:#6e8c74;--rose:#c4857a;--midnight:#1a1624;--steel:#4a5c6a;}
+*{margin:0;padding:0;box-sizing:border-box;}::selection{background:var(--rust);color:#fff;}
+html{scroll-behavior:smooth;}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Serif JP',serif;overflow-x:hidden;cursor:none;}
+body::before{content:'';position:fixed;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9990;}
+#cur{position:fixed;width:10px;height:10px;background:var(--rust);border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);mix-blend-mode:multiply;transition:width .25s,height .25s;}
+#cur-r{position:fixed;width:32px;height:32px;border:1px solid var(--rust);border-radius:50%;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);opacity:.4;transition:width .3s,height .3s,opacity .3s;}
+
+/* HEADER */
+header{position:fixed;top:0;left:0;right:0;z-index:500;display:flex;justify-content:space-between;align-items:center;padding:1.3rem 4rem;background:rgba(247,243,237,.9);backdrop-filter:blur(18px);border-bottom:1px solid rgba(14,12,10,.07);transition:padding .3s;}
+header.compact{padding:.8rem 4rem;}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.1rem;letter-spacing:.08em;}
+.logo em{font-style:italic;color:var(--rust);}
+nav a{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);text-decoration:none;opacity:.45;margin-left:2rem;transition:opacity .2s;}
+nav a:hover{opacity:1;}
+.btn-nav{font-family:'DM Mono',monospace;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;padding:.55rem 1.3rem;border:1px solid var(--ink);background:transparent;color:var(--ink);cursor:none;transition:all .25s;margin-left:1.5rem;}
+.btn-nav:hover{background:var(--ink);color:var(--cream);}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden;}
+.hero-l{padding:10rem 5rem 5rem;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:1;}
+.kicker{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rust);margin-bottom:2rem;display:flex;align-items:center;gap:1rem;opacity:0;animation:aFL .8s .2s forwards;}
+.kicker::before{content:'';width:2.5rem;height:1px;background:var(--rust);}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,6vw,6rem);font-weight:300;line-height:1.05;margin-bottom:1.8rem;opacity:0;animation:aFL .9s .35s forwards;}
+h1 em{font-style:italic;color:var(--rust);}
+h1 .sub{font-family:'Noto Serif JP',serif;font-size:.45em;display:block;color:rgba(14,12,10,.4);margin-top:.5rem;font-weight:300;}
+.hero-body{font-size:.85rem;line-height:2.1;color:rgba(14,12,10,.55);max-width:420px;margin-bottom:2.5rem;opacity:0;animation:aFL .9s .5s forwards;}
+.hero-acts{display:flex;gap:1rem;opacity:0;animation:aFL .9s .65s forwards;}
+.btn-p{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2rem;background:var(--ink);color:var(--cream);border:none;cursor:none;transition:background .3s;position:relative;overflow:hidden;}
+.btn-p::before{content:'';position:absolute;inset:0;background:var(--rust);transform:translateX(-100%);transition:transform .3s;}
+.btn-p:hover::before{transform:translateX(0);}
+.btn-p span{position:relative;z-index:1;}
+.btn-s{font-family:'DM Mono',monospace;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;padding:.95rem 2rem;background:transparent;color:var(--ink);border:1px solid rgba(14,12,10,.25);cursor:none;transition:all .25s;}
+.btn-s:hover{background:rgba(14,12,10,.04);border-color:var(--ink);}
+.hero-r{position:relative;overflow:hidden;opacity:0;animation:aFI 1.2s .3s forwards;}
+.mosaic{position:absolute;inset:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(4,1fr);gap:3px;}
+.mc{overflow:hidden;transform:scale(1.06);transition:transform 10s;}
+.mc.in{transform:scale(1);}
+.hero-scroll{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.7rem;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(14,12,10,.3);z-index:2;animation:aBnc 2.5s ease infinite;}
+.scrl{width:1px;height:2.5rem;background:linear-gradient(to bottom,rgba(14,12,10,.3),transparent);}
+
+/* ── TIMELINE ── */
+#timeline{background:var(--midnight);padding:7rem 0 5rem;position:relative;overflow:hidden;}
+#timeline::before{content:'2026';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Cormorant Garamond',serif;font-size:22vw;font-weight:300;color:rgba(255,255,255,.025);pointer-events:none;white-space:nowrap;line-height:1;}
+.tl-hd{text-align:center;margin-bottom:4rem;position:relative;z-index:1;}
+.tl-kicker{font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.35em;text-transform:uppercase;color:var(--rust);margin-bottom:1.2rem;display:block;}
+.tl-hd h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:300;color:#fff;line-height:1.2;}
+.tl-hd h2 em{font-style:italic;color:var(--gold);}
+.tl-hd p{font-size:.8rem;color:rgba(255,255,255,.35);margin-top:.8rem;}
+
+/* Scrollable track */
+.tl-scroll{overflow-x:auto;padding:0;position:relative;z-index:1;scrollbar-width:thin;scrollbar-color:var(--rust) rgba(255,255,255,.05);}
+.tl-scroll::-webkit-scrollbar{height:4px;}
+.tl-scroll::-webkit-scrollbar-track{background:rgba(255,255,255,.04);}
+.tl-scroll::-webkit-scrollbar-thumb{background:var(--rust);}
+
+.tl-inner{min-width:1800px;padding:0 4rem;}
+/* Month header row */
+.tl-months{display:flex;border-bottom:1px solid rgba(255,255,255,.07);margin-bottom:1rem;}
+.tl-m{flex:0 0 150px;font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.25);padding:.6rem 0 .6rem 8px;border-left:1px solid rgba(255,255,255,.06);}
+.tl-m.now-m{color:var(--rust);}
+.tl-m.past-m{color:rgba(255,255,255,.12);}
+
+/* Bar rows */
+.tl-rows{position:relative;}
+.tl-now-line{position:absolute;top:0;bottom:0;width:1.5px;background:var(--rust);z-index:30;pointer-events:none;}
+.tl-now-line::after{content:'▼ 今日';position:absolute;top:-18px;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:.48rem;color:var(--rust);letter-spacing:.08em;white-space:nowrap;}
+.tl-row{display:flex;align-items:center;margin-bottom:6px;min-height:40px;position:relative;}
+.tl-rl{width:170px;flex-shrink:0;font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.05em;color:rgba(255,255,255,.3);text-align:right;padding-right:12px;line-height:1.3;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.tl-track{flex:1;position:relative;height:36px;}
+.tl-bar{position:absolute;height:28px;top:4px;border-radius:2px;overflow:hidden;display:flex;align-items:center;padding:0 10px;cursor:none;transition:filter .25s,transform .2s;white-space:nowrap;}
+.tl-bar:hover{filter:brightness(1.18);transform:scaleY(1.08);z-index:10;}
+.tl-bar span{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.05em;color:rgba(255,255,255,.9);overflow:hidden;text-overflow:ellipsis;}
+.tl-hint{text-align:center;margin-top:1.5rem;padding:0 4rem;}
+.tl-hint p{font-family:'DM Mono',monospace;font-size:.57rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.2);}
+
+/* ── FILTERS ── */
+.filters{position:sticky;top:63px;z-index:200;background:rgba(247,243,237,.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(14,12,10,.07);padding:0 3rem;display:flex;align-items:center;flex-wrap:wrap;}
+.fg{display:flex;align-items:center;gap:.3rem;padding:.75rem 0;margin-right:1.5rem;border-right:1px solid rgba(14,12,10,.07);padding-right:1.5rem;}
+.fg:last-child{border-right:none;margin-left:auto;}
+.fl{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(14,12,10,.32);margin-right:.4rem;white-space:nowrap;}
+.fbtn{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.09em;padding:.28rem .75rem;border:1px solid rgba(14,12,10,.12);background:transparent;color:rgba(14,12,10,.42);cursor:none;border-radius:2px;transition:all .2s;white-space:nowrap;}
+.fbtn:hover,.fbtn.on{border-color:var(--rust);color:var(--rust);background:rgba(184,84,50,.04);}
+.srch{font-family:'DM Mono',monospace;font-size:.59rem;padding:.36rem .7rem .36rem 2rem;border:1px solid rgba(14,12,10,.12);background:transparent;color:var(--ink);outline:none;width:165px;transition:border-color .2s,width .3s;letter-spacing:.06em;}
+.srch:focus{border-color:var(--rust);width:210px;}
+.sw{position:relative;}
+.sico{position:absolute;left:.6rem;top:50%;transform:translateY(-50%);font-size:.6rem;opacity:.28;pointer-events:none;}
+
+/* ── SECTION HEAD ── */
+.sec-hd{padding:5rem 4rem 2.5rem;display:flex;align-items:flex-end;gap:1.5rem;}
+.sec-n{font-family:'Cormorant Garamond',serif;font-size:4.5rem;font-weight:300;line-height:1;color:rgba(14,12,10,.06);flex-shrink:0;}
+.sec-t p{font-family:'DM Mono',monospace;font-size:.57rem;letter-spacing:.22em;text-transform:uppercase;color:var(--rust);margin-bottom:.2rem;}
+.sec-t h2{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,2.8vw,2.8rem);font-weight:300;}
+.secl{flex:1;height:1px;background:rgba(14,12,10,.09);margin-bottom:.4rem;}
+.cb{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.1em;padding:.24rem .7rem;border:1px solid rgba(14,12,10,.12);color:rgba(14,12,10,.32);margin-bottom:.4rem;white-space:nowrap;}
+
+/* ── GRID ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:1.5px;background:rgba(14,12,10,.06);}
+.card{background:var(--cream);overflow:hidden;transition:transform .45s cubic-bezier(.16,1,.3,1),box-shadow .45s;position:relative;}
+.card:hover{z-index:10;transform:translateY(-2px);box-shadow:0 16px 50px rgba(14,12,10,.1);}
+.card.hidden{display:none;}
+/* ribbon */
+.rib{position:absolute;top:0;right:0;z-index:5;font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;padding:.24rem .7rem;}
+.rib.now{background:var(--sage);color:#fff;}
+.rib.soon{background:var(--gold);color:#fff;}
+.rib.last{background:rgba(14,12,10,.22);color:rgba(255,255,255,.7);}
+/* palette strip */
+.pal{height:7px;display:flex;}
+.pal s{flex:1;transition:flex .4s;}
+.card:hover .pal s{flex:1.4;}
+.card:hover .pal s:nth-child(2n){flex:.6;}
+/* card body */
+.ci{padding:1.8rem 2rem 1.4rem;}
+.cven{font-family:'DM Mono',monospace;font-size:.56rem;letter-spacing:.17em;text-transform:uppercase;color:rgba(14,12,10,.37);}
+.cper{font-family:'DM Mono',monospace;font-size:.57rem;color:var(--rust);letter-spacing:.05em;margin:.2rem 0 .85rem;}
+.ctags{display:flex;flex-wrap:wrap;gap:.32rem;margin-bottom:.85rem;}
+.ct{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.09em;text-transform:uppercase;padding:.17rem .58rem;border:1px solid currentColor;border-radius:100px;opacity:.55;}
+.ctit{font-family:'Cormorant Garamond',serif;font-size:1.42rem;font-weight:300;line-height:1.3;margin-bottom:.65rem;}
+.cdesc{font-size:.78rem;line-height:1.9;color:rgba(14,12,10,.53);margin-bottom:1.1rem;}
+/* makeup panel */
+.mkp{border-top:1px solid rgba(14,12,10,.07);max-height:0;overflow:hidden;transition:max-height .55s cubic-bezier(.16,1,.3,1);}
+.card:hover .mkp{max-height:700px;}
+.mki{padding:1.3rem 2rem 1.7rem;}
+.mkh{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.28em;text-transform:uppercase;color:var(--rust);margin-bottom:1.1rem;display:flex;align-items:center;gap:.7rem;}
+.mkh::after{content:'';flex:1;height:1px;background:rgba(184,84,50,.2);}
+/* big palette */
+.bpal{display:flex;height:52px;border-radius:3px;overflow:hidden;margin-bottom:1.2rem;box-shadow:0 4px 14px rgba(14,12,10,.1);}
+.bp{flex:1;position:relative;transition:flex .28s;cursor:none;}
+.bp:hover{flex:2;}
+.bplb{position:absolute;bottom:.32rem;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:.44rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.85);white-space:nowrap;opacity:0;transition:opacity .2s;text-shadow:0 1px 3px rgba(0,0,0,.4);pointer-events:none;}
+.bp:hover .bplb{opacity:1;}
+/* makeup items grid */
+.mgrid{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;}
+.mi{background:rgba(14,12,10,.02);padding:.82rem;border:1px solid rgba(14,12,10,.055);border-radius:2px;transition:border-color .2s;}
+.mi:hover{border-color:rgba(184,84,50,.3);}
+.mih{display:flex;align-items:center;gap:.5rem;margin-bottom:.42rem;}
+.midot{width:15px;height:15px;border-radius:50%;flex-shrink:0;box-shadow:0 0 0 1px rgba(255,255,255,.5),0 2px 5px rgba(14,12,10,.18);}
+.micat{font-family:'DM Mono',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);}
+.miname{font-family:'Cormorant Garamond',serif;font-size:.95rem;font-weight:400;line-height:1.3;margin-bottom:.28rem;}
+.midesc{font-size:.73rem;line-height:1.7;color:rgba(14,12,10,.53);}
+.moodrow{display:flex;flex-wrap:wrap;gap:.32rem;margin-top:.9rem;padding-top:.8rem;border-top:1px solid rgba(14,12,10,.055);}
+.mood{font-family:'DM Mono',monospace;font-size:.5rem;letter-spacing:.07em;padding:.2rem .6rem;background:rgba(184,84,50,.05);border:1px solid rgba(184,84,50,.14);color:var(--rust);border-radius:100px;}
+/* access */
+.arow{border-top:1px solid rgba(14,12,10,.055);padding:.72rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.ainfo{display:flex;flex-direction:column;gap:.14rem;}
+.ast{font-family:'DM Mono',monospace;font-size:.55rem;letter-spacing:.07em;color:rgba(14,12,10,.4);display:flex;align-items:center;gap:.32rem;}
+.ast::before{content:'◎';color:var(--rust);font-size:.43rem;}
+.afee{font-family:'DM Mono',monospace;font-size:.55rem;color:rgba(14,12,10,.32);}
+.mapbtn{font-family:'DM Mono',monospace;font-size:.53rem;letter-spacing:.12em;text-transform:uppercase;padding:.33rem .85rem;border:1px solid rgba(14,12,10,.12);background:transparent;color:rgba(14,12,10,.42);cursor:none;text-decoration:none;white-space:nowrap;transition:all .2s;display:flex;align-items:center;gap:.3rem;}
+.mapbtn:hover{border-color:var(--rust);color:var(--rust);}
+
+/* dark strip */
+.dstrip{background:var(--midnight);color:var(--cream);padding:5rem 4rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin:3.5rem 0;}
+.dh{font-family:'Cormorant Garamond',serif;font-size:clamp(1.9rem,3.5vw,3rem);font-weight:300;line-height:1.2;}
+.dh em{font-style:italic;color:var(--gold);}
+.dp{font-size:.82rem;line-height:2.1;opacity:.45;}
+
+/* FOOTER */
+footer{background:var(--ink);color:var(--cream);padding:5rem 4rem 3rem;position:relative;overflow:hidden;}
+footer::before{content:'ART×MAKEUP';position:absolute;bottom:-1.5rem;right:1rem;font-family:'Cormorant Garamond',serif;font-size:7rem;font-weight:300;color:rgba(255,255,255,.025);pointer-events:none;white-space:nowrap;}
+.footg{display:grid;grid-template-columns:2fr 1fr 1fr;gap:4rem;margin-bottom:3rem;}
+.flogo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:.8rem;}
+.flogo em{font-style:italic;color:var(--rust);}
+.ftag{font-size:.78rem;line-height:1.9;opacity:.35;max-width:270px;}
+.fct{font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.25em;text-transform:uppercase;color:var(--rust);margin-bottom:.9rem;}
+.flinks{display:flex;flex-direction:column;gap:.55rem;}
+.flinks a{font-size:.78rem;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+.flinks a:hover{color:var(--cream);}
+.footbt{display:flex;justify-content:space-between;align-items:center;padding-top:1.6rem;border-top:1px solid rgba(255,255,255,.06);font-family:'DM Mono',monospace;font-size:.54rem;letter-spacing:.09em;color:rgba(255,255,255,.18);}
+
+@keyframes aFL{from{opacity:0;transform:translateX(-22px)}to{opacity:1;transform:translateX(0)}}
+@keyframes aFI{from{opacity:0}to{opacity:1}}
+@keyframes aBnc{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(5px)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s,transform .6s;}
+.reveal.in{opacity:1;transform:translateY(0);}
+
+@media(max-width:900px){
+  header{padding:1rem 1.5rem;}
+  nav,#cur,#cur-r{display:none;}
+  body{cursor:auto;}
+  .hero{grid-template-columns:1fr;}
+  .hero-r{display:none;}
+  .hero-l{padding:8rem 2rem 3rem;}
+  .filters{padding:0 1.5rem;overflow-x:auto;flex-wrap:nowrap;}
+  .sec-hd{padding:3rem 1.5rem 2rem;}
+  .grid{grid-template-columns:1fr;}
+  .dstrip{grid-template-columns:1fr;padding:3rem 1.5rem;gap:2rem;}
+  .footg{grid-template-columns:1fr;gap:2rem;}
+  footer{padding:3rem 1.5rem 2rem;}
+}
+</style>
+</head>
+<body>
+<div id="cur"></div><div id="cur-r"></div>
+
+<!-- HEADER -->
+<header id="hdr">
+  <div class="logo">Art <em>×</em> Makeup Tokyo</div>
+  <nav>
+    <a href="#timeline">タイムライン</a>
+    <a href="#exhibitions">展覧会</a>
+    <a href="#upcoming">開催予定</a>
+  </nav>
+  <button class="btn-nav" onclick="document.getElementById('exhibitions').scrollIntoView({behavior:'smooth'})">展覧会を見る</button>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="kicker">Tokyo Art & Beauty — 2026 Annual Guide</div>
+    <h1><em>Art</em> に<br>似合う<br>Makeup を。<span class="sub">東京の美術展と、あなたの美のものがたり 2026</span></h1>
+    <p class="hero-body">開催中から秋冬の注目展まで、2026年通年の東京美術展を網羅。展覧会の色調・時代・哲学からインスパイアされたメイクアップを提案します。</p>
+    <div class="hero-acts">
+      <button class="btn-p" onclick="document.getElementById('timeline').scrollIntoView({behavior:'smooth'})"><span>年間タイムライン</span></button>
+      <button class="btn-s" onclick="document.getElementById('exhibitions').scrollIntoView({behavior:'smooth'})">メイク提案を見る</button>
+    </div>
+  </div>
+  <div class="hero-r"><div class="mosaic" id="mosaic"></div></div>
+  <div class="hero-scroll"><div class="scrl"></div>Scroll</div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="tl-hd reveal">
+    <span class="tl-kicker">Annual Timeline 2026</span>
+    <h2>2026年 東京美術展<br><em>年間タイムライン</em></h2>
+    <p>横にスクロールして通年の展覧会スケジュールを確認できます</p>
+  </div>
+  <div class="tl-scroll">
+    <div class="tl-inner">
+      <div class="tl-months" id="tl-months"></div>
+      <div class="tl-rows" id="tl-rows">
+        <div class="tl-now-line" id="tl-now"></div>
+      </div>
+    </div>
+  </div>
+  <div class="tl-hint"><p>← スクロールして全期間を確認 →</p></div>
+</section>
+
+<!-- FILTERS -->
+<div class="filters" id="filters">
+  <div class="fg">
+    <span class="fl">状態</span>
+    <button class="fbtn on" data-f="status" data-v="all">すべて</button>
+    <button class="fbtn" data-f="status" data-v="now">開催中</button>
+    <button class="fbtn" data-f="status" data-v="soon">開催予定</button>
+  </div>
+  <div class="fg">
+    <span class="fl">エリア</span>
+    <button class="fbtn on" data-f="area" data-v="all">すべて</button>
+    <button class="fbtn" data-f="area" data-v="ueno">上野</button>
+    <button class="fbtn" data-f="area" data-v="roppongi">六本木</button>
+    <button class="fbtn" data-f="area" data-v="marunouchi">丸の内</button>
+    <button class="fbtn" data-f="area" data-v="kiyosumi">清澄白河</button>
+    <button class="fbtn" data-f="area" data-v="aoyama">青山</button>
+    <button class="fbtn" data-f="area" data-v="kyobashi">京橋</button>
+    <button class="fbtn" data-f="area" data-v="shinjuku">新宿</button>
+  </div>
+  <div class="fg">
+    <span class="fl">ジャンル</span>
+    <button class="fbtn on" data-f="genre" data-v="all">すべて</button>
+    <button class="fbtn" data-f="genre" data-v="western">洋画</button>
+    <button class="fbtn" data-f="genre" data-v="japanese">日本美術</button>
+    <button class="fbtn" data-f="genre" data-v="contemporary">現代</button>
+  </div>
+  <div class="fg">
+    <div class="sw"><span class="sico">🔍</span><input class="srch" id="srch" type="text" placeholder="展覧会を検索..."></div>
+  </div>
+</div>
+
+<!-- NOW SECTION -->
+<section id="exhibitions">
+  <div class="sec-hd reveal">
+    <div class="sec-n">01</div>
+    <div class="sec-t"><p>Now On View</p><h2>開催中の展覧会</h2></div>
+    <div class="secl"></div>
+    <div class="cb" id="cnt">全 15 件表示中</div>
+  </div>
+
+  <div class="grid" id="grid">
+
+<!-- ───────────────────────────────── CARD DATA ───────────────────────────────── -->
+
+<!-- 1. モネ -->
+<div class="card" data-status="now" data-area="kyobashi" data-genre="western" data-s="モネ 印象派 風景 アーティゾン 京橋">
+  <span class="rib now">開催中</span>
+  <div class="pal"><s style="background:#87CEAB"></s><s style="background:#6B9EC7"></s><s style="background:#C4A882"></s><s style="background:#D4B8E0"></s><s style="background:#B8D0A8"></s><s style="background:#F0D090"></s><s style="background:#E8C8A0"></s></div>
+  <div class="ci">
+    <div class="cven">アーティゾン美術館 — 京橋</div>
+    <div class="cper">2026.02.07 — 05.24</div>
+    <div class="ctags"><span class="ct" style="color:#6B9EC7">印象派</span><span class="ct" style="color:#87CEAB">風景画</span><span class="ct" style="color:#C4A882">19世紀</span></div>
+    <div class="ctit">クロード・モネ — 風景への問いかけ</div>
+    <div class="cdesc">オルセー美術館から傑作が来日。印象派を代表するモネの風景画家としての軌跡を約140点で辿る。光と水が織りなす色彩の冒険。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#87CEAB"><div class="bplb">霧のグリーン</div></div><div class="bp" style="background:#6B9EC7"><div class="bplb">水面ブルー</div></div><div class="bp" style="background:#D4B8E0"><div class="bplb">アイリス</div></div><div class="bp" style="background:#C4A882"><div class="bplb">砂浜</div></div><div class="bp" style="background:#F0D090"><div class="bplb">陽光</div></div><div class="bp" style="background:#E8C8A0"><div class="bplb">朝靄</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#a8c8e8,#d4b8e0)"></div><div class="micat">アイシャドウ</div></div><div class="miname">水面ラベンダー×パール</div><div class="midesc">淡いラベンダーブルーを全体に。目頭にパールホワイトで水面の光を。ライナーはブラウンで。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#e8c4a0,#f5e8d0)"></div><div class="micat">ベース</div></div><div class="miname">霞がかるベール肌</div><div class="midesc">薄いカバーのリキッドに軽いミストをオーバーレイ。筆でさっと広げたような滲み感に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#e8b890,#d4907a)"></div><div class="micat">リップ</div></div><div class="miname">ニュアンスコーラル</div><div class="midesc">ヌードからコーラルへのグラデ。ふちをぼかして印象派の光と影を表現。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#f0d090,#e8c0a0)"></div><div class="micat">チーク</div></div><div class="miname">陽光ピーチグロウ</div><div class="midesc">ゴールドパール入りの淡いピーチ。頬骨〜こめかみに陽光のように広げる。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">ロマンティック</span><span class="mood">透明感</span><span class="mood">水面グラデ</span><span class="mood">印象派ブルー</span><span class="mood">パールグロウ</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">銀座線「京橋」徒歩1分</div><div class="afee">🎟 一般 2,200円</div></div><a class="mapbtn" href="https://maps.google.com/?q=アーティゾン美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 2. テート YBA -->
+<div class="card" data-status="now" data-area="roppongi" data-genre="contemporary" data-s="テート 英国 YBA ダミアン ハースト 国立新美術館 六本木 現代">
+  <span class="rib now">開催中</span>
+  <div class="pal"><s style="background:#1a1a1a"></s><s style="background:#e63946"></s><s style="background:#f4d35e"></s><s style="background:#3d405b"></s><s style="background:#06d6a0"></s><s style="background:#118ab2"></s><s style="background:#fff"></s></div>
+  <div class="ci">
+    <div class="cven">国立新美術館 — 六本木</div>
+    <div class="cper">2026.02.11 — 05.11</div>
+    <div class="ctags"><span class="ct" style="color:#e63946">現代アート</span><span class="ct" style="color:#118ab2">英国</span><span class="ct" style="color:#f4d35e">90年代</span></div>
+    <div class="ctit">テート美術館 YBA & BEYOND<br>世界を変えた 90s 英国アート</div>
+    <div class="cdesc">ダミアン・ハーストら約60名による革命的な作品群。概念・生・死を問うブリティッシュコンテンポラリーの軌跡を辿る。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#0a0a0a"><div class="bplb">漆黒</div></div><div class="bp" style="background:#cc1e2e"><div class="bplb">ブラッドレッド</div></div><div class="bp" style="background:#f4d35e"><div class="bplb">イエロー</div></div><div class="bp" style="background:#06d6a0"><div class="bplb">エレクトリック</div></div><div class="bp" style="background:#f5f5f5"><div class="bplb">白磁</div></div><div class="bp" style="background:#3d405b"><div class="bplb">インディゴ</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#1a1a2e,#cc1e2e)"></div><div class="micat">グラフィックアイ</div></div><div class="miname">インクブラック×ブラッドレッド</div><div class="midesc">ブラックのスモーキーアイ。下まぶたに血を思わせるレッドラインを非対称に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#f0f0f0"></div><div class="micat">ベース</div></div><div class="miname">磁器フラットマット</div><div class="midesc">ポアレス仕上げの白磁ベース。テクスチャーと温かみを消した無機質な肌。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#b50000"></div><div class="micat">リップ</div></div><div class="miname">ピュアレッドマット</div><div class="midesc">政治的な純粋レッド。ブリティッシュパンクへのオマージュとしてラフにのせる。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#06d6a0,#118ab2)"></div><div class="micat">アクセント</div></div><div class="miname">グラフィックエレクトリック</div><div class="midesc">エレクトリックグリーンまたはブルーで目尻に細いグラフィックライン。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">エッジィ</span><span class="mood">コンセプチュアル</span><span class="mood">パンク</span><span class="mood">非対称</span><span class="mood">アヴァンギャルド</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">千代田線「乃木坂」徒歩1分</div><div class="afee">🎟 一般 2,000円</div></div><a class="mapbtn" href="https://maps.google.com/?q=国立新美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 3. スウェーデン -->
+<div class="card" data-status="now" data-area="ueno" data-genre="western" data-s="スウェーデン 北欧 カール ラーション 東京都美術館 上野">
+  <span class="rib now">開催中</span>
+  <div class="pal"><s style="background:#e8d5b7"></s><s style="background:#a8c5a0"></s><s style="background:#c9dde8"></s><s style="background:#d4a878"></s><s style="background:#e0b8a0"></s><s style="background:#b8d0c0"></s><s style="background:#f5f0e0"></s></div>
+  <div class="ci">
+    <div class="cven">東京都美術館 — 上野</div>
+    <div class="cper">2026.01.27 — 04.12</div>
+    <div class="ctags"><span class="ct" style="color:#a8c5a0">北欧</span><span class="ct" style="color:#d4a878">19世紀</span><span class="ct" style="color:#c9dde8">光</span></div>
+    <div class="ctit">スウェーデン絵画<br>北欧の光、日常のかがやき</div>
+    <div class="cdesc">スウェーデン国立美術館全面協力。カール・ラーションらが描く穏やかな日常と北欧固有の光。東京都美術館100周年記念。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#b8d4c0"><div class="bplb">冬の森</div></div><div class="bp" style="background:#c9dde8"><div class="bplb">スカイ</div></div><div class="bp" style="background:#f0e8d8"><div class="bplb">白樺</div></div><div class="bp" style="background:#d4a878"><div class="bplb">シナモン</div></div><div class="bp" style="background:#e0b8a0"><div class="bplb">サーモン</div></div><div class="bp" style="background:#a8b8a0"><div class="bplb">苔色</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#b8d4c0,#d4e8f0)"></div><div class="micat">アイシャドウ</div></div><div class="miname">フロストグリーン×スカイシルバー</div><div class="midesc">北欧の冬の森を映したフロスティグリーン。目頭・眉骨にシルバーパールで冷光を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#f0e0c8"></div><div class="micat">ベース</div></div><div class="miname">ナチュラルそばかす風</div><div class="midesc">ラーションが描く自然な生命感を—そばかすやムラを消しすぎず残した素肌感。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e0a890"></div><div class="micat">リップ</div></div><div class="miname">スカンジナビアコーラル</div><div class="midesc">北欧の健康的な頬を想う柔らかいコーラル。唇と頬を同色でナチュラルに。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#f0d0b8,#f5e8d0)"></div><div class="micat">チーク</div></div><div class="miname">ふんわりピーチブラッシュ</div><div class="midesc">外遊びから帰ってきたような自然な血色感。頬全体にふんわりと。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">ナチュラル</span><span class="mood">北欧ライフ</span><span class="mood">フレッシュ</span><span class="mood">透明感</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR「上野」徒歩7分</div><div class="afee">🎟 一般 1,900円</div></div><a class="mapbtn" href="https://maps.google.com/?q=東京都美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 4. 新版画 -->
+<div class="card" data-status="now" data-area="marunouchi" data-genre="japanese" data-s="新版画 木版画 川瀬巴水 小林清親 三菱一号館 丸の内">
+  <span class="rib now">開催中</span>
+  <div class="pal"><s style="background:#1c3a4a"></s><s style="background:#8b4040"></s><s style="background:#d4c078"></s><s style="background:#6a8c70"></s><s style="background:#2c4860"></s><s style="background:#e8d5b0"></s><s style="background:#4a3020"></s></div>
+  <div class="ci">
+    <div class="cven">三菱一号館美術館 — 丸の内</div>
+    <div class="cper">2026.02.19 — 05.24</div>
+    <div class="ctags"><span class="ct" style="color:#8b4040">木版画</span><span class="ct" style="color:#1c3a4a">近代日本</span></div>
+    <div class="ctit">トワイライト、新版画<br>小林清親から川瀬巴水まで</div>
+    <div class="cdesc">黄昏の光線画から叙情的な新版画へ。スミソニアン所蔵の傑作を中心に明治〜昭和の風景木版画の系譜を辿る。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#1c2c40"><div class="bplb">夜藍</div></div><div class="bp" style="background:#5a2838"><div class="bplb">深紫</div></div><div class="bp" style="background:#c87840"><div class="bplb">夕暮れ</div></div><div class="bp" style="background:#8b3030"><div class="bplb">朱赤</div></div><div class="bp" style="background:#d4b870"><div class="bplb">金箔</div></div><div class="bp" style="background:#6a8c70"><div class="bplb">松緑</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#2c1a3a,#8b3a50)"></div><div class="micat">アイシャドウ</div></div><div class="miname">藍×深紫 黄昏グラデ</div><div class="midesc">藍と深紫を重ねた黄昏色。目尻に朱赤を一筆入れて粋な和の目元に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#d4b870,#f0d890)"></div><div class="micat">ハイライト</div></div><div class="miname">金箔シャンパンゴールド</div><div class="midesc">版画の金雲をイメージ。涙袋・鼻筋・唇山にシャンパンゴールドを。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#8b2830"></div><div class="micat">リップ</div></div><div class="miname">臙脂（えんじ）漆塗り</div><div class="midesc">深みのある朱・臙脂色をくっきり引いてのせる。和の格式とモダンの間。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#3a2818,#6a4830)"></div><div class="micat">ベース・眉</div></div><div class="miname">陶器肌×シャープ眉</div><div class="midesc">版画の輪郭線のように眉を明確に。フラットで均一な陶器質感の肌。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">和モダン</span><span class="mood">黄昏</span><span class="mood">金箔グロウ</span><span class="mood">臙脂リップ</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">千代田線「二重橋前」徒歩3分</div><div class="afee">🎟 一般 2,100円</div></div><a class="mapbtn" href="https://maps.google.com/?q=三菱一号館美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 5. ソル・ルウィット -->
+<div class="card" data-status="now" data-area="kiyosumi" data-genre="contemporary" data-s="ソル ルウィット 幾何学 コンセプチュアル 東京都現代美術館 清澄白河">
+  <span class="rib now">開催中</span>
+  <div class="pal"><s style="background:#cc2222"></s><s style="background:#2255cc"></s><s style="background:#cccc11"></s><s style="background:#000"></s><s style="background:#fff"></s><s style="background:#22aacc"></s><s style="background:#aa22cc"></s></div>
+  <div class="ci">
+    <div class="cven">東京都現代美術館 — 清澄白河</div>
+    <div class="cper">2025.12.25 — 2026.04.02</div>
+    <div class="ctags"><span class="ct" style="color:#2255cc">コンセプチュアル</span><span class="ct" style="color:#cc2222">幾何学</span></div>
+    <div class="ctit">ソル・ルウィット<br>オープン・ストラクチャー</div>
+    <div class="cdesc">純粋な構造と概念で芸術とは何かを問う。ウォールドローイング6点を体感できる日本初個展。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#cc2222"><div class="bplb">プライマリーR</div></div><div class="bp" style="background:#2255cc"><div class="bplb">プライマリーB</div></div><div class="bp" style="background:#cccc11"><div class="bplb">プライマリーY</div></div><div class="bp" style="background:#111"><div class="bplb">ブラック</div></div><div class="bp" style="background:#f5f5f5"><div class="bplb">ホワイト</div></div><div class="bp" style="background:#22aacc"><div class="bplb">セカンダリー</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(90deg,#cc2222,#2255cc)"></div><div class="micat">グラフィックアイ</div></div><div class="miname">三原色 非対称ライン</div><div class="midesc">左右で異なる原色のグラフィックライン。幾何学的な直線で目元に構造を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#f0f0f0"></div><div class="micat">ベース</div></div><div class="miname">ゼロ・ファンデ</div><div class="midesc">完全フラット肌。色も質感も感情も排除した概念的な「無」のキャンバス。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#111"></div><div class="micat">リップ</div></div><div class="miname">漆黒マット or 素唇</div><div class="midesc">ブラックマットで幾何学的な輪郭を強調、またはグロスレスで色を拒絶。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#cc2222,#cccc11,#2255cc)"></div><div class="micat">チーク</div></div><div class="miname">ジオメトリックブラッシュ</div><div class="midesc">三角形や直線状に「構造」として塗る。円形にのせない彫刻的アプリケ。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">アートメイク</span><span class="mood">三原色</span><span class="mood">ジオメトリック</span><span class="mood">前衛</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">半蔵門線「清澄白河」徒歩9分</div><div class="afee">🎟 一般 1,800円</div></div><a class="mapbtn" href="https://maps.google.com/?q=東京都現代美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 6. 根津 -->
+<div class="card" data-status="now" data-area="aoyama" data-genre="japanese" data-s="根津美術館 武器 武具 甲冑 日本美術 南青山">
+  <span class="rib last">3/29まで</span>
+  <div class="pal"><s style="background:#2d1b0e"></s><s style="background:#8b7355"></s><s style="background:#c8a96e"></s><s style="background:#e8d5a3"></s><s style="background:#4a6741"></s><s style="background:#3a2010"></s><s style="background:#a08060"></s></div>
+  <div class="ci">
+    <div class="cven">根津美術館 — 南青山</div>
+    <div class="cper">2026.02.14 — 03.29</div>
+    <div class="ctags"><span class="ct" style="color:#8b7355">日本美術</span><span class="ct" style="color:#4a6741">武具</span></div>
+    <div class="ctit">英姿颯爽<br>根津美術館の武器・武具</div>
+    <div class="cdesc">重要文化財を含む武器・武具コレクション。愛らしい刀装具から格調高い甲冑まで武の美を探る。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#2d1b0e"><div class="bplb">玄鉄</div></div><div class="bp" style="background:#6a3820"><div class="bplb">漆褐</div></div><div class="bp" style="background:#c8a96e"><div class="bplb">金</div></div><div class="bp" style="background:#8b2028"><div class="bplb">緋</div></div><div class="bp" style="background:#4a6741"><div class="bplb">萌葱</div></div><div class="bp" style="background:#e8d8a0"><div class="bplb">象牙</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#3d2818,#8b5838)"></div><div class="micat">アイシャドウ</div></div><div class="miname">鉄錆ブロンズ×朱</div><div class="midesc">鉄と錆を思わせるブロンズ〜ダークブラウン。目尻に朱色で武士の凛を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#c8a96e,#e8d090)"></div><div class="micat">ハイライト</div></div><div class="miname">甲冑の金箔ゴールド</div><div class="midesc">甲冑の金装飾をリスペクトしたゴールドハイライター。頬骨に高く置いて。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#6b2028"></div><div class="micat">リップ</div></div><div class="miname">深緋（こきひ）漆</div><div class="midesc">深みある緋色〜臙脂。一刀彫りのようにくっきりラインを引く。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#2d1b0e,#3d2818)"></div><div class="micat">アイブロウ</div></div><div class="miname">凜とした武士眉</div><div class="midesc">甲冑の精密な細工のように、眉を丁寧に整えシャープに描く。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">和の格式</span><span class="mood">武士の凛</span><span class="mood">金箔グロウ</span><span class="mood">深緋リップ</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">銀座線「表参道」徒歩8分</div><div class="afee">🎟 一般 1,300円</div></div><a class="mapbtn" href="https://maps.google.com/?q=根津美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 7. ワイエス -->
+<div class="card" data-status="soon" data-area="ueno" data-genre="western" data-s="アンドリュー ワイエス 東京都美術館 上野 アメリカ">
+  <span class="rib soon">4月開幕</span>
+  <div class="pal"><s style="background:#c8b898"></s><s style="background:#a89878"></s><s style="background:#d8c8a8"></s><s style="background:#786858"></s><s style="background:#e8d8b8"></s><s style="background:#b8a888"></s><s style="background:#f0e8d0"></s></div>
+  <div class="ci">
+    <div class="cven">東京都美術館 — 上野</div>
+    <div class="cper">2026.04.28 — 07.05</div>
+    <div class="ctags"><span class="ct" style="color:#a89878">アメリカ</span><span class="ct" style="color:#786858">写実</span></div>
+    <div class="ctit">アンドリュー・ワイエス展</div>
+    <div class="cdesc">アメリカの孤高の画家ワイエスの叙情的な写実画を紹介。荒涼とした大地と人間の静かな共存を描く独自の世界観。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#c8b898"><div class="bplb">乾燥大地</div></div><div class="bp" style="background:#a89878"><div class="bplb">麦わら</div></div><div class="bp" style="background:#786858"><div class="bplb">腐葉土</div></div><div class="bp" style="background:#d8c8a8"><div class="bplb">白壁</div></div><div class="bp" style="background:#b8a888"><div class="bplb">枯野</div></div><div class="bp" style="background:#f0e8d0"><div class="bplb">冬の空</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#a89878,#786858)"></div><div class="micat">アイシャドウ</div></div><div class="miname">枯野テラコッタ×ダスティブラウン</div><div class="midesc">荒涼とした大地の色合い。テラコッタからブラウンへ。アイラインは焦げ茶で静かに。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e8dcc8"></div><div class="micat">ベース</div></div><div class="miname">乾いたウォームベージュ</div><div class="midesc">余計なツヤを省いたセミマット。ワイエスの静寂した世界観を肌で体現。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#b87858"></div><div class="micat">リップ</div></div><div class="miname">枯れ野のテラコッタ</div><div class="midesc">乾いたテラコッタのマットリップ。余分な艶を省いた誠実さのある唇に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#c8b090,#d8c8a8)"></div><div class="micat">チーク</div></div><div class="miname">素朴ウォームブラッシュ</div><div class="midesc">頬を軽く焼いたような素朴なウォームトーン。過剰にならず自然体で。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">写実的</span><span class="mood">静謐</span><span class="mood">大地の色</span><span class="mood">テラコッタ</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR「上野」徒歩7分</div><div class="afee">🎟 未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=東京都美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 8. ゴッホ -->
+<div class="card" data-status="soon" data-area="ueno" data-genre="western" data-s="ゴッホ 上野の森美術館 上野 印象派 オランダ 夜のカフェテラス">
+  <span class="rib soon">5月開幕</span>
+  <div class="pal"><s style="background:#2255aa"></s><s style="background:#f0c020"></s><s style="background:#cc6620"></s><s style="background:#186030"></s><s style="background:#e8d050"></s><s style="background:#a04020"></s><s style="background:#304880"></s></div>
+  <div class="ci">
+    <div class="cven">上野の森美術館 — 上野</div>
+    <div class="cper">2026.05.29 — 08.12</div>
+    <div class="ctags"><span class="ct" style="color:#f0c020">ゴッホ</span><span class="ct" style="color:#2255aa">オランダ</span><span class="ct" style="color:#cc6620">後期印象派</span></div>
+    <div class="ctit">大ゴッホ展<br>夜のカフェテラス</div>
+    <div class="cdesc">ファン・ゴッホ美術館の作品を中心にゴッホ作品30点以上が来日。約20年ぶり公開の《夜のカフェテラス》が目玉。日本初公開の貴重な手紙4通も展示。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#2255aa"><div class="bplb">コバルトブルー</div></div><div class="bp" style="background:#f0c020"><div class="bplb">ひまわり</div></div><div class="bp" style="background:#cc6620"><div class="bplb">炎の橙</div></div><div class="bp" style="background:#186030"><div class="bplb">深緑</div></div><div class="bp" style="background:#e8d050"><div class="bplb">麦畑</div></div><div class="bp" style="background:#304880"><div class="bplb">夜空</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#2255aa,#304880)"></div><div class="micat">アイシャドウ</div></div><div class="miname">コバルトブルー夜空グラデ</div><div class="midesc">ゴッホが愛したコバルトブルーを目元に。星月夜を描くように厚塗り気味にのせる。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e8d8a0"></div><div class="micat">ベース</div></div><div class="miname">麦畑イエローベース</div><div class="midesc">温かいイエローアンダートーンのファンデーション。南仏の陽光を帯びた肌感。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#cc5010"></div><div class="micat">リップ</div></div><div class="miname">炎のテラコッタオレンジ</div><div class="midesc">ゴッホの激情を映す深みのあるオレンジ〜テラコッタ。フルリップで情熱的に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#f0c020,#e89020)"></div><div class="micat">ハイライト</div></div><div class="miname">ひまわりイエローグロウ</div><div class="midesc">ゴールドイエローのハイライターで頬骨に太陽の輝きを。ゴッホ的な生命感。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">情熱</span><span class="mood">コバルトブルー</span><span class="mood">南仏の陽光</span><span class="mood">炎リップ</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR「上野」徒歩5分</div><div class="afee">🎟 詳細未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=上野の森美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 9. チュルリョーニス -->
+<div class="card" data-status="soon" data-area="ueno" data-genre="western" data-s="チュルリョーニス リトアニア 国立西洋美術館 上野 象徴主義">
+  <span class="rib soon">3月開幕</span>
+  <div class="pal"><s style="background:#2a2050"></s><s style="background:#4080c0"></s><s style="background:#a0c8e0"></s><s style="background:#e0d0a0"></s><s style="background:#806040"></s><s style="background:#c0a060"></s><s style="background:#601830"></s></div>
+  <div class="ci">
+    <div class="cven">国立西洋美術館 — 上野</div>
+    <div class="cper">2026.03.28 — 06.14</div>
+    <div class="ctags"><span class="ct" style="color:#4080c0">象徴主義</span><span class="ct" style="color:#2a2050">リトアニア</span></div>
+    <div class="ctit">チュルリョーニス展<br>内なる星図</div>
+    <div class="cdesc">リトアニアの国民的画家チュルリョーニスの幻想的な象徴主義絵画。音楽と絵画が融合した神秘的で宇宙的な世界観を体感する。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#2a2050"><div class="bplb">宇宙紺</div></div><div class="bp" style="background:#4080c0"><div class="bplb">深海ブルー</div></div><div class="bp" style="background:#a0c8e0"><div class="bplb">星光</div></div><div class="bp" style="background:#e0d0a0"><div class="bplb">金の星</div></div><div class="bp" style="background:#806040"><div class="bplb">神秘の褐</div></div><div class="bp" style="background:#c0a060"><div class="bplb">宇宙の砂</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#1a1040,#4060a0)"></div><div class="micat">アイシャドウ</div></div><div class="miname">深宇宙ネイビー×星屑シルバー</div><div class="midesc">深いネイビーを広く塗り、グリッターシルバーで星屑を。神秘的で宇宙的な目元。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#d8d0e0"></div><div class="micat">ベース</div></div><div class="miname">月明かりパールベール</div><div class="midesc">ごくうっすらとしたパールホワイト系のベース。月面のような冷たい発光肌。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#601830"></div><div class="micat">リップ</div></div><div class="miname">深淵バーガンディ</div><div class="midesc">宇宙の深さを感じる暗いバーガンディ。神秘的な引力を持つ唇に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#c0a060,#e0d090)"></div><div class="micat">ハイライト</div></div><div class="miname">黄金の星座ハイライト</div><div class="midesc">ゴールドの微粒子で頬と眉骨に星座を描くように点在させて。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">神秘的</span><span class="mood">宇宙</span><span class="mood">深宇宙ブルー</span><span class="mood">星屑グリッター</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR「上野」徒歩7分</div><div class="afee">🎟 未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=国立西洋美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 10. ピカソ×ポールスミス -->
+<div class="card" data-status="soon" data-area="roppongi" data-genre="contemporary" data-s="ピカソ ポールスミス 国立新美術館 六本木 現代">
+  <span class="rib soon">6月開幕</span>
+  <div class="pal"><s style="background:#cc2244"></s><s style="background:#2244cc"></s><s style="background:#44cc22"></s><s style="background:#ccaa00"></s><s style="background:#cc6600"></s><s style="background:#8822cc"></s><s style="background:#22cccc"></s></div>
+  <div class="ci">
+    <div class="cven">国立新美術館 — 六本木</div>
+    <div class="cper">2026.06.10 — 09.21</div>
+    <div class="ctags"><span class="ct" style="color:#cc2244">ピカソ</span><span class="ct" style="color:#2244cc">ファッション</span></div>
+    <div class="ctit">ピカソ meets ポール・スミス<br>遊び心の冒険へ</div>
+    <div class="cdesc">ピカソの作品からインスパイアされたポール・スミスが会場レイアウトを考案。色鮮やかで遊び心あふれる構成でピカソの芸術を体験する。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#cc2244"><div class="bplb">赤</div></div><div class="bp" style="background:#2244cc"><div class="bplb">青</div></div><div class="bp" style="background:#44cc22"><div class="bplb">緑</div></div><div class="bp" style="background:#ccaa00"><div class="bplb">黄</div></div><div class="bp" style="background:#cc6600"><div class="bplb">橙</div></div><div class="bp" style="background:#8822cc"><div class="bplb">紫</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#cc2244,#2244cc,#44cc22)"></div><div class="micat">マルチカラーアイ</div></div><div class="miname">キュビズム虹色アイライン</div><div class="midesc">ピカソのキュビズムのように色の面を構築。2〜3色のカラーライナーで大胆に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#f5f0e0"></div><div class="micat">ベース</div></div><div class="miname">カンバスのような明るい肌</div><div class="midesc">鮮やかな色が映える明るいファンデーション。ポールスミスのストライプのように清潔感。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#cc2244"></div><div class="micat">リップ</div></div><div class="miname">ポップレッド</div><div class="midesc">ポール・スミスの遊び心あふれる真っ赤なリップ。全体を引き締めるアクセント。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#ccaa00,#44cc22)"></div><div class="micat">チーク</div></div><div class="miname">ポップカラーブラッシュ</div><div class="midesc">オレンジやイエローのポップなチーク。ピカソ的な弾ける生命力を頬に。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">ポップアート</span><span class="mood">遊び心</span><span class="mood">マルチカラー</span><span class="mood">ピカソ的</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">千代田線「乃木坂」徒歩1分</div><div class="afee">🎟 未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=国立新美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 11. ルーヴル ルネサンス -->
+<div class="card" data-status="soon" data-area="roppongi" data-genre="western" data-s="ルーヴル ルネサンス ダヴィンチ レオナルド 国立新美術館 六本木">
+  <span class="rib soon">9月開幕</span>
+  <div class="pal"><s style="background:#c8a060"></s><s style="background:#a07840"></s><s style="background:#806030"></s><s style="background:#e0c890"></s><s style="background:#604820"></s><s style="background:#d8b870"></s><s style="background:#402810"></s></div>
+  <div class="ci">
+    <div class="cven">国立新美術館 — 六本木</div>
+    <div class="cper">2026.09.09 — 12.13</div>
+    <div class="ctags"><span class="ct" style="color:#c8a060">ルネサンス</span><span class="ct" style="color:#a07840">ルーヴル</span><span class="ct" style="color:#806030">ダ・ヴィンチ</span></div>
+    <div class="ctit">ルーヴル美術館展<br>ルネサンス</div>
+    <div class="cdesc">ルーヴル所蔵の選りすぐり50点以上。ダ・ヴィンチ《美しきフェロニエール》が初来日。1974年モナリザ来日以来52年ぶりのダ・ヴィンチ。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#c8a060"><div class="bplb">金の時代</div></div><div class="bp" style="background:#a07840"><div class="bplb">アンバー</div></div><div class="bp" style="background:#806030"><div class="bplb">大地</div></div><div class="bp" style="background:#e0c890"><div class="bplb">象牙</div></div><div class="bp" style="background:#604820"><div class="bplb">栗色</div></div><div class="bp" style="background:#d8b870"><div class="bplb">金属</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#806030,#c8a060)"></div><div class="micat">アイシャドウ</div></div><div class="miname">ルネサンスゴールドブロンズ</div><div class="midesc">聖人画の金箔を思わせるゴールド×ブロンズ。スフマート（ぼかし）を意識してやわらかく。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e8d8c0"></div><div class="micat">ベース</div></div><div class="miname">ルネサンス肖像画の肌</div><div class="midesc">ダ・ヴィンチが描いた人物の滑らかで均一な肌感。セミマットで時代の品格を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#a06050"></div><div class="micat">リップ</div></div><div class="miname">テラコッタローズ</div><div class="midesc">ルネサンス絵画の人物が持つ深みのあるローズ。マットで古典的な品を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#d8b870,#e8d090)"></div><div class="micat">ハイライト</div></div><div class="miname">金属光沢シルバーゴールド</div><div class="midesc">フェロニエール（額飾り）を想起させるゴールドハイライトを額中央に。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">古典美</span><span class="mood">ルネサンス</span><span class="mood">ゴールドブロンズ</span><span class="mood">スフマート</span><span class="mood">品格</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">千代田線「乃木坂」徒歩1分</div><div class="afee">🎟 未定（大型展のため2,000円前後予想）</div></div><a class="mapbtn" href="https://maps.google.com/?q=国立新美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 12. 大英博物館 百花繚乱 -->
+<div class="card" data-status="soon" data-area="ueno" data-genre="japanese" data-s="大英博物館 百花繚乱 江戸絵画 浮世絵 東京都美術館 上野">
+  <span class="rib soon">7月開幕</span>
+  <div class="pal"><s style="background:#1a3050"></s><s style="background:#903040"></s><s style="background:#d0a040"></s><s style="background:#506040"></s><s style="background:#e8d8a0"></s><s style="background:#702020"></s><s style="background:#204060"></s></div>
+  <div class="ci">
+    <div class="cven">東京都美術館 — 上野</div>
+    <div class="cper">2026.07.25 — 10.18</div>
+    <div class="ctags"><span class="ct" style="color:#903040">浮世絵</span><span class="ct" style="color:#1a3050">江戸</span><span class="ct" style="color:#d0a040">屏風</span></div>
+    <div class="ctit">大英博物館日本美術コレクション<br>百花繚乱 — 海を越えた江戸絵画</div>
+    <div class="cdesc">大英博物館から江戸の至宝が逆輸入。歌麿・写楽・北斎・広重などの浮世絵から屏風・掛軸まで、江戸絵画の精華を堪能。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#1a3050"><div class="bplb">藍</div></div><div class="bp" style="background:#903040"><div class="bplb">紅</div></div><div class="bp" style="background:#d0a040"><div class="bplb">金</div></div><div class="bp" style="background:#506040"><div class="bplb">松緑</div></div><div class="bp" style="background:#e8d8a0"><div class="bplb">黄土</div></div><div class="bp" style="background:#f8e8d0"><div class="bplb">生成り</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#1a3050,#3060a0)"></div><div class="micat">アイシャドウ</div></div><div class="miname">江戸藍×萌葱グラデ</div><div class="midesc">浮世絵の藍色を目元に大胆に。目尻に向かって深めた江戸の色彩感。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#f0e0c8"></div><div class="micat">ベース</div></div><div class="miname">白粉感のある雅な肌</div><div class="midesc">白粉を思わせるきめ細かな質感。フルカバーで面の美しさを引き出す。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#903040"></div><div class="micat">リップ</div></div><div class="miname">紅梅一色</div><div class="midesc">浮世絵の紅をリスペクト。くっきりとした紅梅色のリップで江戸女の粋を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#d0a040"></div><div class="micat">ハイライト</div></div><div class="miname">金箔風ゴールド</div><div class="midesc">屏風絵の金地を思わせるゴールドを頬骨・鼻筋に。贅沢な江戸の煌めき。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">江戸の粋</span><span class="mood">浮世絵</span><span class="mood">紅梅リップ</span><span class="mood">藍アイ</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR「上野」徒歩7分</div><div class="afee">🎟 未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=東京都美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 13. ウジェーヌ・ブーダン -->
+<div class="card" data-status="soon" data-area="shinjuku" data-genre="western" data-s="ブーダン SOMPO美術館 新宿 印象派 海">
+  <span class="rib soon">4月開幕</span>
+  <div class="pal"><s style="background:#a8c8e0"></s><s style="background:#6898c0"></s><s style="background:#e0d8b0"></s><s style="background:#c0c8a0"></s><s style="background:#f0e8d0"></s><s style="background:#88a8c8"></s><s style="background:#d0b890"></s></div>
+  <div class="ci">
+    <div class="cven">SOMPO美術館 — 新宿</div>
+    <div class="cper">2026.04.11 — 06.21</div>
+    <div class="ctags"><span class="ct" style="color:#6898c0">印象派</span><span class="ct" style="color:#a8c8e0">海景</span></div>
+    <div class="ctit">ウジェーヌ・ブーダン展</div>
+    <div class="cdesc">「印象派の父」モネの師ブーダン。ノルマンディーの海辺や空の輝きを描いた清涼感溢れる海景画が集結。光と風の画家の全貌。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#a8c8e0"><div class="bplb">海の空</div></div><div class="bp" style="background:#6898c0"><div class="bplb">波</div></div><div class="bp" style="background:#f0e8d0"><div class="bplb">砂浜</div></div><div class="bp" style="background:#c0c8a0"><div class="bplb">海草</div></div><div class="bp" style="background:#d0b890"><div class="bplb">帆布</div></div><div class="bp" style="background:#e0d8c0"><div class="bplb">雲</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#a8c8e0,#6898c0)"></div><div class="micat">アイシャドウ</div></div><div class="miname">ノルマンディースカイブルー</div><div class="midesc">空と海の境が曖昧なペールブルー。ブーダンの開放的な空気感を目元に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e8e0d0"></div><div class="micat">ベース</div></div><div class="miname">海辺の透明感肌</div><div class="midesc">潮風に当たったような健康的な透明感。軽いBBクリームで快活に。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#d0a880"></div><div class="micat">リップ</div></div><div class="miname">砂浜コーラルベージュ</div><div class="midesc">日焼けした砂浜のような温かみのあるコーラルベージュ。夏らしく爽やかに。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#c0c8a0,#a8b890)"></div><div class="micat">チーク</div></div><div class="miname">海風ティールグリーンブラッシュ</div><div class="midesc">ほんのりティールがかった淡いグリーンのチーク。海辺の空気をほんのり宿す。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">海景</span><span class="mood">清涼</span><span class="mood">スカイブルー</span><span class="mood">夏の風</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR・地下鉄「新宿」徒歩5分</div><div class="afee">🎟 未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=SOMPO美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 14. 杉本博司 -->
+<div class="card" data-status="soon" data-area="marunouchi" data-genre="contemporary" data-s="杉本博司 写真 東京国立近代美術館 竹橋 絶滅">
+  <span class="rib soon">6月開幕</span>
+  <div class="pal"><s style="background:#101010"></s><s style="background:#404040"></s><s style="background:#808080"></s><s style="background:#c0c0c0"></s><s style="background:#e8e8e8"></s><s style="background:#181818"></s><s style="background:#f8f8f8"></s></div>
+  <div class="ci">
+    <div class="cven">東京国立近代美術館 — 竹橋</div>
+    <div class="cper">2026.06.16 — 09.13</div>
+    <div class="ctags"><span class="ct" style="color:#808080">写真</span><span class="ct" style="color:#404040">コンセプチュアル</span></div>
+    <div class="ctit">杉本博司<br>絶滅写真</div>
+    <div class="cdesc">現代を代表する写真家・杉本博司の絶滅した生物を収めた新シリーズを中心に大規模個展。時間・存在・消滅というテーマを追求。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#101010"><div class="bplb">漆黒</div></div><div class="bp" style="background:#404040"><div class="bplb">影</div></div><div class="bp" style="background:#808080"><div class="bplb">グレー</div></div><div class="bp" style="background:#c0c0c0"><div class="bplb">霧</div></div><div class="bp" style="background:#f0f0f0"><div class="bplb">白光</div></div><div class="bp" style="background:#282828"><div class="bplb">暗部</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#101010,#606060)"></div><div class="micat">アイシャドウ</div></div><div class="miname">モノクローム長時間露光</div><div class="midesc">杉本の長時間露光写真のようなグレーのグラデ。階調だけで表現するミニマルアイ。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e8e8e8"></div><div class="micat">ベース</div></div><div class="miname">ゼロ彩度ホワイト肌</div><div class="midesc">写真のモノクロームを体現する彩度ゼロのベース。完全にグレースケールに徹する。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#202020"></div><div class="micat">リップ</div></div><div class="miname">消えかけるグラファイト</div><div class="midesc">暗く灰がかったグレーリップ。絶滅—消えかける存在を唇で表現。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#c0c0c0,#e8e8e8)"></div><div class="micat">ハイライト</div></div><div class="miname">シルバーシート光沢</div><div class="midesc">ごく純粋なシルバーを使ったハイライト。時間と光の残滓のような発光。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">モノクローム</span><span class="mood">時間</span><span class="mood">消滅</span><span class="mood">グレースケール</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">東西線・半蔵門線「竹橋」徒歩3分</div><div class="afee">🎟 未定</div></div><a class="mapbtn" href="https://maps.google.com/?q=東京国立近代美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+<!-- 15. オルセー いまを生きる歓び -->
+<div class="card" data-status="soon" data-area="ueno" data-genre="western" data-s="オルセー 東京都美術館 上野 ミレー ルノワール 印象派">
+  <span class="rib soon">11月開幕</span>
+  <div class="pal"><s style="background:#c07840"></s><s style="background:#a0b870"></s><s style="background:#d0a870"></s><s style="background:#8090b0"></s><s style="background:#e0c890"></s><s style="background:#b07060"></s><s style="background:#f0d890"></s></div>
+  <div class="ci">
+    <div class="cven">東京都美術館 — 上野</div>
+    <div class="cper">2026.11.14 — 2027.03.28</div>
+    <div class="ctags"><span class="ct" style="color:#c07840">オルセー</span><span class="ct" style="color:#a0b870">印象派</span><span class="ct" style="color:#8090b0">写実</span></div>
+    <div class="ctit">オルセー美術館所蔵<br>いまを生きる歓び</div>
+    <div class="cdesc">印象派の殿堂オルセーから約110点。ミレー《落穂拾い》、ルノワール、モネ、ゴッホの傑作群。生きることの歓びをテーマに。</div>
+    <div class="mkp"><div class="mki">
+      <div class="mkh">おすすめメイク</div>
+      <div class="bpal"><div class="bp" style="background:#c07840"><div class="bplb">収穫の橙</div></div><div class="bp" style="background:#a0b870"><div class="bplb">野の緑</div></div><div class="bp" style="background:#d0a870"><div class="bplb">麦穂</div></div><div class="bp" style="background:#8090b0"><div class="bplb">空</div></div><div class="bp" style="background:#e0c890"><div class="bplb">陽光</div></div><div class="bp" style="background:#b07060"><div class="bplb">大地</div></div></div>
+      <div class="mgrid">
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#a0b870,#8090b0)"></div><div class="micat">アイシャドウ</div></div><div class="miname">野の緑×空のブルー</div><div class="midesc">農地と空が交わるような柔らかいグリーン×スカイブルー。落穂拾いの大地と空気。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#e8d8b0"></div><div class="micat">ベース</div></div><div class="miname">収穫の陽光肌</div><div class="midesc">秋の陽光を浴びたような温かみのある肌感。ゴールデンアンダートーンで生命力を。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:#b06050"></div><div class="micat">リップ</div></div><div class="miname">大地のテラコッタ</div><div class="midesc">豊かな収穫期の大地色。秋らしいテラコッタで歓びを全力で表現。</div></div>
+        <div class="mi"><div class="mih"><div class="midot" style="background:linear-gradient(135deg,#e0c890,#d0a870)"></div><div class="micat">チーク</div></div><div class="miname">麦穂ゴールデンブラッシュ</div><div class="midesc">たわわに実る麦穂のような豊かなゴールデンピーチチーク。歓びが頬から溢れる。</div></div>
+      </div>
+      <div class="moodrow"><span class="mood">生の歓び</span><span class="mood">収穫</span><span class="mood">大地</span><span class="mood">オルセー</span></div>
+    </div></div>
+  </div>
+  <div class="arow"><div class="ainfo"><div class="ast">JR「上野」徒歩7分</div><div class="afee">🎟 未定（大型展のため2,000円前後予想）</div></div><a class="mapbtn" href="https://maps.google.com/?q=東京都美術館" target="_blank" rel="noopener">📍 地図</a></div>
+</div>
+
+  </div><!-- /grid -->
+</section>
+
+<!-- DARK STRIP -->
+<div class="dstrip reveal">
+  <div>
+    <div class="dh">メイクは<br>もう一枚の<br><em>作品</em>である</div>
+  </div>
+  <div>
+    <p class="dp">展覧会の色調・時代・哲学をまとうメイクアップは、単なるオシャレではなく作品との対話です。モネの水面を目元に宿し、ルネサンスの金箔を頬骨に置き、ゴッホの炎をリップに宿す——2026年の東京は、そんな美の実験の場に溢れています。</p>
+  </div>
+</div>
+
+<footer>
+  <div class="footg">
+    <div>
+      <div class="flogo">Art <em>×</em> Makeup Tokyo</div>
+      <p class="ftag">2026年 東京美術展と、それに似合うメイクアップを年間を通じてご案内します。展覧会の世界観と美の対話を。</p>
+    </div>
+    <div>
+      <div class="fct">開催中</div>
+      <div class="flinks">
+        <a href="#">モネ — アーティゾン</a>
+        <a href="#">YBA — 国立新美術館</a>
+        <a href="#">スウェーデン — 都美</a>
+        <a href="#">新版画 — 三菱一号館</a>
+        <a href="#">ソル・ルウィット — MOT</a>
+        <a href="#">英姿颯爽 — 根津</a>
+      </div>
+    </div>
+    <div>
+      <div class="fct">開催予定</div>
+      <div class="flinks">
+        <a href="#">ワイエス — 都美（4月〜）</a>
+        <a href="#">ゴッホ — 上野の森（5月〜）</a>
+        <a href="#">ピカソ×P.スミス（6月〜）</a>
+        <a href="#">ルーヴル ルネサンス（9月〜）</a>
+        <a href="#">大英博 百花繚乱（7月〜）</a>
+        <a href="#">オルセー（11月〜）</a>
+      </div>
+    </div>
+  </div>
+  <div class="footbt"><span>© 2026 Art × Makeup Tokyo</span><span>展覧会情報は各美術館公式サイトをご確認ください</span></div>
+</footer>
+
+<script>
+// CURSOR
+const cur=document.getElementById('cur'),cr=document.getElementById('cur-r');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cur.style.left=mx+'px';cur.style.top=my+'px';});
+(function a(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(a);})();
+
+// HEADER
+window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('compact',scrollY>60);});
+
+// MOSAIC
+const cols=['#87CEAB','#6B9EC7','#D4B8E0','#e63946','#f4d35e','#1a1a1a','#a8c5a0','#c9dde8','#1c3a4a','#d4c078','#cc2222','#2255cc'];
+const m=document.getElementById('mosaic');
+if(m){cols.forEach((c,i)=>{const d=document.createElement('div');d.className='mc';d.style.cssText=`position:relative;`;const b=document.createElement('div');b.style.cssText=`position:absolute;inset:0;background:${c};`;d.appendChild(b);setTimeout(()=>d.classList.add('in'),100+i*80);m.appendChild(d);});}
+
+// TIMELINE DATA
+const TL_START = new Date('2026-01-01');
+const TL_END   = new Date('2026-12-31');
+const TOTAL_DAYS = (TL_END - TL_START) / 86400000;
+const COL_W = 150; // px per month
+
+const exhibitions = [
+  {name:'ソル・ルウィット',  start:'2025-12-25',end:'2026-04-02', color:'#2255cc', venue:'MOT'},
+  {name:'スウェーデン絵画',  start:'2026-01-27',end:'2026-04-12', color:'#a8c5a0', venue:'都美'},
+  {name:'モネ展',           start:'2026-02-07',end:'2026-05-24', color:'#6B9EC7', venue:'アーティゾン'},
+  {name:'テート YBA',       start:'2026-02-11',end:'2026-05-11', color:'#e63946', venue:'国立新'},
+  {name:'新版画',           start:'2026-02-19',end:'2026-05-24', color:'#d4c078', venue:'三菱一号館'},
+  {name:'根津 英姿颯爽',    start:'2026-02-14',end:'2026-03-29', color:'#c8a96e', venue:'根津'},
+  {name:'チュルリョーニス', start:'2026-03-28',end:'2026-06-14', color:'#4080c0', venue:'国立西洋'},
+  {name:'ワイエス展',       start:'2026-04-28',end:'2026-07-05', color:'#c8b898', venue:'都美'},
+  {name:'ブーダン展',       start:'2026-04-11',end:'2026-06-21', color:'#88a8c8', venue:'SOMPO'},
+  {name:'ゴッホ大展',       start:'2026-05-29',end:'2026-08-12', color:'#f0c020', venue:'上野の森'},
+  {name:'ピカソ×P.スミス', start:'2026-06-10',end:'2026-09-21', color:'#cc2244', venue:'国立新'},
+  {name:'杉本博司',         start:'2026-06-16',end:'2026-09-13', color:'#808080', venue:'近代美術館'},
+  {name:'大英 百花繚乱',    start:'2026-07-25',end:'2026-10-18', color:'#1a3050', venue:'都美'},
+  {name:'ルーヴル ルネサンス',start:'2026-09-09',end:'2026-12-13',color:'#c8a060', venue:'国立新'},
+  {name:'オルセー 歓び',    start:'2026-11-14',end:'2027-03-28', color:'#c07840', venue:'都美'},
+];
+
+function dayOffset(dateStr){
+  const d=new Date(dateStr);
+  const s=new Date('2026-01-01');
+  return Math.max(0,(d-s)/86400000);
+}
+function dayWidth(s,e){
+  const ds=new Date(s),de=new Date(e<='2026-12-31'?e:'2026-12-31');
+  const start=new Date('2026-01-01');
+  return Math.max(0,(de-Math.max(ds,start))/86400000);
+}
+
+// Build month headers
+const months=['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+const nowMonth=new Date().getMonth();
+const mEl=document.getElementById('tl-months');
+months.forEach((m,i)=>{const d=document.createElement('div');d.className='tl-m'+(i<new Date().getMonth()?' past-m':i===new Date().getMonth()?' now-m':'');d.textContent=m;d.style.width=COL_W+'px';d.style.flexShrink='0';mEl.appendChild(d);});
+
+// Now line
+const today=new Date();
+const todayOff=dayOffset(today.toISOString().slice(0,10));
+const totalCols=365;
+const nowPct=todayOff/totalCols;
+const nowLine=document.getElementById('tl-now');
+nowLine.style.left=(170+nowPct*COL_W*12)+'px';
+
+// Build bars
+const rowsEl=document.getElementById('tl-rows');
+exhibitions.forEach(ex=>{
+  const row=document.createElement('div');row.className='tl-row';
+  const lbl=document.createElement('div');lbl.className='tl-rl';lbl.textContent=ex.venue;
+  const track=document.createElement('div');track.className='tl-track';track.style.minWidth=(COL_W*12)+'px';
+  const bar=document.createElement('div');bar.className='tl-bar';
+  const offDays=dayOffset(ex.start);
+  const wDays=dayWidth(ex.start,ex.end);
+  bar.style.left=(offDays/365*COL_W*12)+'px';
+  bar.style.width=Math.max(30,wDays/365*COL_W*12)+'px';
+  bar.style.background=ex.color;
+  bar.innerHTML=`<span>${ex.name}</span>`;
+  track.appendChild(bar);
+  // put now line in first row
+  if(ex===exhibitions[0]){track.appendChild(nowLine);}
+  row.appendChild(lbl);row.appendChild(track);
+  rowsEl.appendChild(row);
+});
+
+// FILTERS
+let fStatus='all',fArea='all',fGenre='all',fSearch='';
+document.querySelectorAll('.fbtn').forEach(b=>{
+  b.addEventListener('click',()=>{
+    const f=b.dataset.f,v=b.dataset.v;
+    document.querySelectorAll(`.fbtn[data-f="${f}"]`).forEach(x=>x.classList.remove('on'));
+    b.classList.add('on');
+    if(f==='status')fStatus=v;else if(f==='area')fArea=v;else if(f==='genre')fGenre=v;
+    filter();
+  });
+});
+document.getElementById('srch').addEventListener('input',e=>{fSearch=e.target.value.toLowerCase();filter();});
+function filter(){
+  let cnt=0;
+  document.querySelectorAll('.card').forEach(c=>{
+    const ok=(fStatus==='all'||c.dataset.status===fStatus)&&(fArea==='all'||c.dataset.area===fArea)&&(fGenre==='all'||c.dataset.genre===fGenre)&&(!fSearch||c.dataset.s.includes(fSearch));
+    c.classList.toggle('hidden',!ok);
+    if(ok)cnt++;
+  });
+  document.getElementById('cnt').textContent=`全 ${cnt} 件表示中`;
+}
+
+// REVEAL
+const ro=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>ro.observe(el));
+</script>
+</body>
+</html>
