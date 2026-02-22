@@ -381,6 +381,68 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }
 .reveal.in { opacity:1; transform:translateY(0); }
 
+/* ══ UPCOMING SECTION ══ */
+#upcoming { background: var(--warm); }
+.upcoming-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+  gap: 1px; background: rgba(14,12,10,.05);
+}
+.up-card {
+  background: var(--cream); padding: clamp(1.2rem,2.5vw,1.8rem); position: relative;
+  transition: background .25s; overflow: hidden;
+}
+.up-card:hover { background: #fff; }
+.up-accent {
+  height: 3px; display: flex; margin-bottom: 1.2rem;
+  border-radius: 1px; overflow: hidden;
+}
+.up-accent span { flex: 1; }
+.up-num {
+  font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; line-height: 1;
+  color: rgba(14,12,10,.05); position: absolute; top: .8rem; right: 1.2rem; pointer-events: none;
+}
+.up-venue {
+  font-family: 'DM Mono', monospace; font-size: .55rem; letter-spacing: .18em; text-transform: uppercase;
+  color: rgba(14,12,10,.38); margin-bottom: .2rem;
+}
+.up-title {
+  font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem,2vw,1.4rem); font-weight: 300;
+  line-height: 1.3; margin-bottom: .55rem;
+}
+.up-desc { font-size: clamp(.7rem,1.2vw,.76rem); line-height: 1.85; color: rgba(14,12,10,.5); margin-bottom: 1rem; }
+.up-meta {
+  display: flex; align-items: center; justify-content: space-between; gap: .5rem;
+  flex-wrap: wrap; margin-top: auto;
+}
+.up-period {
+  font-family: 'DM Mono', monospace; font-size: .55rem; letter-spacing: .08em;
+  color: var(--gold); display: flex; align-items: center; gap: .35rem;
+}
+.up-period::before { content: '◷'; font-size: .6rem; }
+.up-tags { display: flex; flex-wrap: wrap; gap: .28rem; margin-bottom: .75rem; }
+.up-tag {
+  font-family: 'DM Mono', monospace; font-size: .5rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .16rem .55rem; border: 1px solid currentColor; border-radius: 100px; opacity: .5;
+}
+.up-map {
+  font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .1em; text-transform: uppercase;
+  padding: .3rem .8rem; border: 1px solid rgba(14,12,10,.13); background: transparent;
+  color: rgba(14,12,10,.42); cursor: pointer; text-decoration: none; transition: all .2s;
+  display: inline-flex; align-items: center; gap: .3rem; border-radius: 2px; white-space: nowrap;
+}
+.up-map:hover, .up-map:active { border-color: var(--rust); color: var(--rust); }
+.up-makeup-hint {
+  margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(14,12,10,.06);
+}
+.up-makeup-heading {
+  font-family: 'DM Mono', monospace; font-size: .52rem; letter-spacing: .22em; text-transform: uppercase;
+  color: rgba(14,12,10,.3); margin-bottom: .65rem; display: flex; align-items: center; gap: .5rem;
+}
+.up-makeup-heading::after { content: ''; flex: 1; height: 1px; background: rgba(14,12,10,.08); }
+.up-palette { display: flex; height: 28px; border-radius: 2px; overflow: hidden; }
+.up-palette span { flex: 1; }
+
 /* ══ RESPONSIVE ══ */
 @media (max-width:900px) {
   .nav-links { display:none; }
@@ -419,6 +481,7 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
   <div class="logo-mark">ART <span class="x">×</span> MAKEUP TOKYO</div>
   <nav class="nav-links">
     <a href="#exhibitions">展覧会</a>
+    <a href="#upcoming">開催予定</a>
     <a href="#diagnosis">メイク診断</a>
     <a href="#map-section">アクセス</a>
   </nav>
@@ -428,6 +491,7 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 
 <nav class="nav-mobile" id="mobileNav">
   <a href="#exhibitions" onclick="closeMenu()">展覧会</a>
+  <a href="#upcoming" onclick="closeMenu()">開催予定</a>
   <a href="#diagnosis" onclick="closeMenu()">メイク診断</a>
   <a href="#map-section" onclick="closeMenu()">アクセスマップ</a>
 </nav>
@@ -790,8 +854,188 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
   </div><!-- /grid -->
 </section>
 
+<!-- UPCOMING EXHIBITIONS -->
+<section id="upcoming">
+  <div class="section-head reveal">
+    <div class="section-num">02</div>
+    <div class="section-titles"><p>Upcoming Exhibitions</p><h2>開催予定の展覧会</h2></div>
+    <div class="section-line"></div>
+    <div class="count-badge">全 9 件</div>
+  </div>
+  <div class="upcoming-grid">
+
+    <!-- UP-1: ブランクーシ -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#c8963c"></span><span style="background:#e8d090"></span><span style="background:#b0a080"></span><span style="background:#f5f0e0"></span><span style="background:#8a7a60"></span></div>
+      <div class="up-num">01</div>
+      <div class="up-venue">国立西洋美術館 — 上野</div>
+      <div class="up-tags"><span class="up-tag" style="color:#c8963c">彫刻</span><span class="up-tag" style="color:#8a7a60">モダニズム</span><span class="up-tag" style="color:#b0a080">抽象</span></div>
+      <div class="up-title">ブランクーシ<br>本質を刻む彫刻家</div>
+      <div class="up-desc">ルーマニア出身の彫刻家コンスタンティン・ブランクーシ。卵形・鳥・無限柱——純粋な形態が宿す精神性を日本初の大規模回顧展で。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#c8963c"></span><span style="background:#e8d090"></span><span style="background:#f5f0e8"></span><span style="background:#8a7a60"></span><span style="background:#3a2818"></span><span style="background:#d4c8a8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.06.09 — 09.06</div>
+        <a class="up-map" href="https://maps.google.com/?q=国立西洋美術館+東京都台東区上野公園7-7" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-2: ルーヴル -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#1a1a2e"></span><span style="background:#8b6a40"></span><span style="background:#c8b078"></span><span style="background:#e8d8b0"></span><span style="background:#4a3828"></span></div>
+      <div class="up-num">02</div>
+      <div class="up-venue">国立新美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#8b6a40">古代</span><span class="up-tag" style="color:#c8b078">ルーヴル</span><span class="up-tag" style="color:#1a1a2e">彫刻</span></div>
+      <div class="up-title">ルーヴル美術館展<br>古代ギリシャの美</div>
+      <div class="up-desc">ルーヴルが誇る古代ギリシャ彫刻・陶器・装飾品を一堂に。人体美の理想と神話の世界が、現代東京に降り立つ。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#1a1a2e"></span><span style="background:#e8d8b0"></span><span style="background:#c8b078"></span><span style="background:#8b6a40"></span><span style="background:#f0e8d0"></span><span style="background:#b0987a"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.06.03 — 08.31</div>
+        <a class="up-map" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-3: ターナー -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#e8a030"></span><span style="background:#f0c868"></span><span style="background:#88b8d8"></span><span style="background:#d0e8f0"></span><span style="background:#c87820"></span></div>
+      <div class="up-num">03</div>
+      <div class="up-venue">東京都美術館 — 上野</div>
+      <div class="up-tags"><span class="up-tag" style="color:#e8a030">ロマン主義</span><span class="up-tag" style="color:#88b8d8">英国</span><span class="up-tag" style="color:#c87820">風景</span></div>
+      <div class="up-title">ターナー<br>光の詩人、嵐の画家</div>
+      <div class="up-desc">テート・ブリテン所蔵の傑作群が来日。嵐と光が溶け合うターナーの風景画は、まるで音楽のように色彩が鳴り響く。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#e8a030"></span><span style="background:#f0c868"></span><span style="background:#88b8d8"></span><span style="background:#d0e8f0"></span><span style="background:#c8d8e8"></span><span style="background:#f8e8c0"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.07.11 — 10.04</div>
+        <a class="up-map" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-4: 江戸琳派 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#8b2028"></span><span style="background:#2c5040"></span><span style="background:#c8a030"></span><span style="background:#1a2c40"></span><span style="background:#d8c890"></span></div>
+      <div class="up-num">04</div>
+      <div class="up-venue">サントリー美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#8b2028">琳派</span><span class="up-tag" style="color:#2c5040">日本画</span><span class="up-tag" style="color:#c8a030">江戸</span></div>
+      <div class="up-title">江戸琳派の華<br>酒井抱一と鈴木其一</div>
+      <div class="up-desc">光琳から続く琳派の意匠を江戸の感性で昇華した抱一と其一。四季の草花・波・風——装飾美の極致がここに。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#8b2028"></span><span style="background:#c8a030"></span><span style="background:#2c5040"></span><span style="background:#1a2c40"></span><span style="background:#d8c890"></span><span style="background:#e8d8b8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.07.01 — 08.24</div>
+        <a class="up-map" href="https://maps.google.com/?q=サントリー美術館+東京都港区赤坂9-7-4" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-5: フェルメール -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#2255a0"></span><span style="background:#f0e0a0"></span><span style="background:#8ab0c8"></span><span style="background:#d8b870"></span><span style="background:#304870"></span></div>
+      <div class="up-num">05</div>
+      <div class="up-venue">東京都美術館 — 上野</div>
+      <div class="up-tags"><span class="up-tag" style="color:#2255a0">バロック</span><span class="up-tag" style="color:#d8b870">17世紀</span><span class="up-tag" style="color:#304870">オランダ</span></div>
+      <div class="up-title">フェルメールと<br>光の王国 オランダ黄金時代</div>
+      <div class="up-desc">マウリッツハイス美術館との共同企画。フェルメール3点を含む17世紀オランダ黄金時代の傑作20点。窓から差し込む光の魔術。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#2255a0"></span><span style="background:#8ab0c8"></span><span style="background:#f0e0a0"></span><span style="background:#d8b870"></span><span style="background:#f8f0e0"></span><span style="background:#c8a858"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.10.10 — 2027.01.18</div>
+        <a class="up-map" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-6: 奈良美智 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#e8a0a0"></span><span style="background:#88b8d8"></span><span style="background:#f0d890"></span><span style="background:#a8c8a0"></span><span style="background:#d8a8c8"></span></div>
+      <div class="up-num">06</div>
+      <div class="up-venue">森美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#e8a0a0">現代日本</span><span class="up-tag" style="color:#88b8d8">絵画</span><span class="up-tag" style="color:#a8c8a0">ポップ</span></div>
+      <div class="up-title">奈良美智<br>Still Dreaming</div>
+      <div class="up-desc">大きな瞳の少女たちと孤独な犬——奈良美智の代表作と新作を網羅した大規模個展。子どもの目線が問う怒りと愛。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#e8a0a0"></span><span style="background:#88b8d8"></span><span style="background:#f0d890"></span><span style="background:#d8a8c8"></span><span style="background:#a8c8a0"></span><span style="background:#f8e8e0"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.07.25 — 11.01</div>
+        <a class="up-map" href="https://maps.google.com/?q=森美術館+東京都港区六本木6-10-1" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-7: 李禹煥 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#606060"></span><span style="background:#a0a090"></span><span style="background:#d8d0c0"></span><span style="background:#303028"></span><span style="background:#e8e0d8"></span></div>
+      <div class="up-num">07</div>
+      <div class="up-venue">国立新美術館 — 六本木</div>
+      <div class="up-tags"><span class="up-tag" style="color:#606060">もの派</span><span class="up-tag" style="color:#a0a090">概念</span><span class="up-tag" style="color:#303028">ミニマル</span></div>
+      <div class="up-title">李禹煥<br>余白の詩学</div>
+      <div class="up-desc">韓国・日本を拠点にもの派を牽引した李禹煥の大規模回顧展。石・鉄板・余白が対話する静謐な空間詩。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#303028"></span><span style="background:#606060"></span><span style="background:#a0a090"></span><span style="background:#d8d0c0"></span><span style="background:#e8e0d8"></span><span style="background:#f0ece8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.09.10 — 11.24</div>
+        <a class="up-map" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-8: 竹久夢二 -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#c87890"></span><span style="background:#d8a8b8"></span><span style="background:#8898a8"></span><span style="background:#e8c8d0"></span><span style="background:#607080"></span></div>
+      <div class="up-num">08</div>
+      <div class="up-venue">弥生美術館 — 本郷</div>
+      <div class="up-tags"><span class="up-tag" style="color:#c87890">大正ロマン</span><span class="up-tag" style="color:#8898a8">日本画</span><span class="up-tag" style="color:#d8a8b8">挿絵</span></div>
+      <div class="up-title">竹久夢二<br>大正の恋と憂愁</div>
+      <div class="up-desc">大正浪漫の詩人画家・夢二の全貌。憂いを帯びた美人画・詩・装幀——100年を超えてなお輝く夢二美人の世界。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#c87890"></span><span style="background:#d8a8b8"></span><span style="background:#e8c8d0"></span><span style="background:#8898a8"></span><span style="background:#607080"></span><span style="background:#f0e0e8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.05.01 — 07.26</div>
+        <a class="up-map" href="https://maps.google.com/?q=弥生美術館+東京都文京区弥生2-4-3" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+    <!-- UP-9: シャガール -->
+    <div class="up-card reveal">
+      <div class="up-accent"><span style="background:#3a5a90"></span><span style="background:#e83040"></span><span style="background:#f0d050"></span><span style="background:#50a060"></span><span style="background:#9858a8"></span></div>
+      <div class="up-num">09</div>
+      <div class="up-venue">Bunkamura ザ・ミュージアム — 渋谷</div>
+      <div class="up-tags"><span class="up-tag" style="color:#3a5a90">表現主義</span><span class="up-tag" style="color:#e83040">ロシア</span><span class="up-tag" style="color:#9858a8">幻想</span></div>
+      <div class="up-title">シャガール<br>愛と夢想の色彩</div>
+      <div class="up-desc">空飛ぶ恋人・ヴィテブスクの村・青い夜——色彩の魔術師シャガールの絵画・版画・舞台美術を集めた総覧展。</div>
+      <div class="up-makeup-hint">
+        <div class="up-makeup-heading">似合うメイクのヒント</div>
+        <div class="up-palette"><span style="background:#3a5a90"></span><span style="background:#e83040"></span><span style="background:#f0d050"></span><span style="background:#50a060"></span><span style="background:#9858a8"></span><span style="background:#c8e8f8"></span></div>
+      </div>
+      <div class="up-meta">
+        <div class="up-period">2026.08.01 — 10.18</div>
+        <a class="up-map" href="https://maps.google.com/?q=Bunkamuraザ・ミュージアム+東京都渋谷区道玄坂2-24-1" target="_blank" rel="noopener">📍 地図</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- DIAGNOSIS -->
 <section id="diagnosis">
+  <div class="section-head reveal">
+    <div class="section-num">03</div>
+    <div class="section-titles"><p>Art × Makeup Diagnosis</p><h2>メイク診断</h2></div>
+    <div class="section-line"></div>
+  </div>
   <div class="diag-inner">
     <div class="diag-header reveal">
       <span class="diag-kicker">Art × Makeup Diagnosis</span>
@@ -828,7 +1072,7 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 <!-- MAP -->
 <section id="map-section">
   <div class="section-head reveal">
-    <div class="section-num">03</div>
+    <div class="section-num">04</div>
     <div class="section-titles"><p>Access &amp; Map</p><h2>美術館マップ</h2></div>
     <div class="section-line"></div>
   </div>
