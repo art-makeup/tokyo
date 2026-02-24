@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>ART × MAKEUP TOKYO 2026</title>
-<meta name="description" content="展覧会の色調・時代・哲学をまとうメイクアップを提案します。作品との対話をより豊かに。メイク傾向からのレコメンド診断も。">
+<meta name="description" content="We curate makeup looks inspired by each exhibition's palette, era, and philosoph">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+SC:wght@300;400&family=DM+Mono:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
 <style>
 
@@ -493,32 +493,32 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 <header id="header">
   <div class="logo-mark">ART <span class="x">×</span> MAKEUP TOKYO</div>
   <nav class="nav-links">
-    <a href="#exhibitions">展覧会</a>
-    <a href="#upcoming">開催予定</a>
-    <a href="#diagnosis">メイク診断</a>
-    <a href="#map-section">アクセス</a>
+    <a href="#exhibitions">Exhibitions</a>
+    <a href="#upcoming">Upcoming</a>
+    <a href="#diagnosis">Makeup Quiz</a>
+    <a href="#map-section">Access</a>
   </nav>
-  <button class="nav-cta" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">診断する</button>
-  <div class="lang-switcher"><a href="index.html" class="lang-btn active">日本語</a><a href="index_en.html" class="lang-btn">EN</a><a href="index_zh.html" class="lang-btn">中文</a></div>
+  <button class="nav-cta" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">Take Quiz</button>
+  <div class="lang-switcher"><a href="index.html" class="lang-btn">日本語</a><a href="index_en.html" class="lang-btn active">EN</a><a href="index_zh.html" class="lang-btn">中文</a></div>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </header>
 
 <nav class="nav-mobile" id="mobileNav">
-  <a href="#exhibitions" onclick="closeMenu()">展覧会</a>
-  <a href="#upcoming" onclick="closeMenu()">開催予定</a>
-  <a href="#diagnosis" onclick="closeMenu()">メイク診断</a>
-  <a href="#map-section" onclick="closeMenu()">アクセスマップ</a>
-  <div style="padding:.7rem 1.5rem; display:flex; gap:.5rem; border-top:1px solid rgba(14,12,10,.06);"><a href="index.html" class="lang-btn active">日本語</a><a href="index_en.html" class="lang-btn">EN</a><a href="index_zh.html" class="lang-btn">中文</a></div>
+  <a href="#exhibitions" onclick="closeMenu()">Exhibitions</a>
+  <a href="#upcoming" onclick="closeMenu()">Upcoming</a>
+  <a href="#diagnosis" onclick="closeMenu()">Makeup Quiz</a>
+  <a href="#map-section" onclick="closeMenu()">Access Map</a>
+  <div style="padding:.7rem 1.5rem; display:flex; gap:.5rem; border-top:1px solid rgba(14,12,10,.06);"><a href="index.html" class="lang-btn">日本語</a><a href="index_en.html" class="lang-btn active">EN</a><a href="index_zh.html" class="lang-btn">中文</a></div>
 </nav>
 
 <section class="hero">
   <div class="hero-left">
     <div class="hero-kicker">Tokyo Art &amp; Beauty 2026 Spring</div>
-    <h1><em>Art</em> に<br>似合う<br>Makeup を。<span class="ja">東京の美術展と、あなたの美のものがたり</span></h1>
-    <p class="hero-body">展覧会の色調・時代・哲学をまとうメイクアップを提案します。作品との対話をより豊かに。メイク傾向からのレコメンド診断も。</p>
+    <h1>Makeup<br>Made for<br><em>Art.</em><span class="ja">Where Tokyo exhibitions meet your beauty story</span></h1>
+    <p class="hero-body">We curate makeup looks inspired by each exhibition's palette, era, and philosophy — deepening your dialogue with art.</p>
     <div class="hero-actions">
-      <button class="btn-primary" onclick="document.getElementById('exhibitions').scrollIntoView({behavior:'smooth'})"><span>展覧会を見る</span></button>
-      <button class="btn-secondary" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">メイク診断</button>
+      <button class="btn-primary" onclick="document.getElementById('exhibitions').scrollIntoView({behavior:'smooth'})"><span>See Exhibitions</span></button>
+      <button class="btn-secondary" onclick="document.getElementById('diagnosis').scrollIntoView({behavior:'smooth'})">Makeup Quiz</button>
     </div>
   </div>
   <div class="hero-right"><div class="hero-mosaic" id="mosaic"></div></div>
@@ -527,26 +527,26 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 
 <div class="filters-bar" id="filters">
   <div class="filter-group">
-    <span class="filter-label">エリア</span>
-    <button class="filter-btn active" data-filter="area" data-val="all">すべて</button>
-    <button class="filter-btn" data-filter="area" data-val="ueno">上野</button>
-    <button class="filter-btn" data-filter="area" data-val="roppongi">六本木</button>
-    <button class="filter-btn" data-filter="area" data-val="marunouchi">丸の内</button>
-    <button class="filter-btn" data-filter="area" data-val="kiyosumi">清澄白河</button>
-    <button class="filter-btn" data-filter="area" data-val="aoyama">青山</button>
-    <button class="filter-btn" data-filter="area" data-val="kyobashi">京橋</button>
+    <span class="filter-label">Area</span>
+    <button class="filter-btn active" data-filter="area" data-val="all">All</button>
+    <button class="filter-btn" data-filter="area" data-val="ueno">Ueno</button>
+    <button class="filter-btn" data-filter="area" data-val="roppongi">Roppongi</button>
+    <button class="filter-btn" data-filter="area" data-val="marunouchi">Marunouchi</button>
+    <button class="filter-btn" data-filter="area" data-val="kiyosumi">Kiyosumi</button>
+    <button class="filter-btn" data-filter="area" data-val="aoyama">Aoyama</button>
+    <button class="filter-btn" data-filter="area" data-val="kyobashi">Kyobashi</button>
   </div>
   <div class="filter-group">
-    <span class="filter-label">ジャンル</span>
-    <button class="filter-btn active" data-filter="genre" data-val="all">すべて</button>
-    <button class="filter-btn" data-filter="genre" data-val="western">洋画</button>
-    <button class="filter-btn" data-filter="genre" data-val="japanese">日本美術</button>
-    <button class="filter-btn" data-filter="genre" data-val="contemporary">現代</button>
+    <span class="filter-label">Genre</span>
+    <button class="filter-btn active" data-filter="genre" data-val="all">All</button>
+    <button class="filter-btn" data-filter="genre" data-val="western">Western</button>
+    <button class="filter-btn" data-filter="genre" data-val="japanese">Japanese</button>
+    <button class="filter-btn" data-filter="genre" data-val="contemporary">Contemporary</button>
   </div>
   <div class="filter-group">
     <div class="search-wrap">
       <span class="search-icon">🔍</span>
-      <input class="search-input" id="search" type="text" placeholder="展覧会を検索...">
+      <input class="search-input" id="search" type="text" placeholder="Search exhibitions...">
     </div>
   </div>
 </div>
@@ -554,183 +554,183 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 <section id="exhibitions">
   <div class="section-head reveal">
     <div class="section-num">01</div>
-    <div class="section-titles"><p>Current Exhibitions</p><h2>開催中の展覧会</h2></div>
+    <div class="section-titles"><p>Current Exhibitions</p><h2>Now Showing</h2></div>
     <div class="section-line"></div>
-    <div class="count-badge" id="count-badge">全6件表示中</div>
+    <div class="count-badge" id="count-badge">6 showing</div>
   </div>
   <div class="exhibitions-grid" id="grid">
-<div class="ex-card" data-area="kyobashi" data-genre="western" data-search="モネ 印象派 風景 アーティゾン 京橋">
+<div class="ex-card" data-area="kyobashi" data-genre="western" data-search="Monet impressionism landscape Artizon Kyobashi">
   <div class="palette-strip"><span style="background:#87CEAB"></span><span style="background:#6B9EC7"></span><span style="background:#C4A882"></span><span style="background:#D4B8E0"></span><span style="background:#B8D0A8"></span><span style="background:#F0D090"></span><span style="background:#E8C8A0"></span></div>
   <div class="card-inner">
     <div class="card-meta">
       <div class="card-venue-wrap">
-        <div class="card-venue">アーティゾン美術館 — 京橋</div>
+        <div class="card-venue">Artizon Museum — Kyobashi</div>
         <div class="card-period">2026.02.07 — 05.24</div>
       </div>
-      <span class="card-status status-now">開催中</span>
+      <span class="card-status status-now">Now Showing</span>
     </div>
-    <div class="card-tags"><span class="tag" style="color:#6B9EC7">印象派</span><span class="tag" style="color:#87CEAB">風景画</span><span class="tag" style="color:#C4A882">19世紀</span></div>
-    <div class="card-title">クロード・モネ<br>— 風景への問いかけ</div>
-    <div class="card-desc">オルセー美術館から傑作が来日。印象派を代表するモネの風景画家としての軌跡を約140点で辿る。光と水が織りなす色彩の冒険。</div>
-    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="card-tags"><span class="tag" style="color:#6B9EC7">Impressionism</span><span class="tag" style="color:#87CEAB">Landscape</span><span class="tag" style="color:#C4A882">19th c.</span></div>
+    <div class="card-title">Claude Monet<br>— Questioning the Landscape</div>
+    <div class="card-desc">Masterpieces from the Musée d'Orsay arrive in Tokyo. Approximately 140 works trace Monet's journey as a landscape painter of light and water.</div>
+    <div class="tap-hint">Tap to see makeup suggestions ▾</div>
     <div class="makeup-panel"><div class="makeup-panel-inner">
-      <div class="makeup-heading">この展覧会に似合うメイク</div>
-      <div class="palette-visual"><div class="palette-swatch" style="background:#87CEAB"><div class="swatch-label">霧のグリーン</div></div><div class="palette-swatch" style="background:#6B9EC7"><div class="swatch-label">水面ブルー</div></div><div class="palette-swatch" style="background:#D4B8E0"><div class="swatch-label">アイリス</div></div><div class="palette-swatch" style="background:#C4A882"><div class="swatch-label">砂浜</div></div><div class="palette-swatch" style="background:#F0D090"><div class="swatch-label">陽光</div></div><div class="palette-swatch" style="background:#E8C8A0"><div class="swatch-label">朝靄</div></div></div>
-      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#a8c8e8,#d4b8e0)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">水面ラベンダー×パールブルー</div><div class="m-desc">淡いラベンダーブルーを目全体に。目頭にパールホワイトのハイライトをのせ、光を反射する水面を表現。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#e8c4a0,#f5e8d0)"></div><div class="m-category">ベース・ファンデ</div></div><div class="m-name">霞がかるベール肌</div><div class="m-desc">薄いカバーのリキッドファンデに軽いミストをオーバーレイ。刷毛でさっと広げたような滲み感のあるセミシアーな肌。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#e8b890,#d4907a)"></div><div class="m-category">リップ</div></div><div class="m-name">ニュアンスコーラル</div><div class="m-desc">ヌードベージュから柔らかいコーラルへのグラデーション。印象派の「光と影」をリップでも——ふちを曖昧にぼかして。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#f0d090,#e8c0a0)"></div><div class="m-category">チーク・ハイライト</div></div><div class="m-name">陽光ピーチ グロウ</div><div class="m-desc">ゴールドパールを含んだ淡いピーチをふんわり。頬骨〜こめかみにかけて夏の陽光のように広げる。</div></div></div>
-      <div class="mood-tags"><span class="mood-tag">ロマンティック</span><span class="mood-tag">透明感</span><span class="mood-tag">柔らかいグラデ</span><span class="mood-tag">印象派ブルー</span><span class="mood-tag">パールグロウ</span></div>
+      <div class="makeup-heading">Makeup for This Exhibition</div>
+      <div class="palette-visual"><div class="palette-swatch" style="background:#87CEAB"><div class="swatch-label">Mist Green</div></div><div class="palette-swatch" style="background:#6B9EC7"><div class="swatch-label">Water Blue</div></div><div class="palette-swatch" style="background:#D4B8E0"><div class="swatch-label">Iris</div></div><div class="palette-swatch" style="background:#C4A882"><div class="swatch-label">Sand</div></div><div class="palette-swatch" style="background:#F0D090"><div class="swatch-label">Sunlight</div></div><div class="palette-swatch" style="background:#E8C8A0"><div class="swatch-label">Morning Haze</div></div></div>
+      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#a8c8e8,#d4b8e0)"></div><div class="m-category">Eye Shadow</div></div><div class="m-name">Lavender Water × Pearl Blue</div><div class="m-desc">Soft lavender-blue all over the lid. Pearl white highlight at the inner corner to reflect light like a water surface.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#e8c4a0,#f5e8d0)"></div><div class="m-category">Base</div></div><div class="m-name">Hazy Veil Skin</div><div class="m-desc">Light-coverage liquid foundation with a fine mist overlay. Semi-sheer, watercolor-soft finish.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#e8b890,#d4907a)"></div><div class="m-category">Lip</div></div><div class="m-name">Nuance Coral</div><div class="m-desc">Gradient from nude beige to soft coral. Blurred edges channel Impressionist light-and-shadow.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#f0d090,#e8c0a0)"></div><div class="m-category">Cheek & Highlight</div></div><div class="m-name">Sunlight Peach Glow</div><div class="m-desc">Dusky peach with gold pearl swept from cheekbone to temple like summer sunlight.</div></div></div>
+      <div class="mood-tags"><span class="mood-tag">Romantic</span><span class="mood-tag">Luminous</span><span class="mood-tag">Soft Gradient</span><span class="mood-tag">Impressionist Blue</span><span class="mood-tag">Pearl Glow</span></div>
     </div></div>
   </div>
   <div class="access-row">
     <div class="access-info">
-      <div class="access-station">東京メトロ銀座線「京橋」徒歩1分</div>
-      <div class="access-fee">🎟 一般 2,200円</div>
+      <div class="access-station">Tokyo Metro Ginza Line "Kyobashi" 1 min walk</div>
+      <div class="access-fee">🎟 General ¥2,200</div>
     </div>
-    <a class="map-btn" href="https://maps.google.com/?q=アーティゾン美術館+東京都中央区京橋1-7-2" target="_blank" rel="noopener">📍 地図で見る</a>
+    <a class="map-btn" href="https://maps.google.com/?q=Artizon+Museum+1-7-2+Kyobashi+Chuo-ku+Tokyo" target="_blank" rel="noopener">📍 Map</a>
   </div>
 </div>
-<div class="ex-card" data-area="roppongi" data-genre="contemporary" data-search="テート 現代アート 英国 YBA ダミアン ハースト 国立新美術館 六本木">
+<div class="ex-card" data-area="roppongi" data-genre="contemporary" data-search="Tate YBA Damien Hirst National Art Center Roppongi contemporary">
   <div class="palette-strip"><span style="background:#1a1a1a"></span><span style="background:#e63946"></span><span style="background:#f4d35e"></span><span style="background:#3d405b"></span><span style="background:#06d6a0"></span><span style="background:#118ab2"></span><span style="background:#ffffff"></span></div>
   <div class="card-inner">
     <div class="card-meta">
       <div class="card-venue-wrap">
-        <div class="card-venue">国立新美術館 — 六本木</div>
+        <div class="card-venue">The National Art Center — Roppongi</div>
         <div class="card-period">2026.02.11 — 05.11</div>
       </div>
-      <span class="card-status status-now">開催中</span>
+      <span class="card-status status-now">Now Showing</span>
     </div>
-    <div class="card-tags"><span class="tag" style="color:#e63946">現代アート</span><span class="tag" style="color:#118ab2">英国</span><span class="tag" style="color:#3d405b">コンセプチュアル</span></div>
-    <div class="card-title">テート美術館 YBA &amp; BEYOND<br>世界を変えた 90s 英国アート</div>
-    <div class="card-desc">ダミアン・ハーストら約60名による革命的な作品群。概念・生・死を問うブリティッシュコンテンポラリーの軌跡。</div>
-    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="card-tags"><span class="tag" style="color:#e63946">Contemporary</span><span class="tag" style="color:#118ab2">British</span><span class="tag" style="color:#3d405b">Conceptual</span></div>
+    <div class="card-title">Tate: YBA &amp; BEYOND<br>British Art That Changed the World</div>
+    <div class="card-desc">Revolutionary works by ~60 artists including Damien Hirst. The trajectory of British Contemporary Art that interrogated concept, life and death.</div>
+    <div class="tap-hint">Tap to see makeup suggestions ▾</div>
     <div class="makeup-panel"><div class="makeup-panel-inner">
-      <div class="makeup-heading">この展覧会に似合うメイク</div>
-      <div class="palette-visual"><div class="palette-swatch" style="background:#0a0a0a"><div class="swatch-label">漆黒</div></div><div class="palette-swatch" style="background:#cc1e2e"><div class="swatch-label">ブラッドレッド</div></div><div class="palette-swatch" style="background:#f4d35e"><div class="swatch-label">イエロー</div></div><div class="palette-swatch" style="background:#06d6a0"><div class="swatch-label">エレクトリック</div></div><div class="palette-swatch" style="background:#f5f5f5"><div class="swatch-label">白磁</div></div><div class="palette-swatch" style="background:#3d405b"><div class="swatch-label">スレート</div></div></div>
-      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#1a1a2e,#cc1e2e)"></div><div class="m-category">グラフィックアイ</div></div><div class="m-name">インクブラック×ブラッドレッド</div><div class="m-desc">ブラックスモーキーを全体に。下まぶたに血を思わせるレッドのラインを非対称に。YBAの挑発的な精神を目元に。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0f0f0"></div><div class="m-category">ベース</div></div><div class="m-name">磁器フラットマット</div><div class="m-desc">ポアレス仕上げの白磁ベース。感情を排した無機質な肌感がコンセプチュアルアートの世界観を体現。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#b50000"></div><div class="m-category">リップ</div></div><div class="m-name">ピュアレッドマット</div><div class="m-desc">ブリティッシュパンクへのオマージュ。政治的な純粋レッドをマットに。ラインはくっきり、ぼかしなし。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#06d6a0,#118ab2)"></div><div class="m-category">アクセント</div></div><div class="m-name">エレクトリックグリーンライン</div><div class="m-desc">目尻に細いエレクトリックグリーンのグラフィックライン1本。コンセプチュアルなアクセント。</div></div></div>
-      <div class="mood-tags"><span class="mood-tag">エッジィ</span><span class="mood-tag">パンク</span><span class="mood-tag">非対称</span><span class="mood-tag">コンセプチュアル</span><span class="mood-tag">ブリティッシュ</span></div>
+      <div class="makeup-heading">Makeup for This Exhibition</div>
+      <div class="palette-visual"><div class="palette-swatch" style="background:#0a0a0a"><div class="swatch-label">Ink Black</div></div><div class="palette-swatch" style="background:#cc1e2e"><div class="swatch-label">Blood Red</div></div><div class="palette-swatch" style="background:#f4d35e"><div class="swatch-label">Yellow</div></div><div class="palette-swatch" style="background:#06d6a0"><div class="swatch-label">Electric</div></div><div class="palette-swatch" style="background:#f5f5f5"><div class="swatch-label">Porcelain</div></div><div class="palette-swatch" style="background:#3d405b"><div class="swatch-label">Slate</div></div></div>
+      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#1a1a2e,#cc1e2e)"></div><div class="m-category">Graphic Eye</div></div><div class="m-name">Ink Black × Blood Red</div><div class="m-desc">Black smoky all over. An asymmetric blood-red line along the lower lash — the provocative spirit of YBA.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0f0f0"></div><div class="m-category">Base</div></div><div class="m-name">Porcelain Flat Matte</div><div class="m-desc">Poreless white porcelain base. Emotionless, inorganic skin embodies conceptual art's world.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#b50000"></div><div class="m-category">Lip</div></div><div class="m-name">Pure Red Matte</div><div class="m-desc">An homage to British punk. Political pure red, matte. No blurring — hard edge only.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#06d6a0,#118ab2)"></div><div class="m-category">Accent</div></div><div class="m-name">Electric Green Line</div><div class="m-desc">One thin electric-green graphic line at the outer corner. A single conceptual accent.</div></div></div>
+      <div class="mood-tags"><span class="mood-tag">Edgy</span><span class="mood-tag">Punk</span><span class="mood-tag">Asymmetric</span><span class="mood-tag">Conceptual</span><span class="mood-tag">British</span></div>
     </div></div>
   </div>
   <div class="access-row">
     <div class="access-info">
-      <div class="access-station">東京メトロ千代田線「乃木坂」徒歩1分</div>
-      <div class="access-fee">🎟 一般 2,000円</div>
+      <div class="access-station">Tokyo Metro Chiyoda Line "Nogizaka" 1 min walk</div>
+      <div class="access-fee">🎟 General ¥2,000</div>
     </div>
-    <a class="map-btn" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 地図で見る</a>
+    <a class="map-btn" href="https://maps.google.com/?q=National+Art+Center+Tokyo+7-22-2+Roppongi+Minato-ku" target="_blank" rel="noopener">📍 Map</a>
   </div>
 </div>
-<div class="ex-card" data-area="ueno" data-genre="western" data-search="スウェーデン 北欧 カール ラーション 東京都美術館 上野">
+<div class="ex-card" data-area="ueno" data-genre="western" data-search="Sweden Nordic Carl Larsson Tokyo Metropolitan Museum Ueno">
   <div class="palette-strip"><span style="background:#e8d5b7"></span><span style="background:#a8c5a0"></span><span style="background:#c9dde8"></span><span style="background:#d4a878"></span><span style="background:#e0b8a0"></span><span style="background:#b8d0c0"></span><span style="background:#f5f0e0"></span></div>
   <div class="card-inner">
     <div class="card-meta">
       <div class="card-venue-wrap">
-        <div class="card-venue">東京都美術館 — 上野</div>
+        <div class="card-venue">Tokyo Metropolitan Art Museum — Ueno</div>
         <div class="card-period">2026.01.27 — 04.12</div>
       </div>
-      <span class="card-status status-now">開催中</span>
+      <span class="card-status status-now">Now Showing</span>
     </div>
-    <div class="card-tags"><span class="tag" style="color:#a8c5a0">北欧</span><span class="tag" style="color:#d4a878">19世紀</span><span class="tag" style="color:#c9dde8">光</span></div>
-    <div class="card-title">スウェーデン絵画<br>北欧の光、日常のかがやき</div>
-    <div class="card-desc">カール・ラーションらが描く穏やかな日常と北欧の光。スウェーデン国立美術館全面協力による待望の来日展。</div>
-    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="card-tags"><span class="tag" style="color:#a8c5a0">Nordic</span><span class="tag" style="color:#d4a878">19th c.</span><span class="tag" style="color:#c9dde8">Light</span></div>
+    <div class="card-title">Swedish Painting<br>Nordic Light, Everyday Radiance</div>
+    <div class="card-desc">The quiet everyday life and Nordic light painted by Carl Larsson and others. A long-awaited Japan tour fully supported by Nationalmuseum Sweden.</div>
+    <div class="tap-hint">Tap to see makeup suggestions ▾</div>
     <div class="makeup-panel"><div class="makeup-panel-inner">
-      <div class="makeup-heading">この展覧会に似合うメイク</div>
-      <div class="palette-visual"><div class="palette-swatch" style="background:#b8d4c0"><div class="swatch-label">冬の森</div></div><div class="palette-swatch" style="background:#c9dde8"><div class="swatch-label">スカイ</div></div><div class="palette-swatch" style="background:#f0e8d8"><div class="swatch-label">白樺</div></div><div class="palette-swatch" style="background:#d4a878"><div class="swatch-label">シナモン</div></div><div class="palette-swatch" style="background:#e0b8a0"><div class="swatch-label">サーモン</div></div><div class="palette-swatch" style="background:#a8b8a0"><div class="swatch-label">苔色</div></div></div>
-      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#b8d4c0,#d4e8f0)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">フロストグリーン × スカイシルバー</div><div class="m-desc">北欧の冬の森を映したフロスティなグリーン。目頭と眉骨にシルバーパールをのせ、冷たく澄んだ光感を。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0e0c8"></div><div class="m-category">ベース</div></div><div class="m-name">ナチュラルそばかす風</div><div class="m-desc">ライトカバーのティンテッドモイスチャライザー。ラーションが描く自然な生命感を—そばかすやムラを消しすぎず残す。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#e0a890"></div><div class="m-category">リップ</div></div><div class="m-name">スカンジナビアコーラル</div><div class="m-desc">北欧の健康的な頬を想う柔らかいコーラル。唇にも同じ色をのせて、全体を自然体に整える。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#f0d0b8,#f5e8d0)"></div><div class="m-category">チーク</div></div><div class="m-name">ふんわりピーチブラッシュ</div><div class="m-desc">頬全体に広がるほんのりとしたピーチ。まるで外で遊んで帰ってきたような自然な血色感に。</div></div></div>
-      <div class="mood-tags"><span class="mood-tag">ナチュラル</span><span class="mood-tag">北欧ライフスタイル</span><span class="mood-tag">フレッシュ</span><span class="mood-tag">日常の美</span><span class="mood-tag">透明感</span></div>
+      <div class="makeup-heading">Makeup for This Exhibition</div>
+      <div class="palette-visual"><div class="palette-swatch" style="background:#b8d4c0"><div class="swatch-label">Winter Forest</div></div><div class="palette-swatch" style="background:#c9dde8"><div class="swatch-label">Sky</div></div><div class="palette-swatch" style="background:#f0e8d8"><div class="swatch-label">Birch</div></div><div class="palette-swatch" style="background:#d4a878"><div class="swatch-label">Cinnamon</div></div><div class="palette-swatch" style="background:#e0b8a0"><div class="swatch-label">Salmon</div></div><div class="palette-swatch" style="background:#a8b8a0"><div class="swatch-label">Moss</div></div></div>
+      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#b8d4c0,#d4e8f0)"></div><div class="m-category">Eye Shadow</div></div><div class="m-name">Frost Green × Sky Silver</div><div class="m-desc">Frosty green reflecting Nordic winter forest. Silver pearl at inner corner and brow bone for crisp, clear luminosity.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0e0c8"></div><div class="m-category">Base</div></div><div class="m-name">Natural Freckle Finish</div><div class="m-desc">Light-coverage tinted moisturizer. Keep imperfections — Larsson's natural vitality in skin form.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#e0a890"></div><div class="m-category">Lip</div></div><div class="m-name">Scandinavian Coral</div><div class="m-desc">Soft coral evoking Nordic healthy cheeks. Same shade on lips for an effortlessly natural look.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#f0d0b8,#f5e8d0)"></div><div class="m-category">Cheek</div></div><div class="m-name">Fluffy Peach Blush</div><div class="m-desc">Barely-there peach swept across the cheeks — rosy as if just back from a walk outside.</div></div></div>
+      <div class="mood-tags"><span class="mood-tag">Natural</span><span class="mood-tag">Nordic Lifestyle</span><span class="mood-tag">Fresh</span><span class="mood-tag">Everyday Beauty</span><span class="mood-tag">Luminous</span></div>
     </div></div>
   </div>
   <div class="access-row">
     <div class="access-info">
-      <div class="access-station">JR「上野」徒歩7分 / 東京メトロ「上野」徒歩10分</div>
-      <div class="access-fee">🎟 一般 1,900円</div>
+      <div class="access-station">JR "Ueno" 7 min walk / Tokyo Metro "Ueno" 10 min walk</div>
+      <div class="access-fee">🎟 General ¥1,900</div>
     </div>
-    <a class="map-btn" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 地図で見る</a>
+    <a class="map-btn" href="https://maps.google.com/?q=Tokyo+Metropolitan+Art+Museum+8-36+Ueno+Park+Taito-ku" target="_blank" rel="noopener">📍 Map</a>
   </div>
 </div>
-<div class="ex-card" data-area="marunouchi" data-genre="japanese" data-search="新版画 木版画 川瀬巴水 小林清親 三菱一号館 丸の内 日本">
+<div class="ex-card" data-area="marunouchi" data-genre="japanese" data-search="Shin-hanga woodblock print Kawase Hasui Kobayashi Kiyochika Mitsubishi Ichigokan Marunouchi">
   <div class="palette-strip"><span style="background:#1c3a4a"></span><span style="background:#8b4040"></span><span style="background:#d4c078"></span><span style="background:#6a8c70"></span><span style="background:#2c4860"></span><span style="background:#e8d5b0"></span><span style="background:#4a3020"></span></div>
   <div class="card-inner">
     <div class="card-meta">
       <div class="card-venue-wrap">
-        <div class="card-venue">三菱一号館美術館 — 丸の内</div>
+        <div class="card-venue">Mitsubishi Ichigokan Museum — Marunouchi</div>
         <div class="card-period">2026.02.19 — 05.24</div>
       </div>
-      <span class="card-status status-now">開催中</span>
+      <span class="card-status status-now">Now Showing</span>
     </div>
-    <div class="card-tags"><span class="tag" style="color:#8b4040">木版画</span><span class="tag" style="color:#1c3a4a">近代日本</span><span class="tag" style="color:#d4c078">明治〜昭和</span></div>
-    <div class="card-title">トワイライト、新版画<br>小林清親から川瀬巴水まで</div>
-    <div class="card-desc">黄昏の光線画から叙情的な新版画へ。スミソニアン所蔵の傑作を中心に明治〜昭和の風景木版画の系譜を辿る。</div>
-    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="card-tags"><span class="tag" style="color:#8b4040">Woodblock Print</span><span class="tag" style="color:#1c3a4a">Modern Japan</span><span class="tag" style="color:#d4c078">Meiji–Shōwa</span></div>
+    <div class="card-title">Twilight, Shin-Hanga<br>From Kiyochika to Kawase Hasui</div>
+    <div class="card-desc">From twilight light paintings to lyrical shin-hanga. Smithsonian masterpieces trace the lineage of Japanese landscape woodblock prints from Meiji to Shōwa.</div>
+    <div class="tap-hint">Tap to see makeup suggestions ▾</div>
     <div class="makeup-panel"><div class="makeup-panel-inner">
-      <div class="makeup-heading">この展覧会に似合うメイク</div>
-      <div class="palette-visual"><div class="palette-swatch" style="background:#1c2c40"><div class="swatch-label">夜藍</div></div><div class="palette-swatch" style="background:#5a2838"><div class="swatch-label">深紫</div></div><div class="palette-swatch" style="background:#c87840"><div class="swatch-label">夕暮れ</div></div><div class="palette-swatch" style="background:#8b3030"><div class="swatch-label">朱赤</div></div><div class="palette-swatch" style="background:#d4b870"><div class="swatch-label">金箔</div></div><div class="palette-swatch" style="background:#6a8c70"><div class="swatch-label">松緑</div></div></div>
-      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#2c1a3a,#8b3a50)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">藍×深紫 黄昏グラデ</div><div class="m-desc">藍色と深紫を重ねた黄昏色。目尻側に向かって深みを増し、朱赤のライナーを一筆いれて粋な和の目元に。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#d4b870,#f0d890)"></div><div class="m-category">ハイライト</div></div><div class="m-name">金箔シャンパンゴールド</div><div class="m-desc">木版画の金雲をイメージした輝き。涙袋・鼻筋・唇山にシャンパンゴールドを置いて贅沢な艶を演出。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#8b2830"></div><div class="m-category">リップ</div></div><div class="m-name">臙脂（えんじ）漆塗り</div><div class="m-desc">深みのある朱・臙脂色をラインをくっきり引いてのせる。和の格式とモダンの間を行く洗練されたリップ。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#3a2818,#6a4830)"></div><div class="m-category">ベース・眉</div></div><div class="m-name">陶器肌 × シャープ眉</div><div class="m-desc">版画の輪郭線のように眉を明確に描く。ベースはフラットで均一な陶器質感。</div></div></div>
-      <div class="mood-tags"><span class="mood-tag">和モダン</span><span class="mood-tag">黄昏</span><span class="mood-tag">金箔グロウ</span><span class="mood-tag">臙脂リップ</span><span class="mood-tag">格式</span></div>
+      <div class="makeup-heading">Makeup for This Exhibition</div>
+      <div class="palette-visual"><div class="palette-swatch" style="background:#1c2c40"><div class="swatch-label">Night Indigo</div></div><div class="palette-swatch" style="background:#5a2838"><div class="swatch-label">Deep Purple</div></div><div class="palette-swatch" style="background:#c87840"><div class="swatch-label">Dusk</div></div><div class="palette-swatch" style="background:#8b3030"><div class="swatch-label">Vermilion</div></div><div class="palette-swatch" style="background:#d4b870"><div class="swatch-label">Gold Leaf</div></div><div class="palette-swatch" style="background:#6a8c70"><div class="swatch-label">Pine Green</div></div></div>
+      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#2c1a3a,#8b3a50)"></div><div class="m-category">Eye Shadow</div></div><div class="m-name">Indigo × Deep Purple Dusk Gradient</div><div class="m-desc">Twilight tones of indigo and purple deepening toward outer corner. Add vermilion liner for chic Japanese eyes.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#d4b870,#f0d890)"></div><div class="m-category">Highlight</div></div><div class="m-name">Gold Leaf Champagne</div><div class="m-desc">Gold-cloud inspiration from woodblock prints. Champagne gold on tear duct, nose bridge and cupid's bow.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#8b2830"></div><div class="m-category">Lip</div></div><div class="m-name">Crimson Lacquer</div><div class="m-desc">Deep crimson-bordeaux with a sharp, defined line. Refined lip walking between Japanese formality and modernity.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#3a2818,#6a4830)"></div><div class="m-category">Base & Brow</div></div><div class="m-name">Porcelain Skin × Sharp Brow</div><div class="m-desc">Brows drawn precisely like woodblock outlines. Flat, even porcelain texture base.</div></div></div>
+      <div class="mood-tags"><span class="mood-tag">Japanese Modern</span><span class="mood-tag">Twilight</span><span class="mood-tag">Gold Leaf Glow</span><span class="mood-tag">Crimson Lip</span><span class="mood-tag">Formal</span></div>
     </div></div>
   </div>
   <div class="access-row">
     <div class="access-info">
-      <div class="access-station">東京メトロ「日比谷」「二重橋前」徒歩3分</div>
-      <div class="access-fee">🎟 一般 2,100円</div>
+      <div class="access-station">Tokyo Metro "Hibiya" / "Nijubashimae" 3 min walk</div>
+      <div class="access-fee">🎟 General ¥2,100</div>
     </div>
-    <a class="map-btn" href="https://maps.google.com/?q=三菱一号館美術館+東京都千代田区丸の内2-6-2" target="_blank" rel="noopener">📍 地図で見る</a>
+    <a class="map-btn" href="https://maps.google.com/?q=Mitsubishi+Ichigokan+Museum+2-6-2+Marunouchi+Chiyoda-ku" target="_blank" rel="noopener">📍 Map</a>
   </div>
 </div>
-<div class="ex-card" data-area="kiyosumi" data-genre="contemporary" data-search="ソル ルウィット 幾何学 コンセプチュアル 東京都現代美術館 清澄白河">
+<div class="ex-card" data-area="kiyosumi" data-genre="contemporary" data-search="Sol LeWitt geometric conceptual Museum of Contemporary Art Kiyosumishirakawa">
   <div class="palette-strip"><span style="background:#cc2222"></span><span style="background:#2255cc"></span><span style="background:#cccc11"></span><span style="background:#000000"></span><span style="background:#ffffff"></span><span style="background:#cc2222"></span><span style="background:#22aacc"></span></div>
   <div class="card-inner">
     <div class="card-meta">
       <div class="card-venue-wrap">
-        <div class="card-venue">東京都現代美術館 — 清澄白河</div>
+        <div class="card-venue">Museum of Contemporary Art Tokyo — Kiyosumi</div>
         <div class="card-period">2025.12.25 — 2026.04.02</div>
       </div>
-      <span class="card-status status-now">開催中</span>
+      <span class="card-status status-now">Now Showing</span>
     </div>
-    <div class="card-tags"><span class="tag" style="color:#2255cc">コンセプチュアル</span><span class="tag" style="color:#cc2222">幾何学</span><span class="tag" style="color:#888">ミニマル</span></div>
-    <div class="card-title">ソル・ルウィット<br>オープン・ストラクチャー</div>
-    <div class="card-desc">純粋な構造と概念で芸術とは何かを問う。ウォールドローイング6点を体感できる日本初個展。思考そのものが作品になる空間。</div>
-    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="card-tags"><span class="tag" style="color:#2255cc">Conceptual</span><span class="tag" style="color:#cc2222">Geometric</span><span class="tag" style="color:#888">Minimal</span></div>
+    <div class="card-title">Sol LeWitt<br>Open Structures</div>
+    <div class="card-desc">Questioning what art is through pure structure and concept. The first major solo exhibition in Japan with 6 wall drawings. Space where thought itself becomes the artwork.</div>
+    <div class="tap-hint">Tap to see makeup suggestions ▾</div>
     <div class="makeup-panel"><div class="makeup-panel-inner">
-      <div class="makeup-heading">この展覧会に似合うメイク</div>
-      <div class="palette-visual"><div class="palette-swatch" style="background:#cc2222"><div class="swatch-label">プライマリーR</div></div><div class="palette-swatch" style="background:#2255cc"><div class="swatch-label">プライマリーB</div></div><div class="palette-swatch" style="background:#cccc11"><div class="swatch-label">プライマリーY</div></div><div class="palette-swatch" style="background:#111111"><div class="swatch-label">ブラック</div></div><div class="palette-swatch" style="background:#f5f5f5"><div class="swatch-label">ホワイト</div></div><div class="palette-swatch" style="background:#22aacc"><div class="swatch-label">セカンダリー</div></div></div>
-      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(90deg,#cc2222,#2255cc)"></div><div class="m-category">グラフィックアイ</div></div><div class="m-name">三原色 非対称ライン</div><div class="m-desc">左右で異なる原色のグラフィックラインを引く。赤・青・黄いずれか1色を選び、幾何学的な直線で目元に構造を。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0f0f0"></div><div class="m-category">ベース</div></div><div class="m-name">ゼロ・ファンデ マット</div><div class="m-desc">キャンバスとなる完全なフラット肌。色も質感も感情も排除した余白——概念的な「無」の肌。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#111111"></div><div class="m-category">リップ</div></div><div class="m-name">漆黒マット or 無彩色</div><div class="m-desc">ブラックマットで幾何学的な輪郭を強調するか、あえてグロスレスの素唇で色を拒絶する。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#cc2222,#cccc11,#2255cc)"></div><div class="m-category">チーク代わり</div></div><div class="m-name">ジオメトリック ブラッシュ</div><div class="m-desc">三角形や直線状にカットしたブラッシュを彫刻的に。「構造」を意識したアプリケーション。</div></div></div>
-      <div class="mood-tags"><span class="mood-tag">アートメイク</span><span class="mood-tag">コンセプチュアル</span><span class="mood-tag">三原色</span><span class="mood-tag">ジオメトリック</span><span class="mood-tag">前衛</span></div>
+      <div class="makeup-heading">Makeup for This Exhibition</div>
+      <div class="palette-visual"><div class="palette-swatch" style="background:#cc2222"><div class="swatch-label">Primary R</div></div><div class="palette-swatch" style="background:#2255cc"><div class="swatch-label">Primary B</div></div><div class="palette-swatch" style="background:#cccc11"><div class="swatch-label">Primary Y</div></div><div class="palette-swatch" style="background:#111111"><div class="swatch-label">Black</div></div><div class="palette-swatch" style="background:#f5f5f5"><div class="swatch-label">White</div></div><div class="palette-swatch" style="background:#22aacc"><div class="swatch-label">Secondary</div></div></div>
+      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(90deg,#cc2222,#2255cc)"></div><div class="m-category">Graphic Eye</div></div><div class="m-name">Primary Color Asymmetric Lines</div><div class="m-desc">Different primary color graphic lines on each eye. Choose red, blue, or yellow — geometric straight lines structure the eyes.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#f0f0f0"></div><div class="m-category">Base</div></div><div class="m-name">Zero Foundation Matte</div><div class="m-desc">Complete flat skin as canvas. Eliminate all color, texture, and emotion — conceptual "nothingness" skin.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#111111"></div><div class="m-category">Lip</div></div><div class="m-name">Jet Black Matte or Bare</div><div class="m-desc">Black matte to emphasize geometric contours, or bare lips to reject color entirely. Both are structural.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#cc2222,#cccc11,#2255cc)"></div><div class="m-category">Cheek Alt.</div></div><div class="m-name">Geometric Blush</div><div class="m-desc">Apply blush in triangular or linear cuts, sculpturally. Application that is conscious of "structure" not circles.</div></div></div>
+      <div class="mood-tags"><span class="mood-tag">Art Makeup</span><span class="mood-tag">Conceptual</span><span class="mood-tag">Primary Colors</span><span class="mood-tag">Geometric</span><span class="mood-tag">Avant-Garde</span></div>
     </div></div>
   </div>
   <div class="access-row">
     <div class="access-info">
-      <div class="access-station">東京メトロ半蔵門線「清澄白河」徒歩9分</div>
-      <div class="access-fee">🎟 一般 1,800円</div>
+      <div class="access-station">Tokyo Metro Hanzomon Line "Kiyosumishirakawa" 9 min walk</div>
+      <div class="access-fee">🎟 General ¥1,800</div>
     </div>
-    <a class="map-btn" href="https://maps.google.com/?q=東京都現代美術館+東京都江東区三好4-1-1" target="_blank" rel="noopener">📍 地図で見る</a>
+    <a class="map-btn" href="https://maps.google.com/?q=Museum+of+Contemporary+Art+Tokyo+4-1-1+Miyoshi+Koto-ku" target="_blank" rel="noopener">📍 Map</a>
   </div>
 </div>
-<div class="ex-card" data-area="aoyama" data-genre="japanese" data-search="根津美術館 武器 武具 甲冑 日本美術 南青山">
+<div class="ex-card" data-area="aoyama" data-genre="japanese" data-search="Nezu Museum weapons armor Japanese art Minami-Aoyama">
   <div class="palette-strip"><span style="background:#2d1b0e"></span><span style="background:#8b7355"></span><span style="background:#c8a96e"></span><span style="background:#e8d5a3"></span><span style="background:#4a6741"></span><span style="background:#3a2010"></span><span style="background:#a08060"></span></div>
   <div class="card-inner">
     <div class="card-meta">
       <div class="card-venue-wrap">
-        <div class="card-venue">根津美術館 — 南青山</div>
+        <div class="card-venue">Nezu Museum — Minami-Aoyama</div>
         <div class="card-period">2026.02.14 — 03.29</div>
       </div>
-      <span class="card-status status-now">開催中</span>
+      <span class="card-status status-now">Now Showing</span>
     </div>
-    <div class="card-tags"><span class="tag" style="color:#8b7355">日本美術</span><span class="tag" style="color:#4a6741">武具</span><span class="tag" style="color:#c8a96e">重文</span></div>
-    <div class="card-title">英姿颯爽<br>根津美術館の武器・武具</div>
-    <div class="card-desc">重要文化財を含む武器・武具コレクション。おとぎ話をモチーフにした愛らしい刀装具から格調高い甲冑まで武の美を探る。</div>
-    <div class="tap-hint">タップしてメイク提案を見る ▾</div>
+    <div class="card-tags"><span class="tag" style="color:#8b7355">Japanese Art</span><span class="tag" style="color:#4a6741">Armor</span><span class="tag" style="color:#c8a96e">Important Cultural Property</span></div>
+    <div class="card-title">Gallant Figures<br>Weapons &amp; Armor at Nezu Museum</div>
+    <div class="card-desc">A collection including important cultural properties. From charming fairytale-motif sword fittings to stately armor — exploring the beauty of the martial.</div>
+    <div class="tap-hint">Tap to see makeup suggestions ▾</div>
     <div class="makeup-panel"><div class="makeup-panel-inner">
-      <div class="makeup-heading">この展覧会に似合うメイク</div>
-      <div class="palette-visual"><div class="palette-swatch" style="background:#2d1b0e"><div class="swatch-label">玄鉄</div></div><div class="palette-swatch" style="background:#6a3820"><div class="swatch-label">漆褐</div></div><div class="palette-swatch" style="background:#c8a96e"><div class="swatch-label">金</div></div><div class="palette-swatch" style="background:#8b2028"><div class="swatch-label">緋</div></div><div class="palette-swatch" style="background:#4a6741"><div class="swatch-label">萌葱</div></div><div class="palette-swatch" style="background:#e8d8a0"><div class="swatch-label">象牙</div></div></div>
-      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#3d2818,#8b5838)"></div><div class="m-category">アイシャドウ</div></div><div class="m-name">鉄錆ブロンズ × 朱</div><div class="m-desc">鉄と錆を思わせるブロンズ〜ダークブラウン。目尻に朱色のシャドウをさりげなく重ねて武士の凛を演出。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#c8a96e,#e8d090)"></div><div class="m-category">ハイライト</div></div><div class="m-name">甲冑の金箔 ゴールド</div><div class="m-desc">甲冑の金装飾をリスペクトしたゴールドハイライター。頬骨に高く置いて彫刻のような立体感を。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#6b2028"></div><div class="m-category">リップ</div></div><div class="m-name">深緋（こきひ）漆</div><div class="m-desc">深みのある緋色〜臙脂。一刀彫りのようにくっきりとラインを引き、凜とした和の格式を纏う。</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#2d1b0e,#3d2818)"></div><div class="m-category">アイブロウ</div></div><div class="m-name">凜とした武士眉</div><div class="m-desc">甲冑の精密な細工のように、眉を丁寧に整えシャープに描く。凜とした強さと品格が漂う目もとに。</div></div></div>
-      <div class="mood-tags"><span class="mood-tag">和の格式</span><span class="mood-tag">武士の凛</span><span class="mood-tag">金箔グロウ</span><span class="mood-tag">深緋リップ</span><span class="mood-tag">ブロンズアイ</span></div>
+      <div class="makeup-heading">Makeup for This Exhibition</div>
+      <div class="palette-visual"><div class="palette-swatch" style="background:#2d1b0e"><div class="swatch-label">Iron Black</div></div><div class="palette-swatch" style="background:#6a3820"><div class="swatch-label">Lacquer Brown</div></div><div class="palette-swatch" style="background:#c8a96e"><div class="swatch-label">Gold</div></div><div class="palette-swatch" style="background:#8b2028"><div class="swatch-label">Crimson</div></div><div class="palette-swatch" style="background:#4a6741"><div class="swatch-label">Moss Green</div></div><div class="palette-swatch" style="background:#e8d8a0"><div class="swatch-label">Ivory</div></div></div>
+      <div class="makeup-grid"><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#3d2818,#8b5838)"></div><div class="m-category">Eye Shadow</div></div><div class="m-name">Iron-Rust Bronze × Vermilion</div><div class="m-desc">Bronze to dark brown evoking iron and rust. Subtle vermilion shadow layered at outer corner for warrior's poise.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#c8a96e,#e8d090)"></div><div class="m-category">Highlight</div></div><div class="m-name">Gold Leaf Armor Glow</div><div class="m-desc">Gold highlighter in respect of armor's gold ornamentation. Placed high on the cheekbone for sculptural dimension.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:#6b2028"></div><div class="m-category">Lip</div></div><div class="m-name">Deep Crimson Lacquer</div><div class="m-desc">Deep crimson to bordeaux with a sharp defined line. Wearing Japanese formality with sleek precision.</div></div><div class="makeup-item"><div class="m-item-header"><div class="m-dot" style="background:linear-gradient(135deg,#2d1b0e,#3d2818)"></div><div class="m-category">Brow</div></div><div class="m-name">Resolute Warrior Brow</div><div class="m-desc">Brows carefully shaped and drawn sharp, like the precision of armor craftsmanship. Strength and grace.</div></div></div>
+      <div class="mood-tags"><span class="mood-tag">Japanese Formality</span><span class="mood-tag">Warrior's Poise</span><span class="mood-tag">Gold Leaf Glow</span><span class="mood-tag">Deep Crimson Lip</span><span class="mood-tag">Bronze Eye</span></div>
     </div></div>
   </div>
   <div class="access-row">
     <div class="access-info">
-      <div class="access-station">東京メトロ銀座線「表参道」徒歩8分</div>
-      <div class="access-fee">🎟 一般 1,300円</div>
+      <div class="access-station">Tokyo Metro Ginza Line "Omotesando" 8 min walk</div>
+      <div class="access-fee">🎟 General ¥1,300</div>
     </div>
-    <a class="map-btn" href="https://maps.google.com/?q=根津美術館+東京都港区南青山6-5-1" target="_blank" rel="noopener">📍 地図で見る</a>
+    <a class="map-btn" href="https://maps.google.com/?q=Nezu+Museum+6-5-1+Minami-Aoyama+Minato-ku+Tokyo" target="_blank" rel="noopener">📍 Map</a>
   </div>
 </div>
   </div>
@@ -739,153 +739,153 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 <section id="upcoming">
   <div class="section-head reveal">
     <div class="section-num">02</div>
-    <div class="section-titles"><p>Upcoming Exhibitions</p><h2>開催予定の展覧会</h2></div>
+    <div class="section-titles"><p>Upcoming Exhibitions</p><h2>Coming Soon</h2></div>
     <div class="section-line"></div>
-    <div class="count-badge">全 9 件</div>
+    <div class="count-badge">9 upcoming</div>
   </div>
   <div class="upcoming-grid">
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#c8963c"></span><span style="background:#e8d090"></span><span style="background:#b0a080"></span><span style="background:#f5f0e0"></span><span style="background:#8a7a60"></span></div>
   <div class="up-num">01</div>
-  <div class="up-venue">国立西洋美術館 — 上野</div>
-  <div class="up-tags"><span class="up-tag" style="color:#c8963c">彫刻</span><span class="up-tag" style="color:#8a7a60">モダニズム</span><span class="up-tag" style="color:#b0a080">抽象</span></div>
-  <div class="up-title">ブランクーシ<br>本質を刻む彫刻家</div>
-  <div class="up-desc">コンスタンティン・ブランクーシの日本初大規模回顧展。卵形・鳥・無限柱——純粋な形態が宿す精神性。</div>
+  <div class="up-venue">National Museum of Western Art — Ueno</div>
+  <div class="up-tags"><span class="up-tag" style="color:#c8963c">Sculpture</span><span class="up-tag" style="color:#8a7a60">Modernism</span><span class="up-tag" style="color:#b0a080">Abstract</span></div>
+  <div class="up-title">Brancusi<br>Sculptor of the Essence</div>
+  <div class="up-desc">The first large-scale Brancusi retrospective in Japan. Egg forms, birds, the infinite column — the spirituality within pure form.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#c8963c"></span><span style="background:#e8d090"></span><span style="background:#f5f0e8"></span><span style="background:#8a7a60"></span><span style="background:#3a2818"></span><span style="background:#d4c8a8"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.06.09 — 09.06</div>
-    <a class="up-map" href="https://maps.google.com/?q=国立西洋美術館+東京都台東区上野公園7-7" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=National+Museum+of+Western+Art+7-7+Ueno+Park+Taito-ku+Tokyo" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#1a1a2e"></span><span style="background:#8b6a40"></span><span style="background:#c8b078"></span><span style="background:#e8d8b0"></span><span style="background:#4a3828"></span></div>
   <div class="up-num">02</div>
-  <div class="up-venue">国立新美術館 — 六本木</div>
-  <div class="up-tags"><span class="up-tag" style="color:#8b6a40">古代</span><span class="up-tag" style="color:#c8b078">ルーヴル</span><span class="up-tag" style="color:#1a1a2e">彫刻</span></div>
-  <div class="up-title">ルーヴル美術館展<br>古代ギリシャの美</div>
-  <div class="up-desc">ルーヴルが誇る古代ギリシャ彫刻・陶器・装飾品を一堂に。人体美の理想と神話の世界が東京に降り立つ。</div>
+  <div class="up-venue">The National Art Center — Roppongi</div>
+  <div class="up-tags"><span class="up-tag" style="color:#8b6a40">Ancient</span><span class="up-tag" style="color:#c8b078">Louvre</span><span class="up-tag" style="color:#1a1a2e">Sculpture</span></div>
+  <div class="up-title">Louvre Museum Exhibition<br>The Beauty of Ancient Greece</div>
+  <div class="up-desc">Ancient Greek sculptures, pottery and decorative arts from the Louvre in one place. The ideal of human beauty and mythology descend upon Tokyo.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#1a1a2e"></span><span style="background:#e8d8b0"></span><span style="background:#c8b078"></span><span style="background:#8b6a40"></span><span style="background:#f0e8d0"></span><span style="background:#b0987a"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.06.03 — 08.31</div>
-    <a class="up-map" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=National+Art+Center+Tokyo+7-22-2+Roppongi+Minato-ku" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#e8a030"></span><span style="background:#f0c868"></span><span style="background:#88b8d8"></span><span style="background:#d0e8f0"></span><span style="background:#c87820"></span></div>
   <div class="up-num">03</div>
-  <div class="up-venue">東京都美術館 — 上野</div>
-  <div class="up-tags"><span class="up-tag" style="color:#e8a030">ロマン主義</span><span class="up-tag" style="color:#88b8d8">英国</span><span class="up-tag" style="color:#c87820">風景</span></div>
-  <div class="up-title">ターナー<br>光の詩人、嵐の画家</div>
-  <div class="up-desc">テート・ブリテン所蔵の傑作群が来日。嵐と光が溶け合うターナーの風景画——色彩が音楽のように鳴り響く。</div>
+  <div class="up-venue">Tokyo Metropolitan Art Museum — Ueno</div>
+  <div class="up-tags"><span class="up-tag" style="color:#e8a030">Romanticism</span><span class="up-tag" style="color:#88b8d8">British</span><span class="up-tag" style="color:#c87820">Landscape</span></div>
+  <div class="up-title">Turner<br>Poet of Light, Painter of Storms</div>
+  <div class="up-desc">Masterpieces from Tate Britain arrive in Japan. Turner's landscapes where storms and light dissolve — color resonates like music.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#e8a030"></span><span style="background:#f0c868"></span><span style="background:#88b8d8"></span><span style="background:#d0e8f0"></span><span style="background:#c8d8e8"></span><span style="background:#f8e8c0"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.07.11 — 10.04</div>
-    <a class="up-map" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=Tokyo+Metropolitan+Art+Museum+8-36+Ueno+Park+Taito-ku" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#8b2028"></span><span style="background:#2c5040"></span><span style="background:#c8a030"></span><span style="background:#1a2c40"></span><span style="background:#d8c890"></span></div>
   <div class="up-num">04</div>
-  <div class="up-venue">サントリー美術館 — 六本木</div>
-  <div class="up-tags"><span class="up-tag" style="color:#8b2028">琳派</span><span class="up-tag" style="color:#2c5040">日本画</span><span class="up-tag" style="color:#c8a030">江戸</span></div>
-  <div class="up-title">江戸琳派の華<br>酒井抱一と鈴木其一</div>
-  <div class="up-desc">光琳から続く琳派の意匠を江戸の感性で昇華した抱一と其一。四季の草花・波・風——装飾美の極致。</div>
+  <div class="up-venue">Suntory Museum of Art — Roppongi</div>
+  <div class="up-tags"><span class="up-tag" style="color:#8b2028">Rinpa</span><span class="up-tag" style="color:#2c5040">Japanese Painting</span><span class="up-tag" style="color:#c8a030">Edo</span></div>
+  <div class="up-title">Splendor of Edo Rinpa<br>Sakai Hōitsu &amp; Suzuki Kiitsu</div>
+  <div class="up-desc">Hōitsu and Kiitsu elevated the Rinpa tradition through Edo sensibility. Seasonal flowers, waves, wind — the pinnacle of decorative beauty.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#8b2028"></span><span style="background:#c8a030"></span><span style="background:#2c5040"></span><span style="background:#1a2c40"></span><span style="background:#d8c890"></span><span style="background:#e8d8b8"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.07.01 — 08.24</div>
-    <a class="up-map" href="https://maps.google.com/?q=サントリー美術館+東京都港区赤坂9-7-4" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=Suntory+Museum+of+Art+9-7-4+Akasaka+Minato-ku+Tokyo" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#2255a0"></span><span style="background:#f0e0a0"></span><span style="background:#8ab0c8"></span><span style="background:#d8b870"></span><span style="background:#304870"></span></div>
   <div class="up-num">05</div>
-  <div class="up-venue">東京都美術館 — 上野</div>
-  <div class="up-tags"><span class="up-tag" style="color:#2255a0">バロック</span><span class="up-tag" style="color:#d8b870">17世紀</span><span class="up-tag" style="color:#304870">オランダ</span></div>
-  <div class="up-title">フェルメールと<br>光の王国 オランダ黄金時代</div>
-  <div class="up-desc">マウリッツハイス美術館との共同企画。フェルメール3点を含む17世紀オランダ黄金時代の傑作20点。</div>
+  <div class="up-venue">Tokyo Metropolitan Art Museum — Ueno</div>
+  <div class="up-tags"><span class="up-tag" style="color:#2255a0">Baroque</span><span class="up-tag" style="color:#d8b870">17th c.</span><span class="up-tag" style="color:#304870">Dutch</span></div>
+  <div class="up-title">Vermeer &amp;<br>The Kingdom of Light: Dutch Golden Age</div>
+  <div class="up-desc">Joint project with the Mauritshuis. 20 masterworks of 17th-century Dutch Golden Age including 3 Vermeers. The magic of light through a window.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#2255a0"></span><span style="background:#8ab0c8"></span><span style="background:#f0e0a0"></span><span style="background:#d8b870"></span><span style="background:#f8f0e0"></span><span style="background:#c8a858"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.10.10 — 2027.01.18</div>
-    <a class="up-map" href="https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=Tokyo+Metropolitan+Art+Museum+8-36+Ueno+Park+Taito-ku" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#e8a0a0"></span><span style="background:#88b8d8"></span><span style="background:#f0d890"></span><span style="background:#a8c8a0"></span><span style="background:#d8a8c8"></span></div>
   <div class="up-num">06</div>
-  <div class="up-venue">森美術館 — 六本木</div>
-  <div class="up-tags"><span class="up-tag" style="color:#e8a0a0">現代日本</span><span class="up-tag" style="color:#88b8d8">絵画</span><span class="up-tag" style="color:#a8c8a0">ポップ</span></div>
-  <div class="up-title">奈良美智<br>Still Dreaming</div>
-  <div class="up-desc">大きな瞳の少女たちと孤独な犬——奈良美智の代表作と新作を網羅した大規模個展。子どもの目線が問う怒りと愛。</div>
+  <div class="up-venue">Mori Art Museum — Roppongi</div>
+  <div class="up-tags"><span class="up-tag" style="color:#e8a0a0">Contemporary Japan</span><span class="up-tag" style="color:#88b8d8">Painting</span><span class="up-tag" style="color:#a8c8a0">Pop</span></div>
+  <div class="up-title">Yoshitomo Nara<br>Still Dreaming</div>
+  <div class="up-desc">Girls with wide eyes and solitary dogs — a major retrospective covering Nara's signature works and new pieces. Anger and love through a child's gaze.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#e8a0a0"></span><span style="background:#88b8d8"></span><span style="background:#f0d890"></span><span style="background:#d8a8c8"></span><span style="background:#a8c8a0"></span><span style="background:#f8e8e0"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.07.25 — 11.01</div>
-    <a class="up-map" href="https://maps.google.com/?q=森美術館+東京都港区六本木6-10-1" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=Mori+Art+Museum+6-10-1+Roppongi+Minato-ku+Tokyo" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#606060"></span><span style="background:#a0a090"></span><span style="background:#d8d0c0"></span><span style="background:#303028"></span><span style="background:#e8e0d8"></span></div>
   <div class="up-num">07</div>
-  <div class="up-venue">国立新美術館 — 六本木</div>
-  <div class="up-tags"><span class="up-tag" style="color:#606060">もの派</span><span class="up-tag" style="color:#a0a090">概念</span><span class="up-tag" style="color:#303028">ミニマル</span></div>
-  <div class="up-title">李禹煥<br>余白の詩学</div>
-  <div class="up-desc">韓国・日本を拠点にもの派を牽引した李禹煥の大規模回顧展。石・鉄板・余白が対話する静謐な空間詩。</div>
+  <div class="up-venue">The National Art Center — Roppongi</div>
+  <div class="up-tags"><span class="up-tag" style="color:#606060">Mono-ha</span><span class="up-tag" style="color:#a0a090">Concept</span><span class="up-tag" style="color:#303028">Minimal</span></div>
+  <div class="up-title">Lee Ufan<br>Poetics of Emptiness</div>
+  <div class="up-desc">A major retrospective of Lee Ufan who led the Mono-ha movement. A quiet spatial poem where stone, iron, and empty space dialogue.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#303028"></span><span style="background:#606060"></span><span style="background:#a0a090"></span><span style="background:#d8d0c0"></span><span style="background:#e8e0d8"></span><span style="background:#f0ece8"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.09.10 — 11.24</div>
-    <a class="up-map" href="https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=National+Art+Center+Tokyo+7-22-2+Roppongi+Minato-ku" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#c87890"></span><span style="background:#d8a8b8"></span><span style="background:#8898a8"></span><span style="background:#e8c8d0"></span><span style="background:#607080"></span></div>
   <div class="up-num">08</div>
-  <div class="up-venue">弥生美術館 — 本郷</div>
-  <div class="up-tags"><span class="up-tag" style="color:#c87890">大正ロマン</span><span class="up-tag" style="color:#8898a8">日本画</span><span class="up-tag" style="color:#d8a8b8">挿絵</span></div>
-  <div class="up-title">竹久夢二<br>大正の恋と憂愁</div>
-  <div class="up-desc">大正浪漫の詩人画家・夢二の全貌。憂いを帯びた美人画・詩・装幀——100年を超えてなお輝く夢二美人の世界。</div>
+  <div class="up-venue">Yayoi Museum — Hongo</div>
+  <div class="up-tags"><span class="up-tag" style="color:#c87890">Taishō Romance</span><span class="up-tag" style="color:#8898a8">Japanese Painting</span><span class="up-tag" style="color:#d8a8b8">Illustration</span></div>
+  <div class="up-title">Yumeji Takehisa<br>Love &amp; Melancholy of Taishō</div>
+  <div class="up-desc">The full picture of Taishō's poet-painter Yumeji. Melancholic bijin-ga, poetry, bookbinding — the world of Yumeji's beauties shining over 100 years on.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#c87890"></span><span style="background:#d8a8b8"></span><span style="background:#e8c8d0"></span><span style="background:#8898a8"></span><span style="background:#607080"></span><span style="background:#f0e0e8"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.05.01 — 07.26</div>
-    <a class="up-map" href="https://maps.google.com/?q=弥生美術館+東京都文京区弥生2-4-3" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=Yayoi+Museum+2-4-3+Yayoi+Bunkyo-ku+Tokyo" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
 <div class="up-card reveal">
   <div class="up-accent"><span style="background:#3a5a90"></span><span style="background:#e83040"></span><span style="background:#f0d050"></span><span style="background:#50a060"></span><span style="background:#9858a8"></span></div>
   <div class="up-num">09</div>
-  <div class="up-venue">Bunkamura ザ・ミュージアム — 渋谷</div>
-  <div class="up-tags"><span class="up-tag" style="color:#3a5a90">表現主義</span><span class="up-tag" style="color:#e83040">ロシア</span><span class="up-tag" style="color:#9858a8">幻想</span></div>
-  <div class="up-title">シャガール<br>愛と夢想の色彩</div>
-  <div class="up-desc">空飛ぶ恋人・ヴィテブスクの村・青い夜——色彩の魔術師シャガールの絵画・版画・舞台美術を集めた総覧展。</div>
+  <div class="up-venue">Bunkamura The Museum — Shibuya</div>
+  <div class="up-tags"><span class="up-tag" style="color:#3a5a90">Expressionism</span><span class="up-tag" style="color:#e83040">Russian</span><span class="up-tag" style="color:#9858a8">Fantasy</span></div>
+  <div class="up-title">Chagall<br>Colors of Love &amp; Reverie</div>
+  <div class="up-desc">Flying lovers, Vitebsk, the blue night — a comprehensive survey of Chagall the color magician's paintings, prints, and stage art.</div>
   <div class="up-makeup-hint">
-    <div class="up-makeup-heading">似合うメイクのヒント</div>
+    <div class="up-makeup-heading">Makeup Hint</div>
     <div class="up-palette"><span style="background:#3a5a90"></span><span style="background:#e83040"></span><span style="background:#f0d050"></span><span style="background:#50a060"></span><span style="background:#9858a8"></span><span style="background:#c8e8f8"></span></div>
   </div>
   <div class="up-meta">
     <div class="up-period">2026.08.01 — 10.18</div>
-    <a class="up-map" href="https://maps.google.com/?q=Bunkamuraザ・ミュージアム+東京都渋谷区道玄坂2-24-1" target="_blank" rel="noopener">📍 Access</a>
+    <a class="up-map" href="https://maps.google.com/?q=Bunkamura+The+Museum+2-24-1+Dogenzaka+Shibuya-ku+Tokyo" target="_blank" rel="noopener">📍 Access</a>
   </div>
 </div>
   </div>
@@ -894,35 +894,35 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 <section id="diagnosis">
   <div class="section-head reveal">
     <div class="section-num">03</div>
-    <div class="section-titles"><p>Art × Makeup Diagnosis</p><h2>メイク診断</h2></div>
+    <div class="section-titles"><p>Art × Makeup Diagnosis</p><h2>Makeup Quiz</h2></div>
     <div class="section-line"></div>
   </div>
   <div class="diag-inner">
     <div class="diag-header reveal">
       <span class="diag-kicker">Art × Makeup Diagnosis</span>
-      <h2>あなたのメイクで<br><em>運命の展覧会</em>を探す</h2>
-      <p>4つの質問に答えてください。あなたのメイク傾向から今行くべき展覧会とパーフェクトメイクを提案します。</p>
+      <h2>Find Your<br><em>Destined Exhibition</em></h2>
+      <p>Answer 4 questions about your makeup style. We'll recommend the perfect exhibition and look for you.</p>
     </div>
     <div class="diag-steps" id="diag-form">
-      <div class="diag-step"><span class="step-num">01</span><div class="step-q">普段、何色のアイシャドウを使いますか？</div><div class="diag-opts"><button class="diag-opt" data-q="1" data-v="pastel">淡いパステル・ベージュ</button><button class="diag-opt" data-q="1" data-v="dark">ダーク・スモーキー</button><button class="diag-opt" data-q="1" data-v="earth">テラコッタ・ブラウン</button><button class="diag-opt" data-q="1" data-v="vivid">ビビッド・カラー</button></div></div>
-      <div class="diag-step"><span class="step-num">02</span><div class="step-q">リップの好みは？</div><div class="diag-opts"><button class="diag-opt" data-q="2" data-v="nude">ヌード・コーラル</button><button class="diag-opt" data-q="2" data-v="red">レッド・ボルドー</button><button class="diag-opt" data-q="2" data-v="deep">深みのある和色</button><button class="diag-opt" data-q="2" data-v="bare">グロスのみ・素唇</button></div></div>
-      <div class="diag-step"><span class="step-num">03</span><div class="step-q">ベースメイクのスタイルは？</div><div class="diag-opts"><button class="diag-opt" data-q="3" data-v="sheer">シアー・うすづき</button><button class="diag-opt" data-q="3" data-v="matte">マット・セミマット</button><button class="diag-opt" data-q="3" data-v="glow">ツヤ・グロウ肌</button><button class="diag-opt" data-q="3" data-v="porcelain">磁器・フルカバー</button></div></div>
-      <div class="diag-step"><span class="step-num">04</span><div class="step-q">休日のドレスコードは？</div><div class="diag-opts"><button class="diag-opt" data-q="4" data-v="casual">ナチュラルカジュアル</button><button class="diag-opt" data-q="4" data-v="edgy">エッジィ・ストリート</button><button class="diag-opt" data-q="4" data-v="elegant">エレガント・和洋折衷</button><button class="diag-opt" data-q="4" data-v="artistic">アート的・個性派</button></div></div>
+      <div class="diag-step"><span class="step-num">01</span><div class="step-q">What eyeshadow do you usually wear?</div><div class="diag-opts"><button class="diag-opt" data-q="1" data-v="pastel">Pastel & Beige</button><button class="diag-opt" data-q="1" data-v="dark">Dark & Smoky</button><button class="diag-opt" data-q="1" data-v="earth">Terracotta & Brown</button><button class="diag-opt" data-q="1" data-v="vivid">Vivid Colors</button></div></div>
+      <div class="diag-step"><span class="step-num">02</span><div class="step-q">What's your lip preference?</div><div class="diag-opts"><button class="diag-opt" data-q="2" data-v="nude">Nude & Coral</button><button class="diag-opt" data-q="2" data-v="red">Red & Bordeaux</button><button class="diag-opt" data-q="2" data-v="deep">Deep Japanese tones</button><button class="diag-opt" data-q="2" data-v="bare">Gloss only / Bare</button></div></div>
+      <div class="diag-step"><span class="step-num">03</span><div class="step-q">Your base makeup style?</div><div class="diag-opts"><button class="diag-opt" data-q="3" data-v="sheer">Sheer & Light</button><button class="diag-opt" data-q="3" data-v="matte">Matte & Semi-matte</button><button class="diag-opt" data-q="3" data-v="glow">Glow & Dewy</button><button class="diag-opt" data-q="3" data-v="porcelain">Porcelain & Full Cover</button></div></div>
+      <div class="diag-step"><span class="step-num">04</span><div class="step-q">Your weekend dress code?</div><div class="diag-opts"><button class="diag-opt" data-q="4" data-v="casual">Natural Casual</button><button class="diag-opt" data-q="4" data-v="edgy">Edgy & Street</button><button class="diag-opt" data-q="4" data-v="elegant">Elegant & Eclectic</button><button class="diag-opt" data-q="4" data-v="artistic">Artistic & Individual</button></div></div>
     </div>
     <div class="diag-cta">
-      <button id="diag-btn" onclick="runDiagnosis()">診断する →</button>
-      <br><button id="diag-reset" onclick="resetDiagnosis()">リセット</button>
+      <button id="diag-btn" onclick="runDiagnosis()">Get Results →</button>
+      <br><button id="diag-reset" onclick="resetDiagnosis()">Reset</button>
     </div>
     <div class="diag-result" id="diag-result">
       <div class="result-grid">
         <div class="result-left">
-          <span class="result-label" id="result-label">あなたのタイプ</span>
+          <span class="result-label" id="result-label">Your Type</span>
           <div class="result-title" id="result-title">—</div>
           <div class="result-desc" id="result-desc">—</div>
           <div class="result-exhibitions" id="result-exhibitions"></div>
         </div>
         <div>
-          <span class="result-label" style="display:block;margin-bottom:1rem">あなたに似合うパレット</span>
+          <span class="result-label" style="display:block;margin-bottom:1rem">Your Palette</span>
           <div class="result-palette" id="result-palette"></div>
         </div>
       </div>
@@ -933,17 +933,17 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
 <section id="map-section">
   <div class="section-head reveal">
     <div class="section-num">04</div>
-    <div class="section-titles"><p>Access &amp; Map</p><h2>美術館マップ</h2></div>
+    <div class="section-titles"><p>Access &amp; Map</p><h2>Museum Map</h2></div>
     <div class="section-line"></div>
   </div>
   <div class="map-grid" style="padding:0 clamp(1.5rem,4vw,4rem) clamp(2rem,4vw,4rem);">
     <div class="map-list" id="map-list">
-<div class="map-venue-item active" data-venue="0" onclick="selectVenue(0)"><div class="mv-name">アーティゾン美術館</div><div class="mv-area">京橋 — Kyobashi</div><div class="mv-station">銀座線「京橋」徒歩1分</div></div>
-<div class="map-venue-item" data-venue="1" onclick="selectVenue(1)"><div class="mv-name">国立新美術館</div><div class="mv-area">六本木 — Roppongi</div><div class="mv-station">千代田線「乃木坂」徒歩1分</div></div>
-<div class="map-venue-item" data-venue="2" onclick="selectVenue(2)"><div class="mv-name">東京都美術館</div><div class="mv-area">上野 — Ueno</div><div class="mv-station">JR「上野」徒歩7分</div></div>
-<div class="map-venue-item" data-venue="3" onclick="selectVenue(3)"><div class="mv-name">三菱一号館美術館</div><div class="mv-area">丸の内 — Marunouchi</div><div class="mv-station">千代田線「二重橋前」徒歩3分</div></div>
-<div class="map-venue-item" data-venue="4" onclick="selectVenue(4)"><div class="mv-name">東京都現代美術館</div><div class="mv-area">清澄白河 — Kiyosumi</div><div class="mv-station">半蔵門線「清澄白河」徒歩9分</div></div>
-<div class="map-venue-item" data-venue="5" onclick="selectVenue(5)"><div class="mv-name">根津美術館</div><div class="mv-area">南青山 — Minami-Aoyama</div><div class="mv-station">銀座線「表参道」徒歩8分</div></div>
+<div class="map-venue-item active" data-venue="0" onclick="selectVenue(0)"><div class="mv-name">Artizon Museum</div><div class="mv-area">Kyobashi</div><div class="mv-station">Ginza Line "Kyobashi" 1 min walk</div></div>
+<div class="map-venue-item" data-venue="1" onclick="selectVenue(1)"><div class="mv-name">The National Art Center, Tokyo</div><div class="mv-area">Roppongi</div><div class="mv-station">Chiyoda Line "Nogizaka" 1 min walk</div></div>
+<div class="map-venue-item" data-venue="2" onclick="selectVenue(2)"><div class="mv-name">Tokyo Metropolitan Art Museum</div><div class="mv-area">Ueno</div><div class="mv-station">JR "Ueno" 7 min walk</div></div>
+<div class="map-venue-item" data-venue="3" onclick="selectVenue(3)"><div class="mv-name">Mitsubishi Ichigokan Museum</div><div class="mv-area">Marunouchi</div><div class="mv-station">Chiyoda Line "Nijubashimae" 3 min walk</div></div>
+<div class="map-venue-item" data-venue="4" onclick="selectVenue(4)"><div class="mv-name">Museum of Contemporary Art Tokyo</div><div class="mv-area">Kiyosumishirakawa</div><div class="mv-station">Hanzomon Line "Kiyosumishirakawa" 9 min walk</div></div>
+<div class="map-venue-item" data-venue="5" onclick="selectVenue(5)"><div class="mv-name">Nezu Museum</div><div class="mv-area">Minami-Aoyama</div><div class="mv-station">Ginza Line "Omotesando" 8 min walk</div></div>
 
     </div>
     <div class="map-embed-wrap">
@@ -976,10 +976,10 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
           <g transform="translate(455,355)"><circle r="18" fill="#f7f3ed" opacity="0.8"/><text y="-6" text-anchor="middle" font-size="7" fill="#b85432" font-family="'DM Mono',monospace" font-weight="bold">N</text><line x1="0" y1="-12" x2="0" y2="12" stroke="#b85432" stroke-width="1.5"/><line x1="-12" y1="0" x2="12" y2="0" stroke="#b0a090" stroke-width="0.8"/></g>
         </svg>
         <div class="map-detail-box show" id="map-detail">
-          <div class="mdb-venue" id="mdb-venue">アーティゾン美術館</div>
+          <div class="mdb-venue" id="mdb-venue">Artizon Museum</div>
           <div class="mdb-title" id="mdb-title"></div>
-          <div class="mdb-info" id="mdb-info">銀座線「京橋」徒歩1分 ／ 一般 2,200円 ／ 〜2026.05.24</div>
-          <a class="mdb-gmaps" id="mdb-gmaps" href="https://maps.google.com/?q=アーティゾン美術館+東京都中央区京橋1-7-2" target="_blank" rel="noopener">📍 Google マップで開く</a>
+          <div class="mdb-info" id="mdb-info">Ginza Line "Kyobashi" 1 min walk ／ General ¥2,200 ／ Until 2026.05.24</div>
+          <a class="mdb-gmaps" id="mdb-gmaps" href="https://maps.google.com/?q=Artizon+Museum+1-7-2+Kyobashi+Chuo-ku+Tokyo" target="_blank" rel="noopener">📍 Open in Google Maps</a>
         </div>
       </div>
     </div>
@@ -990,8 +990,8 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
   <div class="footer-grid">
     <div class="footer-brand">
       <div class="footer-logo">Art <em>×</em> Makeup Tokyo</div>
-      <p class="footer-tagline">展覧会の色、時代、哲学をまとうメイクアップの提案。東京の美術館と美の交差点で、あなただけのものがたりを。</p>
-      <div class="footer-company"><strong>運営</strong><br>ART Connection 合同会社<br>© 2026 ART Connection LLC. All rights reserved.</div>
+      <p class="footer-tagline">Makeup inspired by art — palette, era, philosophy. Your beauty story, where Tokyo's museums and art intersect.</p>
+      <div class="footer-company"><strong>Operated by</strong><br>ART Connection LLC<br>© 2026 ART Connection LLC. All rights reserved.</div>
     </div>
     <div>
       <div class="footer-col-title">Exhibitions</div>
@@ -1007,15 +1007,15 @@ footer::before { content:'ART × MAKEUP'; position:absolute; bottom:-2rem; right
     <div>
       <div class="footer-col-title">Navigate</div>
       <div class="footer-links">
-        <a href="#exhibitions">展覧会一覧</a>
-        <a href="#diagnosis">メイク診断</a>
-        <a href="#map-section">アクセスマップ</a>
+        <a href="#exhibitions">Exhibitions</a>
+        <a href="#diagnosis">Makeup Quiz</a>
+        <a href="#map-section">Access Map</a>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>ART Connection 合同会社 — art-makeup-tokyo.netlify.app</span>
-    <span>展覧会情報は各美術館公式サイトでご確認ください</span>
+    <span>ART Connection LLC — art-makeup-tokyo.netlify.app</span>
+    <span>Please verify exhibition info on each museum's official website.</span>
   </div>
 </footer>
 
@@ -1065,7 +1065,7 @@ function filterCards(){
     const ok=(activeArea==='all'||card.dataset.area===activeArea)&&(activeGenre==='all'||card.dataset.genre===activeGenre)&&(!searchVal||card.dataset.search.toLowerCase().includes(searchVal));
     card.classList.toggle('hidden',!ok);if(ok)vis++;
   });
-  document.getElementById('count-badge').textContent=`全${vis}件表示中`;
+  document.getElementById('count-badge').textContent=`${vis} showing`;
 }
 /* REVEAL */
 const revObs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.1});
@@ -1080,10 +1080,10 @@ document.querySelectorAll('.diag-opt').forEach(btn=>{
   });
 });
 const diagData={
-  impressionist:{label:'インプレッショニスト',title:'光と霞の美食家',desc:'あなたは繊細な色彩と自然の光に魅かれるタイプ。メイクも絵画のように、ぼかしとグラデーションを大切にします。',exhibitions:['クロード・モネ — アーティゾン美術館', 'スウェーデン絵画 — 東京都美術館'],palette:['#87CEAB', '#6B9EC7', '#D4B8E0', '#C4A882', '#F0D090', '#e8c8a8', '#b8d4e0', '#f5e8d0']},
-  avantgarde:{label:'アヴァンギャルディスト',title:'概念と挑発の芸術家',desc:'あなたはメイクをアートと捉える前衛派。既成概念を壊す大胆な色使いと構造的な美に惹かれます。',exhibitions:['テート美術館 YBA & BEYOND — 国立新美術館', 'ソル・ルウィット — 東京都現代美術館'],palette:['#e63946', '#2255cc', '#f4d35e', '#111111', '#06d6a0', '#3d405b', '#ffffff', '#cc1166']},
-  wafu:{label:'和美主義者',title:'日本の美意識を宿す人',desc:'あなたには日本の美意識が息づいています。金箔の輝きや深い緋色——古来の色彩語が身体に馴染んでいます。',exhibitions:['トワイライト、新版画 — 三菱一号館美術館', '英姿颯爽 — 根津美術館'],palette:['#8b2028', '#c8a96e', '#1c3a4a', '#d4c078', '#6a8c70', '#4a3020', '#e8d5b0', '#5a2838']},
-  naturel:{label:'ナチュレル',title:'日常の光に生きる人',desc:'あなたはその日々の「普通」に美を見出す目を持っています。自然体の色気と健やかさが魅力です。',exhibitions:['スウェーデン絵画 — 東京都美術館', 'クロード・モネ — アーティゾン美術館'],palette:['#e8d5b7', '#a8c5a0', '#c9dde8', '#d4a878', '#e0b8a0', '#b8d0c0', '#f5e8d8', '#c8a888']}
+  impressionist:{label:'Impressionist',title:'Connoisseur of Light & Haze',desc:'You're drawn to delicate color and natural light. Like a painting, you treasure soft blends and gradients.',exhibitions:['Claude Monet — Artizon Museum', 'Swedish Painting — Tokyo Met Art'],palette:['#87CEAB', '#6B9EC7', '#D4B8E0', '#C4A882', '#F0D090', '#e8c8a8', '#b8d4e0', '#f5e8d0']},
+  avantgarde:{label:'Avant-Gardist',title:'Artist of Concept & Provocation',desc:'You treat makeup as art. You're attracted to bold colors that break conventions and structural beauty.',exhibitions:['Tate YBA & BEYOND — Natl Art Center', 'Sol LeWitt — MOT Tokyo'],palette:['#e63946', '#2255cc', '#f4d35e', '#111111', '#06d6a0', '#3d405b', '#ffffff', '#cc1166']},
+  wafu:{label:'Wabi-Aesthete',title:'Bearer of Japanese Aesthetics',desc:'Japanese aesthetics run through you. Gold leaf shimmer, deep crimson — ancient color language feels natural.',exhibitions:['Twilight Shin-hanga — Mitsubishi Ichigokan', 'Gallant Figures — Nezu Museum'],palette:['#8b2028', '#c8a96e', '#1c3a4a', '#d4c078', '#6a8c70', '#4a3020', '#e8d5b0', '#5a2838']},
+  naturel:{label:'Naturel',title:'Living in Everyday Light',desc:'You find beauty in the ordinary. Natural-looking allure and vitality — effortless is your signature.',exhibitions:['Swedish Painting — Tokyo Met Art', 'Claude Monet — Artizon Museum'],palette:['#e8d5b7', '#a8c5a0', '#c9dde8', '#d4a878', '#e0b8a0', '#b8d0c0', '#f5e8d8', '#c8a888']}
 };
 function scoreType(){
   const sc={impressionist:0,avantgarde:0,wafu:0,naturel:0};
@@ -1094,7 +1094,7 @@ function scoreType(){
   return Object.entries(sc).sort((a,b)=>b[1]-a[1])[0][0];
 }
 function runDiagnosis(){
-  if(Object.keys(answers).length<4){alert('4つの質問すべてに答えてください');return;}
+  if(Object.keys(answers).length<4){alert('Please answer all 4 questions');return;}
   const type=scoreType(),data=diagData[type];
   document.getElementById('result-label').textContent=data.label;
   document.getElementById('result-title').textContent=data.title;
@@ -1105,7 +1105,7 @@ function runDiagnosis(){
 }
 function resetDiagnosis(){Object.keys(answers).forEach(k=>delete answers[k]);document.querySelectorAll('.diag-opt').forEach(b=>b.classList.remove('selected'));document.getElementById('diag-result').classList.remove('show');}
 /* MAP */
-const venueData=[{"name":"アーティゾン美術館","title":"","info":"銀座線「京橋」徒歩1分 ／ 一般 2,200円 ／ 〜2026.05.24","gmaps":"https://maps.google.com/?q=アーティゾン美術館+東京都中央区京橋1-7-2"},{"name":"国立新美術館","title":"","info":"千代田線「乃木坂」徒歩1分 ／ 一般 2,000円 ／ 〜2026.05.11","gmaps":"https://maps.google.com/?q=国立新美術館+東京都港区六本木7-22-2"},{"name":"東京都美術館","title":"","info":"JR「上野」徒歩7分 ／ 一般 1,900円 ／ 〜2026.04.12","gmaps":"https://maps.google.com/?q=東京都美術館+東京都台東区上野公園8-36"},{"name":"三菱一号館美術館","title":"","info":"千代田線「二重橋前」徒歩3分 ／ 一般 2,100円 ／ 〜2026.05.24","gmaps":"https://maps.google.com/?q=三菱一号館美術館+東京都千代田区丸の内2-6-2"},{"name":"東京都現代美術館","title":"","info":"半蔵門線「清澄白河」徒歩9分 ／ 一般 1,800円 ／ 〜2026.04.02","gmaps":"https://maps.google.com/?q=東京都現代美術館+東京都江東区三好4-1-1"},{"name":"根津美術館","title":"","info":"銀座線「表参道」徒歩8分 ／ 一般 1,300円 ／ 〜2026.03.29","gmaps":"https://maps.google.com/?q=根津美術館+東京都港区南青山6-5-1"}];
+const venueData=[{"name":"Artizon Museum","title":"","info":"Ginza Line "Kyobashi" 1 min walk ／ General ¥2,200 ／ Until 2026.05.24","gmaps":"https://maps.google.com/?q=Artizon+Museum+1-7-2+Kyobashi+Chuo-ku+Tokyo"},{"name":"The National Art Center, Tokyo","title":"","info":"Chiyoda Line "Nogizaka" 1 min walk ／ General ¥2,000 ／ Until 2026.05.11","gmaps":"https://maps.google.com/?q=National+Art+Center+Tokyo+7-22-2+Roppongi+Minato-ku"},{"name":"Tokyo Metropolitan Art Museum","title":"","info":"JR "Ueno" 7 min walk ／ General ¥1,900 ／ Until 2026.04.12","gmaps":"https://maps.google.com/?q=Tokyo+Metropolitan+Art+Museum+8-36+Ueno+Park+Taito-ku"},{"name":"Mitsubishi Ichigokan Museum","title":"","info":"Chiyoda Line "Nijubashimae" 3 min walk ／ General ¥2,100 ／ Until 2026.05.24","gmaps":"https://maps.google.com/?q=Mitsubishi+Ichigokan+Museum+2-6-2+Marunouchi+Chiyoda-ku"},{"name":"Museum of Contemporary Art Tokyo","title":"","info":"Hanzomon Line "Kiyosumishirakawa" 9 min walk ／ General ¥1,800 ／ Until 2026.04.02","gmaps":"https://maps.google.com/?q=Museum+of+Contemporary+Art+Tokyo+4-1-1+Miyoshi+Koto-ku"},{"name":"Nezu Museum","title":"","info":"Ginza Line "Omotesando" 8 min walk ／ General ¥1,300 ／ Until 2026.03.29","gmaps":"https://maps.google.com/?q=Nezu+Museum+6-5-1+Minami-Aoyama+Minato-ku+Tokyo"}];
 function selectVenue(i){
   document.querySelectorAll('.map-venue-item').forEach(el=>el.classList.remove('active'));
   document.querySelector(`[data-venue="${i}"]`).classList.add('active');
